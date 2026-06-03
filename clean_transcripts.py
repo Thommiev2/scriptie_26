@@ -2,10 +2,14 @@ import re
 import jiwer
 from whisper.normalizers import BasicTextNormalizer
 
+# CLEAN TRANSCRIPT AND GROUND TRUTH BEFORE SCORE CALCULATION
+
+
+# initialize OpenAI's basic text normalizer, removes "  ", special characters, punctuation, capitalization
 normalizer = BasicTextNormalizer(remove_diacritics=True)
+# basic regex expression for filler words, matches duhh, uhhh, hmmm, emm, etc
 basic_filler_words_regex = re.compile(r"\s[d]?[uea]+[hm]+\b", flags=re.MULTILINE)
-
-
+# rule-based lexicon, matches words with similar meaning (not functional yet, can be expanded on during transcribing ground truth)
 rules = {
     'het': ["t"],
     'goededag': ["goeiedag", "goede dag", "goeie dag"],
@@ -15,12 +19,14 @@ rules = {
 }
 
 
+# Apply normalizer and regex
 def normalize(text):
     text = normalizer(text)
     text = basic_filler_words_regex.sub("", text)
     return text
 
 
+# Deletes [unaudible] sections and substitution or insertions in the hypothesis pointing to it (not functional yet)
 def delete_unaudible_segments(gt, h):
 
     aligned_text = jiwer.process_words(gt, h)
@@ -31,8 +37,14 @@ def delete_unaudible_segments(gt, h):
             while aligned_text.alignments[index].ref:
                 i += 1
 
-def align_sentences(gt, h):
 
+def align_sentences(gt, h):
+    """
+    :param gt:
+    :param h:
+    :return:    reference:  list[str] -> the ground truth split on every '.' character, marking a single sentence
+                hypothesis: list[str] -> the hypothesis aligned to the ground truth and split according to the ground truth.
+    """
     aligned_text = jiwer.process_words(gt, h)
 
     reference = []
@@ -74,8 +86,8 @@ r = "ik doe als jij zeg"
 error = jiwer.process_words(p, r)
 print(error)
 # # print(error.alignments[0][0].ref_start_idx)
-# print(error.alignments[0][0])
-# print(align_sentences(error))
+print(error.alignments[0][0])
+print(align_sentences(t, s))
 
 # t = """Leger des heils, Christian health care organization,
 # van uit  christelijke waarde helpen uhhh ummm duuh ahhhh zë mensën die dat zelf niet kunnen en/of nodig hebben
