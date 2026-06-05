@@ -6,14 +6,24 @@ from pathlib import Path
 from datetime import datetime
 import csv
 
+#
+#
+#       This file runs a list of models on a list of directories containing structured audio files
+#       It outputs a single csv file in ASR output which is structured as follows
+#
+#       | ASR output
+#       | - year-month-day_hour-min-second.csv  ->  name, category, model, time, transcript
+#
+#
 
-class PipeLine:
+
+class PipeLine1:
     def __init__(self, models: list['AsrModel'], categories: list[str]):
         self.models = models
         self.dataset_paths = categories
         self.output_file_path = Path('ASR output')
 
-    def run(self, normalize=False):
+    def run(self):
 
         headers = ['name', 'category', 'model', 'time', 'transcript']
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
@@ -39,11 +49,6 @@ class PipeLine:
                             'time': times[name]
                         })
 
-
-def format_output():
-    path = Path("ASR output")
-
-
-a = PipeLine(models=[WhisperAsr, ParakeetAsr, CohereAsr, CanaryAsr],
+a = PipeLine1(models=[WhisperAsr, ParakeetAsr, CohereAsr, CanaryAsr],
              categories=['Test'])
 a.run()

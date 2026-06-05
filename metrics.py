@@ -1,6 +1,6 @@
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from sentence_transformers import SentenceTransformer
-from data_cleaning import align_sentences, normalize
+from utility_functions import align_sentences, normalize
 
 import numpy as np
 import torch
@@ -20,8 +20,9 @@ class SummaC:
         self.model = AutoModelForSequenceClassification.from_pretrained("LokaalHub/nl-nli-klein")
         self.tokenizer = AutoTokenizer.from_pretrained("LokaalHub/nl-nli-klein")
 
-    def calculate_score(self, gt, h) -> float:
+    def calculate_score(self, gt, h) -> (float, int):
 
+        # Hypothesis is the transcript and Ground Truth is the summary
         if isinstance(gt, str):
             gt = gt.split('.')
         if isinstance(h, str):
@@ -45,46 +46,53 @@ class SummaC:
 
         max_entailment_scores = np.max(array, axis=0)
 
-        return np.average(max_entailment_scores)
+        return np.average(max_entailment_scores), len(gt)
 
 
 class WER:
     def __init__(self):
         pass
 
-    def calculate_score(self, gt, h) -> float:
+    def calculate_score(self, gt, h) -> (float, int):
 
         if not isinstance(gt, str):
             raise TypeError(f"Ground Truth is not of type string but of type {type(gt)} while calculating WER")
         if not isinstance(h, str):
             raise TypeError(f"Hypothesis is not of type string but of type {type(h)} while calculating WER")
 
+        gt = normalize(gt)
+        h = normalize(h)
+
         processed_words = jiwer.process_words(gt, h)
-        return processed_words.wer
+        return processed_words.wer, len(processed_words.references[0])
 
 
 class SimDist:
     def __init__(self):
         self.model = SentenceTransformer('NetherlandsForensicInstitute/robbert-2022-dutch-sentence-transformers')
 
-    def calculate_score(self, gt, h) -> float:
+    def calculate_score(self, gt: str, h: str) -> (float, int):
 
-        gt = self.model.encode(gt)
-        h = self.model.encode(h)
+        gt = gt.replace('?', '.').replace('!', '.')
+        h = h.replace('?', '.').replace('!', '.')
 
-        sim_values = np.zeros(len(gt))
+        gt, h = align_sentences(gt, h)
 
-        for i, (gt_sent, h_sent) in enumerate(zip(gt, h)):
+        gt = [normalize(sentence) for sentence in gt]
+        h = [normalize(sentence) for sentence in h]
 
-            # Normalize vectors
-            gt_sent = gt_sent / np.linalg.norm(gt_sent)
-            h_sent = h_sent / np.linalg.norm(h_sent)
+        gt_embed = self.model.encode(gt, convert_to_numpy=True)
+        h_embed = self.model.encode(h, convert_to_numpy=True)
+        # print(gt_embed)
 
-            # Calculate angle between 0 to 1
-            sim_values[i] = np.dot(gt_sent, h_sent)
+        gt_norm = gt_embed / np.linalg.norm(gt_embed, axis=1, keepdims=True)
+        h_norm = h_embed / np.linalg.norm(h_embed, axis=1, keepdims=True)
 
-        # average semantic difference
-        return np.sum(sim_values, dtype=float) / len(gt)
+        sim_values = gt_norm * h_norm
+        sim_values = np.sum(sim_values, axis=1)
+        print(sim_values)
+
+        return float(np.mean(sim_values)), len(gt)
 
 
 class CompressionRate:
@@ -225,13 +233,14 @@ def get_common_sequences(original_text, summary):
 #     Bijvoorbeeld: "De ptiënt hft een goede prognosis, maar we moeten wel de follow-up in de gaten houden."
 #     """
 #
-# gt2 = "hallo meneer ik ben thomas"
-# h2 = "hallo man ik ben thomas"
-# h3 = "hallo hond ik ben thomas"
-#
+# gt2 = ["hallo meneer ik ben thomas", "hallo meneer ik ben thomas", "hallo meneer ik ben thomas", "hallo meneer ik ben thomas"]
+# h2 = ["hallo man ik ben thomas", "hallo mevrouw ik ben thomas", "hallo hond ik ben thomas", "shuuush ff niet praten"]
+# # h3 = "hallo hond ik ben thomas"
+# #
 # w = SimDist()
 # a = w.calculate_score(gt2, h2)
-# b = w.calculate_score(gt2, h3)
+# b = w.calculate_score(gt2, gt2)
+# print(a, b)
 # c = w.calculate_score(h3, h2)
 # print(a, b, c)
 

@@ -13,31 +13,12 @@ from datasets import load_dataset, Audio, get_dataset_config_names, Value, Featu
 #     | - [name] transcript.txt
 
 
-# Clean data for category Dokter Patient directory
-def dok_pat(t):
-    t = t.split('\n')
-    t = " ".join([t[i*2+1] for i in range(int(len(t)/2))])
-    return t
-
-
-# Clean data for category Pedagogische gesprekken
-def ped_ges(t):
-    t = t.split('\n')
-    st = ''
-    for line in t:
-        st += line[line.find(':')+1:]
-    return st
-
-
-clean_func = {'Dokter Patient': dok_pat, 'Pedagogische gesprekken': ped_ges, 'Test': ped_ges}
-
-
 class DS:
     def __init__(self, category):
         self.name = category
         self.audio = Path("dataset") / category / Path("audio")
         self.ground_truth = Path("dataset") / category / Path("ground truth")
-        self.clean = clean_func[category]
+        # self.clean = clean_func[category]
         self.duration = 0
         self.data = self.load_data()
 
