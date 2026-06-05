@@ -1,9 +1,2 @@
-file_name,transcript
-auto-immuunziekten audio.mp3,auto-immuunziekten transcript.txt
-diabetes audio.mp3,diabetes transcript.txt
-hartziekten audio.mp3,hartziekten transcript.txt
-neurologie audio.mp3,neurologie transcript.txt
-oncologie audo.mp3,oncologie transcript.txt
-ademhaling audio.mp3,ademhaling transcript.txt
-bewegingsapparaat audio.mp3,bewegingsapparaat transcript.txt
-abdomen audio.mp3, abdomen transcript.txt
+file_name,transcript,name
+pedagogische.mp3,pedagogische.txt,pedagogische

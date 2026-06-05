@@ -4,13 +4,15 @@ from pathlib import Path, PurePosixPath
 from datasets import load_dataset, Audio, get_dataset_config_names, Value, Features, Dataset
 
 # LOAD IN AUDIO/GROUND TRUTH DATASETS THAT ARE USED FOR ASR TRANSCRIPTION
+# FORMATTING CHECKED PER CATEGORY BY VALIDATE_DATA_FORMATTING
 #
 # - dataset
 # | - [category]
 #   | - audio
-#     | - [name] audio.[mp3/wav]
+#     | - metadata.csv
+#     | - [name].[mp3/wav]
 #   | - ground truth
-#     | - [name] transcript.txt
+#     | - [name].txt
 
 
 class DS:
@@ -23,6 +25,9 @@ class DS:
         self.data = self.load_data()
 
     def load_data(self):
+
+        validate_data_formatting(self.name)
+
         dataset = load_dataset("audiofolder", data_dir=str(self.audio), split="train", streaming=True)
         dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
 
@@ -39,6 +44,52 @@ class DS:
         return dataset
 
 
+def validate_data_formatting(directory):
+
+    path = Path('dataset')
+    if not Path.exists(path):
+        raise FileNotFoundError('Missing root directory for all data')
+    if not Path.exists(path / directory):
+        raise FileNotFoundError(f"Provided category '{directory}' of data is not present inside the dataset directory")
+    path = path / directory
+    audio = path / Path('audio')
+    ground_truth = path / Path('ground truth')
+    if not Path.exists(audio):
+        raise FileNotFoundError(f"Category '{directory}' does not contain a dedicated audio directory")
+    if not Path.exists(ground_truth):
+        raise FileNotFoundError(f"Category '{directory}' does not contain a dedicated ground truth directory")
+
+    gt_files = os.listdir(ground_truth)
+    gt_names = [file.split('.')[0] for file in gt_files]
+    gt_extensions = [file.split('.')[-1] for file in gt_files]
+
+    meta_data_present = False
+
+    for file in os.listdir(audio):
+        if file == 'metadata.csv':
+            meta_data_present = True
+            continue
+
+        name = file.split('.')[0]
+        extension = file.split('.')[-1]
+
+        if extension not in ['mp3', 'wav']:
+            raise TypeError(f"file '{file}' should be of type .mp3 or .wav in category '{directory}'s audio directory")
+        if '_' in file:
+            raise NameError(f"file '{file}' contains the invalid character '_'")
+
+        if name not in gt_names:
+            raise FileNotFoundError(f"file '{file}' had no matching ground truth file")
+
+    if not meta_data_present:
+        raise FileNotFoundError(f"no metadata present in audio directory of category '{directory}'")
+
+    for i in range(len(gt_extensions)):
+        if gt_extensions[i] != 'txt':
+            raise TypeError(f"file {gt_files[i]} should be of type .txt in category '{directory}'s audio directory")
+
+
+
 # for dataset in datasets:
 #     print(dataset.audio, dataset.category, dataset.name)
 
@@ -51,7 +102,7 @@ class DS:
 # print(transcript)
 # print(r_transcription)
 
-# a = DS("Dokter Patient")
+# a = DS("Test")
 # Dataset("Pedagogische gesprekken")
 
 
@@ -59,4 +110,9 @@ class DS:
 # print(path)
 # b = str(PurePosixPath(path))
 # print(b[:2] + b[3:])
-
+path = Path('dataset')
+for category in os.listdir(path):
+    for type in ['audio', 'ground truth']:
+        n_path = path / category / type
+        for file in os.listdir(n_path):
+            os.rename(n_path / file, n_path / Path(f"{file.replace('_', '-').split(' ')[0]}.{file.split('.')[-1]}"))

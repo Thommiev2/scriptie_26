@@ -1,5 +1,5 @@
 from data_initiation import DS
-from models import BaseModel, CanaryAsr, WhisperAsr, ParakeetAsr, CohereAsr
+from asr_models import BaseModel, CanaryAsr, WhisperAsr, ParakeetAsr, CohereAsr
 # from models import BaseModel, WhisperAsr
 import os
 from pathlib import Path

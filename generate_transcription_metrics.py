@@ -13,7 +13,7 @@ import csv
 #       | Metrics
 #       | - year-month-day_hour-min-second.csv  ->  name, category, model, wer, simdist, num_words
 #
-# name,category,model,time,transcript
+#
 
 clean_func = {'Dokter Patient': dok_pat, 'Pedagogische gesprekken': ped_ges, 'Test': dok_pat}
 
