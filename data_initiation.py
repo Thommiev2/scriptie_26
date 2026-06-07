@@ -6,13 +6,17 @@ from datasets import load_dataset, Audio, get_dataset_config_names, Value, Featu
 # LOAD IN AUDIO/GROUND TRUTH DATASETS THAT ARE USED FOR ASR TRANSCRIPTION
 # FORMATTING CHECKED PER CATEGORY BY VALIDATE_DATA_FORMATTING
 #
-# - dataset
-# | - [category]
-#   | - audio
-#     | - metadata.csv
-#     | - [name].[mp3/wav]
-#   | - ground truth
-#     | - [name].txt
+#       - dataset
+#       | - [category]
+#         | - audio
+#         | | - metadata.csv
+#         | | - [name].[mp3/wav]
+#         | - ground truth
+#           | - [name].txt
+#
+#       Output file of DS load_data takes the same fieldnames as in the csv file (file_name, transcript, name)
+#
+#
 
 
 class DS:
@@ -47,16 +51,16 @@ class DS:
 def validate_data_formatting(directory):
 
     path = Path('dataset')
-    if not Path.exists(path):
+    if not path.exists():
         raise FileNotFoundError('Missing root directory for all data')
-    if not Path.exists(path / directory):
+    if not (path / directory).exists():
         raise FileNotFoundError(f"Provided category '{directory}' of data is not present inside the dataset directory")
     path = path / directory
     audio = path / Path('audio')
     ground_truth = path / Path('ground truth')
-    if not Path.exists(audio):
+    if not audio.exists():
         raise FileNotFoundError(f"Category '{directory}' does not contain a dedicated audio directory")
-    if not Path.exists(ground_truth):
+    if not ground_truth.exists():
         raise FileNotFoundError(f"Category '{directory}' does not contain a dedicated ground truth directory")
 
     gt_files = os.listdir(ground_truth)
@@ -110,9 +114,10 @@ def validate_data_formatting(directory):
 # print(path)
 # b = str(PurePosixPath(path))
 # print(b[:2] + b[3:])
-path = Path('dataset')
-for category in os.listdir(path):
-    for type in ['audio', 'ground truth']:
-        n_path = path / category / type
-        for file in os.listdir(n_path):
-            os.rename(n_path / file, n_path / Path(f"{file.replace('_', '-').split(' ')[0]}.{file.split('.')[-1]}"))
+
+# path = Path('dataset')
+# for category in os.listdir(path):
+#     for type in ['audio', 'ground truth']:
+#         n_path = path / category / type
+#         for file in os.listdir(n_path):
+#             os.rename(n_path / file, n_path / Path(f"{file.replace('_', '-').split(' ')[0]}.{file.split('.')[-1]}"))

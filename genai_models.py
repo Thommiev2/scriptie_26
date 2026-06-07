@@ -67,7 +67,7 @@ class GPT(GenAI):
                 time.sleep(cooldown * n_tries)
                 cooldown *= 2
 
-        print(f"< Transcription completed in {round((time.perf_counter() - timer) / 60, 2)} minutes")
+        print(f"< Transcription completed in {int((time.perf_counter() - timer) / 60)}:{int((time.perf_counter() - timer) % 60)} minutes")
 
         return completion.choices[0].message.content
 
@@ -125,7 +125,7 @@ class Gemini(GenAI):
                 time.sleep(cooldown * n_tries)
                 n_tries += 1
 
-        print(f"< Transcription completed in {round((time.perf_counter() - timer) / 60, 2)} minutes")
+        print(f"< Transcription completed in {int((time.perf_counter() - timer) / 60)}:{int((time.perf_counter() - timer) % 60)} minutes")
         text = response.text.replace('\n', "")
 
         return text
@@ -229,12 +229,12 @@ def generate_batch(models: list['GenAI'], save=False, normalize_input=False):
         genai_model = genai_model()
         print(f"model {genai_model.model} initiated succesfully")
 
-        for file in os.listdir(Path('ASR output')):
+        for file in os.listdir(Path('output/ASR output')):
             batch_file_path = Path('batch requests') / Path(f'{genai_model.model}_{file}.jsonl')
             if str(batch_file_path) not in batched_data:
 
                 with open(batch_file_path, 'w', newline='', encoding='utf-8') as f_w:
-                    with open(Path('ASR output') / file, 'r', encoding='utf-8') as f_r:
+                    with open(Path('output/ASR output') / file, 'r', encoding='utf-8') as f_r:
                         reader = csv.DictReader(f_r)
                         for i, row in enumerate(reader):
                             request_id = f"{i}_{row['name']}_{row['category']}_{row['model']}"

@@ -9,26 +9,28 @@ import csv
 #
 #
 #       This file runs a list of models on a list of directories containing structured audio files
-#       It outputs a single csv file in ASR output which is structured as follows
+#       It outputs a single csv file as follows
 #
-#       | ASR output
-#       | - year-month-day_hour-min-second.csv  ->  name, category, model, time, transcript
+#       - output
+#       | - asr output
+#         | - year-month-day_hour-min-second.csv  ->  name, category, model, time, transcript
 #
 #
+
 
 
 class PipeLine1:
     def __init__(self, models: list['AsrModel'], categories: list[str]):
         self.models = models
         self.dataset_paths = categories
-        self.output_file_path = Path('ASR output')
+        self.output_file_path = Path('output/ASR output')
 
     def run(self):
 
         headers = ['name', 'category', 'model', 'time', 'transcript']
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
-        with open(Path('ASR output') / Path(f"{current_time}.csv"), 'w', newline='', encoding='utf-8') as f:
+        with open(Path('output/ASR output') / Path(f"{current_time}.csv"), 'w', newline='', encoding='utf-8') as f:
             writer = csv.DictWriter(f, fieldnames=headers)
             writer.writeheader()
 

@@ -1,40 +1,42 @@
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+import re
+
+from transformers import AutoTokenizer, AutoModelForSequenceClassification, RobertaTokenizer
 from sentence_transformers import SentenceTransformer
 from utility_functions import align_sentences, normalize
 
 import numpy as np
 import torch
 import jiwer
-
-
-class Metric:
-    def __init__(self):
-        self.normalizer = normalize
-
-    def normalize(self, text):
-        self.normalizer(text)
-
+from bert_score import score
+from pathlib import Path
 
 class SummaC:
     def __init__(self):
+        self.name = 'summac'
         self.model = AutoModelForSequenceClassification.from_pretrained("LokaalHub/nl-nli-klein")
         self.tokenizer = AutoTokenizer.from_pretrained("LokaalHub/nl-nli-klein")
 
-    def calculate_score(self, gt, h) -> (float, int):
+    def calculate_score(self, transcript: str, summary: str) -> (float, int):
 
-        # Hypothesis is the transcript and Ground Truth is the summary
-        if isinstance(gt, str):
-            gt = gt.split('.')
-        if isinstance(h, str):
-            h = h.split('.')
+        # validate input
+        if not isinstance(transcript, str):
+            raise TypeError(f"Transcript is not of type string but of type {type(transcript)}")
+        if not isinstance(summary, str):
+            raise TypeError(f"Summary is not of type string but of type {type(summary)}")
+
+        transcript = re.sub(r"[?!]+", '.', transcript)
+        h = re.sub(r"[?!]+", '.', summary)
+
+        transcript = transcript.split('.')
+        summary = h.split('.')
 
         # Array containing entailment scores for each pair of summary sentences with sentences from the original document
-        array = np.zeros((len(gt), len(h)))
+        array = np.zeros((len(transcript), len(summary)))
 
-        for i, gt_sentence in enumerate(gt):
-            for j, h_sentence in enumerate(h):
+        for i, transcript_sentence in enumerate(transcript):
+            for j, summary_sentence in enumerate(summary):
 
-                inputs = self.tokenizer(gt_sentence, h_sentence, truncation='only_first', max_length=256, return_tensors='pt')
+                inputs = self.tokenizer(transcript_sentence, summary_sentence, truncation='only_first', max_length=256, return_tensors='pt')
 
                 with torch.no_grad():
                     logits = self.model(**inputs).logits
@@ -42,16 +44,16 @@ class SummaC:
                 prob_distr = logits.softmax(-1).squeeze().tolist()
                 # Takes just the entailment probability. Change later to incorporate other scores into single value
                 array[i, j] = prob_distr[0]
-                print(f"gt: {gt_sentence}, h: {h_sentence}, entailment_score: {prob_distr[0]}")
+                # print(f"gt: {transcript_sentence}, h: {summary_sentence}, entailment_score: {prob_distr[0]}")
 
         max_entailment_scores = np.max(array, axis=0)
 
-        return np.average(max_entailment_scores), len(gt)
+        return np.average(max_entailment_scores)
 
 
 class WER:
     def __init__(self):
-        pass
+        self.name = 'wer'
 
     def calculate_score(self, gt, h) -> (float, int):
 
@@ -64,17 +66,15 @@ class WER:
         h = normalize(h)
 
         processed_words = jiwer.process_words(gt, h)
-        return processed_words.wer, len(processed_words.references[0])
+        return processed_words.wer
 
 
 class SimDist:
     def __init__(self):
+        self.name = 'simdist'
         self.model = SentenceTransformer('NetherlandsForensicInstitute/robbert-2022-dutch-sentence-transformers')
 
     def calculate_score(self, gt: str, h: str) -> (float, int):
-
-        gt = gt.replace('?', '.').replace('!', '.')
-        h = h.replace('?', '.').replace('!', '.')
 
         gt, h = align_sentences(gt, h)
 
@@ -90,76 +90,111 @@ class SimDist:
 
         sim_values = gt_norm * h_norm
         sim_values = np.sum(sim_values, axis=1)
-        print(sim_values)
+        # print(sim_values)
 
-        return float(np.mean(sim_values)), len(gt)
+        return float(np.mean(sim_values))
 
 
 class CompressionRate:
     def __init__(self):
-        pass
+        self.name = 'compression_rate'
 
-    def calculate_score(self, gt, h):
+    def calculate_score(self, transcript: str, summary: str):
 
-        if not isinstance(gt, str):
-            raise TypeError(f"Ground Truth is not of type string but of type {type(gt)} while calculating Compression Rate")
-        if not isinstance(h, str):
-            raise TypeError(f"Hypothesis is not of type string but of type {type(h)} while calculating Compression Rate")
+        if not isinstance(transcript, str):
+            raise TypeError(f"Ground Truth is not of type string but of type {type(transcript)} while calculating Compression Rate")
+        if not isinstance(summary, str):
+            raise TypeError(f"Hypothesis is not of type string but of type {type(summary)} while calculating Compression Rate")
 
-        return len(h) / len(gt)
+        return len(summary) / len(transcript)
+
+
+class BertScore:
+    def __init__(self):
+        # self.model = SentenceTransformer('NetherlandsForensicInstitute/robbert-2022-dutch-sentence-transformers')
+        self.name = 'bertscore'
+
+    def calculate_score(self, reference: str, candidate: str):
+
+        # ref_tokens = self.tokenizer.tokenize(reference)
+        # can_tokens = self.tokenizer.tokenize(candidate)
+        #
+        # for token in ref_tokens:
+        #     print(token)
+        # for token in can_tokens:
+        #     print(token)
+
+        reference = [reference]
+        candidate = [candidate]
+
+        if not Path.exists(Path("hf_model")):
+            model = SentenceTransformer('NetherlandsForensicInstitute/robbert-2022-dutch-sentence-transformers')
+            model[0].auto_model.save_pretrained("./hf_model")
+            model.tokenizer.save_pretrained("./hf_model")
+
+        precission_score, recall_score, f1_score = score(
+            candidate,
+            reference,
+            model_type="./hf_model",
+            num_layers=12,
+
+        )
+
+        return [precission_score.item(), recall_score.item(), f1_score.item()]
 
 
 class Density:
     def __init__(self):
-        pass
+        self.name = 'density'
 
-    def calculate_score(self, gt, h):
-        sequences = get_common_sequences(gt, h)
+    def calculate_score(self, transcript: str, summary: str):
+        sequences = get_common_sequences(transcript, summary)
         score = sum(len(seq)**2 for seq in sequences['sequences']) / sequences['sum_length']
         return score
 
 
 class Coverage:
     def __init__(self):
-        pass
+        self.name = 'coverage'
 
-    def calculate_score(self, gt, h):
-        sequences = get_common_sequences(gt, h)
+    def calculate_score(self, transcript: str, summary: str):
+        sequences = get_common_sequences(transcript, summary)
         score = sum(len(seq) for seq in sequences['sequences']) / sequences['sum_length']
         return score
 
 
 class ROUGE:
-    def __init__(self, n):
+    def __init__(self, n=2):
+        self.name = 'rouge'
         self.seq_length = n
 
-    def calculate_score(self, gt, h):
+    def calculate_score(self, reference: str, candidate: str):
 
-        ref_sum = gt.split(' ')
-        summ = h.split(' ')
+        ref_summ = reference.split(' ')
+        summ = candidate.split(' ')
 
         sum_index = 0
-        ref_sum_index = 0
+        ref_summ_index = 0
         match_count = 0
 
-        while ref_sum_index <= len(ref_sum) - self.seq_length:
+        while ref_summ_index <= len(ref_summ) - self.seq_length:
             while sum_index <= len(summ) - self.seq_length:
                 n = 0
                 while n < self.seq_length:
-                    if ref_sum[ref_sum_index + n] == summ[sum_index + n]:
+                    if ref_summ[ref_summ_index + n] == summ[sum_index + n]:
                         n += 1
                     else:
-                        print(ref_sum[ref_sum_index: ref_sum_index + n])
+                        # print(ref_summ[ref_summ_index: ref_summ_index + n])
                         break
                 else:
                     match_count += 1
-                    print(ref_sum[ref_sum_index: ref_sum_index + n])
+                    # print(ref_summ[ref_summ_index: ref_summ_index + n])
                     break
                 sum_index += 1
             sum_index = 0
-            ref_sum_index += 1
+            ref_summ_index += 1
 
-        return match_count / (len(ref_sum) - self.seq_length + 1)
+        return match_count / (len(ref_summ) - self.seq_length + 1)
 
 
 def get_common_sequences(original_text, summary):
@@ -290,9 +325,9 @@ def get_common_sequences(original_text, summary):
 # print(aa.calculate_score(gt1, h1))
 # print(bb.calculate_score(gt1, h1))
 
-# #################### ROUGE #################################
-# a = "hello my name stoer is thomas"
-# b = "hello my name cool is thomas"
+#################### ROUGE #################################
+# a = "hello my name stoer is thomas. ik hou van zingen en spelletje"
+# b = "hello my name cool is thomas. spelletjes en zingen vind ik leuk, maar niet heus"
 #
-# d = ROUGE()
-# print(d.calculate_score(2, a, b))
+# d = BertScore()
+# print(d.calculate_score(a, b))

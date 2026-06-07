@@ -47,6 +47,10 @@ def align_sentences(gt, h):
     :return reference:      list[str] -> the ground truth split on every '.' character, marking a single sentence
             hypothesis:     list[str] -> the hypothesis aligned to the ground truth and split according to the ground truth.
     """
+
+    gt = re.sub(r"[?!]+", '.', gt)
+    h = re.sub(r"[?!]+", '.', h)
+
     aligned_text = jiwer.process_words(gt, h)
 
     reference = []
@@ -80,6 +84,17 @@ def align_sentences(gt, h):
 
     return reference, hypothesis
 
+
+def count_words(text):
+    text = normalizer(text)
+    return len(text.split(' '))
+
+
+def count_sentences(text):
+    text = re.sub(r"[?!]+", '.', text)
+    return len(text.split('.'))
+
+
 # Clean data for category Dokter Patient directory
 def dok_pat(t):
     t = t.split('\n')
@@ -94,6 +109,10 @@ def ped_ges(t):
     for line in t:
         st += line[line.find(':')+1:]
     return st
+
+
+clean_func = {'Dokter Patient': dok_pat, 'Pedagogische gesprekken': ped_ges, 'Test': dok_pat}
+
 # t = "hallo ik ben. door de woorden. wow crazy aaa cool, nice. asdw aaawdw. asdwaf wad adwa awwww. maar dan. huh hoeze. crazy work haha. gekke handoek. maar dan niet echt."
 # s = "hallo ik door de woorden. wow aaa crazy, nice. asdw aaawdw. asdwaf wad adwa. awwww hoi. maar dan. huh hoezo no way haha. gekke lol nee handoek cool maar dan wel"
 # p = "ik [unaudible] zeg"
