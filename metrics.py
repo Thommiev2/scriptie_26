@@ -140,7 +140,7 @@ class BertScore:
 
         )
 
-        return [precission_score.item(), recall_score.item(), f1_score.item()]
+        return [round(precission_score.item(), 5), round(recall_score.item(), 5), round(f1_score.item(), 5)]
 
 
 class Density:

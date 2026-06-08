@@ -4,14 +4,11 @@ if transformers.__version__ != "5.9.0":
                       "Run 'python transformer_version --upgrade' to install the correct version.")
 
 import torch
-import nemo.collections.asr as nemo_asr
 from nemo.collections.asr.models import ASRModel
-from transformers.audio_utils import load_audio
 from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq, pipeline, CohereAsrForConditionalGeneration
 from data_initiation import DS
 import time
-from qwen_asr import Qwen3ASRModel
-
+from faster_whisper import WhisperModel
 
 class BaseModel:
     def __init__(self, name, model, processor=None):
@@ -30,7 +27,7 @@ sample_rate = 16000
 batch_size = 1
 max_new_tokens = 256
 language = 'du'
-torch_type = torch.float16 if torch.cuda.is_available() else torch.float32
+torch_type = torch.bfloat16 if torch.cuda.is_available() else torch.bfloat16
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 
@@ -39,7 +36,11 @@ class CohereAsr(BaseModel):
     def __init__(self):
         super().__init__(
             name="Cohere Labs Transcribe",
-            model=CohereAsrForConditionalGeneration.from_pretrained("CohereLabs/cohere-transcribe-03-2026", device_map=device),
+            model=CohereAsrForConditionalGeneration.from_pretrained(
+                "CohereLabs/cohere-transcribe-03-2026",
+                device_map=device,
+                dtype=torch_type
+            ),
             processor=AutoProcessor.from_pretrained("CohereLabs/cohere-transcribe-03-2026")
         )
 
@@ -77,9 +78,42 @@ class CohereAsr(BaseModel):
         return transcripts, times
 
 
+class WhisperAsrCpu(BaseModel):
+    def __init__(self):
+        super().__init__(
+            name="Whisper-large-v3-cpu-optimized",
+            model=WhisperModel(
+                'large-v3',
+                device=device,
+                compute_type="int8",
+                cpu_threads=4
+            )
+        )
+
+    def transcribe(self, dataset: 'DS') -> (dict[str: str], dict[str: float]):
+        transcripts = {}
+        times = {}
+
+        for row in dataset.data:
+            timer = time.perf_counter()
+
+            print(f"> Attempting to transcribe {row['name']} from dataset {dataset.name}")
+            text, info = self.model.transcribe(row['audio']['array'])
+            process_time = (time.perf_counter() - timer)
+            print(f"< Transcription completed in {int(process_time/60)}:{int(process_time % 60)} minutes")
+            
+            text = " ".join([segment.text.strip() for segment in text])
+
+            transcripts[row['name']] = text
+            times[row['name']] = round(process_time/60, 3)
+
+        return transcripts, times
+
+
 # --------------- Whisper-large-v3 ----------------
 class WhisperAsr(BaseModel):
     def __init__(self):
+
         super().__init__(
             name="Whisper-large-v3",
             model=AutoModelForSpeechSeq2Seq.from_pretrained(
@@ -131,6 +165,7 @@ class ParakeetAsr(BaseModel):
             name="NVIDIA Parakeet TDT 0.6B v3",
             model=ASRModel.from_pretrained(model_name="nvidia/parakeet-tdt-0.6b-v3")
         )
+        self.model.to(dtype=torch_type)
         self.model.change_attention_model(self_attention_model="rel_pos_local_attn", att_context_size=[256, 256])
 
     def transcribe(self, dataset: 'DS') -> (dict[str: str], dict[str: float]):
@@ -161,6 +196,7 @@ class CanaryAsr(BaseModel):
             name="NVIDIA Canary 1B v2",
             model=ASRModel.from_pretrained(model_name="nvidia/canary-1b-v2")
         )
+        self.model.to(dtype=torch_type)
 
     def transcribe(self, dataset: 'DS'):
 
@@ -190,8 +226,8 @@ class CanaryAsr(BaseModel):
 #         )
 
 
-# for mod in [CanaryAsr]:
-#     m = mod()
-#     print(m.name)
-#     output = m.transcribe(DS("Test"))
-#     print(output)
+for mod in [WhisperAsrCpu]:
+    m = mod()
+    print(m.name)
+    output = m.transcribe(DS("Test"))
+    print(output)

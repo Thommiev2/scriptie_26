@@ -1,7 +1,7 @@
 from data_initiation import DS
 import transformers
 if transformers.__version__ == "5.9.0":
-    from asr_models import BaseModel, CanaryAsr, WhisperAsr, ParakeetAsr, CohereAsr
+    from asr_models import BaseModel, CanaryAsr, WhisperAsr, ParakeetAsr, CohereAsr, WhisperAsrFast
 if transformers.__version__ == "4.57.6":
     from asr_models_qwen import QwenAsr
 
@@ -55,6 +55,6 @@ class PipeLine1:
                         })
 
 
-a = PipeLine1(models=[QwenAsr],
+a = PipeLine1(models=[WhisperAsr],
               categories=['Test'])
 a.run()

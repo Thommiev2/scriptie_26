@@ -34,7 +34,7 @@ sample_rate = 16000
 batch_size = 1
 max_new_tokens = 256
 language = 'du'
-torch_type = torch.float16 if torch.cuda.is_available() else torch.float32
+torch_type = torch.bfloat16 if torch.cuda.is_available() else torch.bfloat16
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 
