@@ -1,11 +1,16 @@
+import transformers
+if transformers.__version__ != "5.9.0":
+    raise ImportError("The models in asr_models require version 5.9.0 of the transformer library.\n"
+                      "Run 'python transformer_version --upgrade' to install the correct version.")
+
 import torch
 import nemo.collections.asr as nemo_asr
 from nemo.collections.asr.models import ASRModel
 from transformers.audio_utils import load_audio
 from transformers import AutoProcessor, AutoModelForSpeechSeq2Seq, pipeline, CohereAsrForConditionalGeneration
 from data_initiation import DS
-# from qwen_asr import Qwen3ASRModel
 import time
+from qwen_asr import Qwen3ASRModel
 
 
 class BaseModel:
@@ -16,7 +21,7 @@ class BaseModel:
         self.model = model
         self.processor = processor
 
-    def transcribe(self, audio) -> str:
+    def transcribe(self, dataset: 'DS') -> (dict[str: str], dict[str: float]):
         pass
 
 
@@ -29,29 +34,6 @@ torch_type = torch.float16 if torch.cuda.is_available() else torch.float32
 device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 
-# --------------- Qwen3 ASR 1.7B ----------------
-# class QwenAsr(BaseModel):
-#     def __init__(self):
-#         super().__init__(
-#                 name="Qwen3 ASR 1.7B",
-#                 model=Qwen3ASRModel.from_pretrained(
-#                     "Qwen/Qwen3-ASR-1.7B",
-#                     dtype=torch.bfloat16,
-#                     device_map=device,
-#                     # attn_implementation="flash_attention_2",
-#                     max_inference_batch_size=batch_size, # Batch size limit for inference. -1 means unlimited. Smaller values can help avoid OOM.
-#                     max_new_tokens=max_new_tokens # Maximum number of tokens to generate. Set a larger value for long audio input.
-#                 )
-#         )
-#
-#     def transcribe(self, audio):
-#         r esult = self.model.transcribe(
-#             audio=audio,
-#             language='Dutch'
-#         )
-#         return result
-
-
 # --------------- Cohere Labs Transcribe ----------------
 class CohereAsr(BaseModel):
     def __init__(self):
@@ -61,7 +43,7 @@ class CohereAsr(BaseModel):
             processor=AutoProcessor.from_pretrained("CohereLabs/cohere-transcribe-03-2026")
         )
 
-    def transcribe(self, dataset: 'DS'):
+    def transcribe(self, dataset: 'DS') -> (dict[str: str], dict[str: float]):
 
         transcripts = {}
         times = {}
@@ -83,14 +65,14 @@ class CohereAsr(BaseModel):
                     else:
                         safe_inputs[k] = v
 
-                outputs = self.model.generate(**safe_inputs, max_new_tokens=256)
-                text = self.processor.decode(outputs, skip_special_tokens=True, audio_chunk_index=audio_chunk_index, language="nl")[0]
+                output = self.model.generate(**safe_inputs, max_new_tokens=256)
+                text = self.processor.decode(output, skip_special_tokens=True, audio_chunk_index=audio_chunk_index, language="nl")[0]
 
-                duration = round((time.perf_counter() - timer) / 60, 5)
-                print(f"< Transcription completed in {round(duration, 2)} minutes")
+                process_time = (time.perf_counter() - timer)
+                print(f"< Transcription completed in {int(process_time/60)}:{int(process_time % 60)} minutes")
 
                 transcripts[row['name']] = text
-                times[row['name']] = duration
+                times[row['name']] = round(process_time/60, 3)
 
         return transcripts, times
 
@@ -121,7 +103,7 @@ class WhisperAsr(BaseModel):
 
         # print(self.pipe.model.generation_config)
 
-    def transcribe(self, dataset):
+    def transcribe(self, dataset) -> (dict[str: str], dict[str: float]):
 
         transcripts = {}
         times = {}
@@ -133,11 +115,11 @@ class WhisperAsr(BaseModel):
                              return_timestamps=True,
                              generate_kwargs={"language": "nl",
                                               "task": "transcribe"})['text']
-            duration = round((time.perf_counter() - timer) / 60, 4)
-            print(f"< Transcription completed in {round(duration, 2)} minutes")
+            process_time = (time.perf_counter() - timer)
+            print(f"< Transcription completed in {int(process_time/60)}:{int(process_time % 60)} minutes")
 
             transcripts[row['name']] = text
-            times[row['name']] = duration
+            times[row['name']] = round(process_time/60, 3)
 
         return transcripts, times
 
@@ -151,21 +133,23 @@ class ParakeetAsr(BaseModel):
         )
         self.model.change_attention_model(self_attention_model="rel_pos_local_attn", att_context_size=[256, 256])
 
-    def transcribe(self, dataset: 'DS'):
+    def transcribe(self, dataset: 'DS') -> (dict[str: str], dict[str: float]):
 
         transcripts = {}
         times = {}
 
         for row in dataset.data:
             timer = time.perf_counter()
-            print(f"> Attempting to transcribe {row['name']} from dataset {dataset.name}")
             audio = row['audio']['array']
+
+            print(f"> Attempting to transcribe {row['name']} from dataset {dataset.name}")
             text = self.model.transcribe(audio)
-            duration = round((time.perf_counter() - timer) / 60, 4)
-            print(f"< Transcription completed in {round(duration, 2)} minutes")
+
+            process_time = (time.perf_counter() - timer)
+            print(f"< Transcription completed in {int(process_time/60)}:{int(process_time % 60)} minutes")
 
             transcripts[row['name']] = text[0].text
-            times[row['name']] = duration
+            times[row['name']] = round(process_time/60, 3)
 
         return transcripts, times
 
@@ -188,11 +172,12 @@ class CanaryAsr(BaseModel):
             print(f"> Attempting to transcribe {row['name']} from dataset {dataset.name}")
             audio = row['audio']['array']
             text = self.model.transcribe(audio, source_lang='nl', target_lang='nl')
-            duration = round((time.perf_counter() - timer) / 60, 4)
-            print(f"< Transcription completed in {round(duration, 2)} minutes")
+
+            process_time = (time.perf_counter() - timer)
+            print(f"< Transcription completed in {int(process_time/60)}:{int(process_time % 60)} minutes")
 
             transcripts[row['name']] = text[0].text
-            times[row['name']] = duration
+            times[row['name']] = round(process_time/60, 3)
 
         return transcripts, times
 

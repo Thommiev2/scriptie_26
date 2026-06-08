@@ -1,3 +1,4 @@
+import csv
 import re
 import jiwer
 from whisper.normalizers import BasicTextNormalizer
@@ -36,6 +37,18 @@ def delete_unaudible_segments(gt, h):
             i = 0
             while aligned_text.alignments[index]:
                 i += 1
+
+
+def concat_csv_files(path1, path2):
+    with open(path1, 'w', newline='', encoding='utf-8') as f_w:
+        writer = csv.DictWriter(f_w)
+        with open(path2, 'r', encoding='utf-8') as f_r:
+            reader = csv.DictReader(f_r)
+            for row in reader:
+                writer.writerow(row)
+            f_r.close()
+            path2.unlink()
+        f_w.close()
 
 
 def align_sentences(gt, h):

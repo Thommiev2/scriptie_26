@@ -1,6 +1,10 @@
 from data_initiation import DS
-from asr_models import BaseModel, CanaryAsr, WhisperAsr, ParakeetAsr, CohereAsr
-# from models import BaseModel, WhisperAsr
+import transformers
+if transformers.__version__ == "5.9.0":
+    from asr_models import BaseModel, CanaryAsr, WhisperAsr, ParakeetAsr, CohereAsr
+if transformers.__version__ == "4.57.6":
+    from asr_models_qwen import QwenAsr
+
 import os
 from pathlib import Path
 from datetime import datetime
@@ -16,7 +20,6 @@ import csv
 #         | - year-month-day_hour-min-second.csv  ->  name, category, model, time, transcript
 #
 #
-
 
 
 class PipeLine1:
@@ -38,8 +41,8 @@ class PipeLine1:
                 model = model()
                 print(f" x-x-x-x-x INITIALIZED MODEL {model.name} x-x-x-x-x ")
                 for dataset_path in self.dataset_paths:
-                    print(f" x-x-x-x-x loading data for {ds.name} x-x-x-x-x ")
                     ds = DS(dataset_path)
+                    print(f" x-x-x-x-x loading data for {ds.name} x-x-x-x-x ")
                     transcripts, times = model.transcribe(ds)
 
                     for name in transcripts.keys():
@@ -51,6 +54,7 @@ class PipeLine1:
                             'time': times[name]
                         })
 
-a = PipeLine1(models=[WhisperAsr, ParakeetAsr, CohereAsr, CanaryAsr],
-             categories=['Test'])
+
+a = PipeLine1(models=[QwenAsr],
+              categories=['Test'])
 a.run()
