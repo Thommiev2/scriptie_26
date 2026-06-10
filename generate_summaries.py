@@ -1,6 +1,6 @@
 import csv
 import os
-from utility_functions import dok_pat, ped_ges
+from utility_functions import clean_func
 from genai_models import GPT, Gemini, GenAI
 from pathlib import Path
 
@@ -18,9 +18,6 @@ from pathlib import Path
 #       asr_models: [asr models] | ground_truth
 #
 #   name,category,model,time,transcript
-
-
-clean_func = {'Dokter Patient': dok_pat, 'Pedagogische gesprekken': ped_ges, 'Test': dok_pat}
 
 
 class PipeLine3:

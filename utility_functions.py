@@ -111,6 +111,7 @@ def count_sentences(text):
 # Clean data for category Dokter Patient directory
 def dok_pat(t):
     t = t.split('\n')
+    t = [line.strip for line in t]
     t = " ".join([t[i*2+1] for i in range(int(len(t)/2))])
     return t
 
@@ -118,13 +119,14 @@ def dok_pat(t):
 # Clean data for category Pedagogische gesprekken
 def ped_ges(t):
     t = t.split('\n')
+    t = [line.strip for line in t]
     st = ''
     for line in t:
         st += line[line.find(':')+1:]
-    return st
+    return st.strip()
 
 
-clean_func = {'Dokter Patient': dok_pat, 'Pedagogische gesprekken': ped_ges, 'Test': dok_pat}
+clean_func = {'Dokter Patient': dok_pat, 'Psychologische gespreksvoering': ped_ges, 'Test': dok_pat, 'interviews': ped_ges}
 
 # t = "hallo ik ben. door de woorden. wow crazy aaa cool, nice. asdw aaawdw. asdwaf wad adwa awwww. maar dan. huh hoeze. crazy work haha. gekke handoek. maar dan niet echt."
 # s = "hallo ik door de woorden. wow aaa crazy, nice. asdw aaawdw. asdwaf wad adwa. awwww hoi. maar dan. huh hoezo no way haha. gekke lol nee handoek cool maar dan wel"
