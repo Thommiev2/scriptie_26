@@ -1,0 +1,13 @@
+bert_score==0.3.13
+datasets==4.8.5
+faster_whisper==1.2.1
+jiwer==3.1.0
+nemo_toolkit==2.7.3
+numpy==2.2.5
+openai==2.34.0
+openai_whisper==20250625
+protobuf==5.29.6
+qwen_asr==0.0.6
+sentence_transformers==5.5.0
+torch==2.11.0
+transformers==5.9.0
