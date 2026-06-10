@@ -24,11 +24,11 @@ class BaseModel:
 
 # CONSTANTS
 sample_rate = 16000
-batch_size = 1
+batch_size = 2
 max_new_tokens = 256
 language = 'du'
-torch_type = torch.bfloat16 if torch.cuda.is_available() else torch.bfloat16
-device = "cuda:0" if torch.cuda.is_available() else "cpu"
+torch_type = torch.float16 if torch.cuda.is_available() else torch.bfloat16
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 # --------------- Cohere Labs Transcribe ----------------
@@ -38,7 +38,7 @@ class CohereAsr(BaseModel):
             name="Cohere Labs Transcribe",
             model=CohereAsrForConditionalGeneration.from_pretrained(
                 "CohereLabs/cohere-transcribe-03-2026",
-                device_map=device,
+                device_map='auto',
                 dtype=torch_type
             ),
             processor=AutoProcessor.from_pretrained("CohereLabs/cohere-transcribe-03-2026")
@@ -85,8 +85,7 @@ class WhisperAsrCpu(BaseModel):
             model=WhisperModel(
                 'large-v3',
                 device=device,
-                compute_type="int8",
-                cpu_threads=4
+                compute_type="float16"
             )
         )
 
@@ -132,7 +131,7 @@ class WhisperAsr(BaseModel):
             chunk_length_s=30,
             batch_size=batch_size,
             torch_dtype=torch_type,
-            device=device,
+            device=0 if torch.cuda.is_available() else -1,
         )
 
         # print(self.pipe.model.generation_config)
@@ -165,8 +164,7 @@ class ParakeetAsr(BaseModel):
             name="NVIDIA Parakeet TDT 0.6B v3",
             model=ASRModel.from_pretrained(model_name="nvidia/parakeet-tdt-0.6b-v3")
         )
-        self.model.to(dtype=torch_type)
-        self.model.change_attention_model(self_attention_model="rel_pos_local_attn", att_context_size=[256, 256])
+        self.model = self.model.to(device=device, dtype=torch_type)
 
     def transcribe(self, dataset: 'DS') -> (dict[str: str], dict[str: float]):
 
@@ -196,7 +194,7 @@ class CanaryAsr(BaseModel):
             name="NVIDIA Canary 1B v2",
             model=ASRModel.from_pretrained(model_name="nvidia/canary-1b-v2")
         )
-        self.model.to(dtype=torch_type)
+        self.model = self.model.to(device=device, dtype=torch_type)
 
     def transcribe(self, dataset: 'DS'):
 
