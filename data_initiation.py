@@ -1,39 +1,45 @@
 import os
 import csv
 from pathlib import Path, PurePosixPath
-from datasets import load_dataset, Audio, get_dataset_config_names, Value, Features, Dataset
+import librosa
+import soundfile as sf
 
 # LOAD IN AUDIO/GROUND TRUTH DATASETS THAT ARE USED FOR ASR TRANSCRIPTION
+
 
 class DS:
     def __init__(self, category):
         self.name = category
-        self.audio = Path("dataset") / category / Path("audio")
-        self.ground_truth = Path("dataset") / category / Path("ground truth")
-        # self.clean = clean_func[category]
+        self.audio = Path("dataset") / category / "audio"
+        self.ground_truth = Path("dataset") / category / "ground truth"
+
         self.duration = 0
         self.data = self.load_data()
 
     def load_data(self):
+        files = list(self.audio.glob("*"))
 
-        validate_data_formatting(self.name)
+        dataset = []
+        total_duration = 0.0
 
-        dataset = load_dataset("audiofolder", data_dir=str(self.audio), split="train", streaming=True)
-        dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+        for file_path in files:
+            audio, sr = sf.read(file_path)
+            audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
 
-        print(f'First row of dataset {self.name}: {next(iter(dataset))}')
+            duration = len(audio) / 16000
+            total_duration += duration
 
-        total_duration = 0
-        for file in dataset["audio"]:
-            print(file)
-            total_duration += len(file["array"]) / file["sampling_rate"]
+            dataset.append({
+                "path": str(file_path),
+                "audio": audio,
+                "sampling_rate": sr,
+                "duration": duration
+            })
 
-        print(f"Total duration of '{self.name}' audio files: {round(total_duration / 60, 1)} minutes")
+        print(f"Total duration of '{self.name}' audio files: {int(total_duration / 60)}:{int(total_duration % 60)} minutes")
+
         self.duration = total_duration
-
         return dataset
-
-
 
 
 
@@ -54,7 +60,7 @@ class DS:
 
 
 # path = Path(r'C:\Users\thoma\PycharmProjects\Scriptie_26\dataset\Dokter Patient')
-# print(path)
+# print(path) ssh -i ~/Downloads/vm-poc-tenant-expermimentation_key.pem azure@4.180.21.26
 # b = str(PurePosixPath(path))
 # print(b[:2] + b[3:])
 
