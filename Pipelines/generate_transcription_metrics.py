@@ -19,7 +19,7 @@ import csv
 
 class PipeLine2:
     def __init__(self, metrics):
-        self.asr_output = Path("output/asr output")
+        self.asr_output = Path("../output/asr output")
         self.metrics = [metric() for metric in metrics]
 
     def run(self):
@@ -40,11 +40,11 @@ class PipeLine2:
                         reader = csv.DictReader(f_r)
                         for row in reader:
 
-                            ground_truth_path = Path('dataset') / row['category'] / Path('ground truth') / Path(f"{row['name']}.txt")
+                            ground_truth_path = Path('../dataset') / row['category'] / Path('ground truth') / Path(f"{row['name']}.txt")
                             ground_truth = open(ground_truth_path).read()
                             ground_truth = clean_func[row['category']](ground_truth).strip()
                             hypothesis = row['transcript'].strip()
-                            #
+
                             # print(ground_truth)
                             # print(hypothesis)
 
@@ -63,12 +63,18 @@ class PipeLine2:
                             for metric in metrics:
                                 output_row[metric.name] = metric.calculate_score(ground_truth, hypothesis)
 
+                            character_error_margin = 0.05
+                            if len(ground_truth) * character_error_margin < abs(len(hypothesis) - len(ground_truth)):
+                                print(f"[SYS] X  Character diff over the margin of error of {round(character_error_margin * 100, 1)}%")
+                                print(f"         Audio file {row['name']} of dataset {row['category']} might have been truncated")
+
                             writer.writerow(output_row)
 
                         f_r.close()
                     f_w.close()
 
-a = PipeLine2()
+
+a = PipeLine2([WER, SimDist])
 a.run()
 
 

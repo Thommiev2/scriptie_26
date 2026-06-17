@@ -1,7 +1,7 @@
 import csv
 import os
 from utility_functions import clean_func
-from genai_models import GPT, Gemini, GenAI
+from models.genai_models import GPT, Gemini, GenAI
 from pathlib import Path
 
 
@@ -28,13 +28,13 @@ class PipeLine3:
 
         headers = ['name', 'category', 'asr_model', 'genai_model', 'summary']
 
-        for file in os.listdir(Path('output/asr output')):
-            if file in os.listdir(Path('output/genai output')):
+        for file in os.listdir(Path('../output/asr output')):
+            if file in os.listdir(Path('../output/genai output')):
                 print(f"X ASR OUTPUT FILE {file} HAS ALREADY BEEN SUMMARIZED")
                 continue
-            with open(Path('output/asr output') / file, 'r', encoding='utf-8') as f_r:
+            with open(Path('../output/asr output') / file, 'r', encoding='utf-8') as f_r:
                 reader = csv.DictReader(f_r)
-                with open(Path('output/genai output') / file, 'w', newline='', encoding='utf-8') as f_w:
+                with open(Path('../output/genai output') / file, 'w', newline='', encoding='utf-8') as f_w:
                     writer = csv.DictWriter(f_w, fieldnames=headers)
                     writer.writeheader()
 
@@ -59,7 +59,7 @@ class PipeLine3:
                             unique_categories.add(row['category'])
 
                     for category in unique_categories:
-                        gt_path = Path('dataset') / category / Path('ground truth')
+                        gt_path = Path('../dataset') / category / Path('ground truth')
                         for name in unique_names:
                             summary = model.summarize_single_call(text=clean_func[category](open(gt_path / Path(f'{name}.txt')).read()),
                                                                   name=name,

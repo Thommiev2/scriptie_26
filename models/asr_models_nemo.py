@@ -5,13 +5,13 @@
 
 import os
 
+import numpy as np
 import torch
 from nemo.collections.asr.models import ASRModel
 from base_model import BaseModel, CONFIG
 import librosa
 import time
 from pathlib import Path
-
 
 
 # # --------------- Whisper-large-v3 ----------------
@@ -59,6 +59,9 @@ class ParakeetAsr(BaseModel):
             name="NVIDIA Parakeet TDT 0.6B v3",
             model=ASRModel.from_pretrained(model_name="nvidia/parakeet-tdt-0.6b-v3")
         )
+        self.model.change_attention_model("rel_pos_local_attn", [128, 128])
+        self.model.change_subsampling_conv_chunking_factor(1)
+
         print('[PRK] v  Model initialized and loaded in succesfully')
 
     def transcribe(self, data_file: dict) -> (str, float):
@@ -87,10 +90,13 @@ class CanaryAsr(BaseModel):
 
     def transcribe(self, data_file: dict) -> (str, float):
 
+        if isinstance(data_file['audio'], list):
+            data_file['audio'] = np.concatenate(data_file['audio'])
+
         timer = time.perf_counter()
 
         print(f"[CNR] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
-        text = self.model.transcribe(data_file['audio'], source_lang='nl', target_lang='nl')
+        text = self.model.transcribe(data_file['audio'], source_lang='nl', target_lang='nl', batch_size=1)
         process_time = (time.perf_counter() - timer)
         seconds = int(process_time % 60)
         print(f"[CNR] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
@@ -108,30 +114,34 @@ class CanaryAsr(BaseModel):
 #             model=
 #         )
 
+if __name__ == "__main__":
+    models = [ParakeetAsr, CanaryAsr]
+    for model in models:
+        model = model()
+        model.validate_model()
+    # for mod in [ParakeetAsr, CanaryAsr]:
+    #     m = mod()
+    #     print(m.name)
+    #     p = Path("dataset/Test/audio")
+    #
+    #     for file in os.listdir(p):
+    #         audio, _ = librosa.load(p / file, sr=16000, mono=True)
+    #         b = {
+    #             'name': file,
+    #             'category': 'Test',
+    #             'audio': audio
+    #         }
+    #
+    #         text = m.run(b)
+    #         print(text)
 
-for mod in [ParakeetAsr, CanaryAsr]:
-    m = mod()
-    print(m.name)
-    p = Path("dataset/Test/audio")
-
-    for file in os.listdir(p):
-        audio, _ = librosa.load(p / file, sr=16000, mono=True)
-        b = {
-            'name': file,
-            'category': 'Test',
-            'audio': audio
-        }
-
-        text = m.run(b)
-        print(text)
-
-# c, _ = librosa.load('test.wav', sr=16000, mono=True)
-# b = {
-#     'name': 'test.wav',
-#     'category': 'testing',
-#     'audio': c
-# }
-#
-# a = ParakeetAsr()
-# d = a.transcribe(b)
-# print(d)
+    # c, _ = librosa.load('test.wav', sr=16000, mono=True)
+    # b = {
+    #     'name': 'test.wav',
+    #     'category': 'testing',
+    #     'audio': c
+    # }
+    #
+    # a = ParakeetAsr()
+    # d = a.transcribe(b)
+    # print(d)

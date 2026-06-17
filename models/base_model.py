@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+import librosa
 
 
 class BaseModel:
@@ -23,6 +24,35 @@ class BaseModel:
 
     def transcribe(self, data_file: dict) -> (str, float):
         return '', 0
+
+    def validate_model(self) -> bool:
+
+        print(f"[SYS]    Validating {self.name}")
+
+        audio, process_time = librosa.load("../test.wav", sr=16000, mono=True)
+
+        vad_model = VadModel() if CONFIG['use_vad'] else None
+        vad_audio = vad_model.get_speech_chunks(audio, CONFIG['sample_rate']) if CONFIG['use_vad'] else audio
+
+        data_file = {
+             'name': 'test',
+             'category': 'test',
+             'audio': audio if self.model == "Whisper-large-v3-fast" else vad_audio
+        }
+
+        try:
+            text, time = self.run(data_file)
+            if not isinstance(text, str):
+                print(f"[SYS] X  Transcript ouput of model {self.name} is not of type str")
+            if not isinstance(time, float):
+                print(f"[SYS] X  Process time ouput of model {self.name} is not of type float")
+        except Exception as e:
+            print(f"[SYS] X  The following error occured while running model {self.name}\n{e}")
+            return False
+
+        print(f"[SYS] v  Validating model {self.name} was succesfull")
+
+        return True
 
 
 class VadModel:
@@ -65,6 +95,7 @@ class VadModel:
         segments = [
             audio_tensor[ts["start"]:ts["end"]] for ts in speech_timestamps
         ]
+
         filtered = torch.cat(segments).numpy()
 
         removed = len(audio) - len(filtered)
@@ -105,7 +136,9 @@ class VadModel:
 
         if current_start is not None:
             chunks.append(audio_tensor[current_start:current_end].numpy())
-
+        print(len(chunks))
+        for chunk in chunks:
+            print(len(chunk))
         return chunks if chunks else [audio]
 
 CPU_CONSTANTS = {
@@ -122,7 +155,7 @@ GPU_CONSTANTS = {
 DEVICE_CONFIG = GPU_CONSTANTS if torch.cuda.is_available() else CPU_CONSTANTS
 
 ENCODE_CONFIG = {
-    'use_vad': False,
+    'use_vad': True,
     'silence_padding': 200,
     'sample_rate': 16000,
     'audio_threshold': 0.5,

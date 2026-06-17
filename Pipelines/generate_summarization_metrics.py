@@ -26,14 +26,14 @@ class PipeLine4:
         self.metrics = [metric() for metric in metrics]
 
     def run(self):
-        for genai_file in os.listdir(Path('output/genai output')):
-            if genai_file in [sum_score_file for sum_score_file in os.listdir(Path('output/summarization scoring'))]:
+        for genai_file in os.listdir(Path('../output/genai output')):
+            if genai_file in [sum_score_file for sum_score_file in os.listdir(Path('../output/summarization scoring'))]:
                 print(f"X GENAI OUTPUT FILE {genai_file} HAS ALREADY BEEN SUMMARIZED")
                 continue
-            with open(Path('output/genai output') / genai_file, 'r', encoding='utf-8') as f_r:
+            with open(Path('../output/genai output') / genai_file, 'r', encoding='utf-8') as f_r:
 
                 base_header = ['name', 'category', 'asr_model', 'genai_model', 'sum_num_words']
-                with open(Path('output/summarization scoring') / genai_file, 'w', newline='', encoding='utf-8') as f_w:
+                with open(Path('../output/summarization scoring') / genai_file, 'w', newline='', encoding='utf-8') as f_w:
                     writer = csv.DictWriter(f_w, fieldnames=base_header + [metric.name for metric in self.accuracy_metrics] + [metric.name for metric in self.metrics])
                     writer.writeheader()
 
@@ -51,7 +51,7 @@ class PipeLine4:
 
                     for row in reader:
                         reference_summary = reference_summaries[f"{row['name']}_{row['category']}"]
-                        transcript = clean_func[row['category']](open(Path('dataset') / row['category'] / Path(f"ground truth/{row['name']}.txt")).read())
+                        transcript = clean_func[row['category']](open(Path('../dataset') / row['category'] / Path(f"ground truth/{row['name']}.txt")).read())
 
                         output_row = {
                             'name': row['name'],

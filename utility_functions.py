@@ -12,11 +12,16 @@ normalizer = BasicTextNormalizer(remove_diacritics=True)
 basic_filler_words_regex = re.compile(r"\s[d]?[uea]+[hm]+\b", flags=re.MULTILINE)
 # rule-based lexicon, matches words with similar meaning (not functional yet, can be expanded on during transcribing ground truth)
 rules = {
-    'het': ["t"],
+    'het': ["t", "'t"],
     'goededag': ["goeiedag", "goede dag", "goeie dag"],
-    'mijn': ["me"],
-    'het is': ["tis"],
-    'oke': ["ok"]
+    'mijn': ["mn", "m'n"],
+    'het is': ["tis", "ts", "t's"],
+    'oke': ["ok"],
+    'haar': ["d'r", " dr"],
+    'snachts': ["'s nachts", "s nachts"],
+    'savonds': ["s avonds", "'s avonds"],
+    'sochtends': ["'s ochtends", 's ochtends'],
+    'smiddags': ["'s middags", 's middags']
 }
 
 
@@ -31,12 +36,14 @@ def normalize(text):
 def delete_unaudible_segments(gt, h):
 
     aligned_text = jiwer.process_words(gt, h)
+    gt_words = gt.spltit(' ')
+    h_words = h.split(' ')
 
-    for index, word in enumerate(gt):
+    for index, word in enumerate(aligned_text.references[0]):
         if word == '[unaudible]':
-            i = 0
+            gt_words.pop(index)
             while aligned_text.alignments[index]:
-                i += 1
+                continue
 
 
 def concat_csv_files(path1, path2):

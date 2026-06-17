@@ -1,37 +1,52 @@
 import os
 import csv
 from pathlib import Path, PurePosixPath
-from datasets import load_dataset, Audio, get_dataset_config_names, Value, Features, Dataset
-
+import librosa
 # LOAD IN AUDIO/GROUND TRUTH DATASETS THAT ARE USED FOR ASR TRANSCRIPTION
 
-class DS:
-    def __init__(self, category):
-        self.name = category
-        self.audio = Path("dataset") / category / Path("audio")
-        self.ground_truth = Path("dataset") / category / Path("ground truth")
-        # self.clean = clean_func[category]
-        self.duration = 0
-        self.data = self.load_data()
 
-    def load_data(self):
+# class DataFile:
+#     def __init__(self, name, category):
+#         self.name = name
+#         self.category = category
+#
+#         self.audio = audio_tensor
+#         self.duration = len(audio_tensor.shape[-1] / 16000)
+#
+#
+# def load_data(category):
+#     total_duration = 0
+#     data_set = {}
+#     for file_name in os.listdir(Path('dataset') / category / Path('audio')):
+#         audio_tensor, _ = librosa.load(str(Path("dataset") / category / Path("audio") / file_name), sr=16000, mono=True)
+#         total_duration += len(audio_tensor)
 
-        validate_data_formatting(self.name)
 
-        dataset = load_dataset("audiofolder", data_dir=str(self.audio), split="train", streaming=True)
-        dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
-
-        print(f'First row of dataset {self.name}: {next(iter(dataset))}')
-
-        total_duration = 0
-        for file in dataset["audio"]:
-            print(file)
-            total_duration += len(file["array"]) / file["sampling_rate"]
-
-        print(f"Total duration of '{self.name}' audio files: {round(total_duration / 60, 1)} minutes")
-        self.duration = total_duration
-
-        return dataset
+# class DS:
+#     def __init__(self, category):
+#         self.name = category
+#         self.audio = Path("dataset") / category / Path("audio")
+#         self.ground_truth = Path("dataset") / category / Path("ground truth")
+#         # self.clean = clean_func[category]
+#         self.duration = 0
+#         self.data = self.load_data()
+#
+#     def load_data(self):
+#
+#         dataset = load_dataset("audiofolder", data_dir=str(self.audio), split="train", streaming=True)
+#         dataset = dataset.cast_column("audio", Audio(sampling_rate=16000))
+#
+#         print(f'First row of dataset {self.name}: {next(iter(dataset))}')
+#
+#         total_duration = 0
+#         for file in dataset["audio"]:
+#             print(file)
+#             total_duration += len(file["array"]) / file["sampling_rate"]
+#
+#         print(f"Total duration of '{self.name}' audio files: {round(total_duration / 60, 1)} minutes")
+#         self.duration = total_duration
+#
+#         return dataset
 
 
 
