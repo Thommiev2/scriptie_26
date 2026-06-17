@@ -1,57 +1,57 @@
-A: Goedemorgen, Wat kan ik voor u betekenen vandaag?
-B: Ik heb last van heel ernstige hoofdpijn.
-A: Heel ernstig? Wat is ernstig?
-B: Ik heb gewoon hele hefige hoofdpijnsaanvallen.
-A: Hoe lang heeft u hier al last van?
-B: Ik denk al enkele maanden, maar de laatste weken wel steeds vaker.
-A: Oh dat is al best wel lang. Wat maakt dat u vandaag naar mij bent gekomen?
-B: Ik ben er klaar mee, ik wil er nu van af, want het heeft echt invloed op mijn dagelijkse leven.
-A: Hoe bedoelt u?
-B: Ik wil echt iets tegen de pijn.
-A: Dat begrijp ik. Heeft u al iets geprobeerd om de pijn te verlichten?
-B: Ik lig dan het liefst gewoon op mijn kamer in het donker maar soms word ik ook echt misselijk als ik moet opstaan.
-A: Heeft u zelf een idee waar het vandaan kan komen?
-B: Ik ben eigenlijk wel bang dat het iets ernstigs is.
-A: Waar denkt u dan aan?
-B: Iemand in de familie is na dezelfde klachten gestorven aan een hersentumor, ik ben er eigenlijk wel bang voor dat ik dat ook heb.
-A: Ik kan me voorstellen dat u zich dan zorgen maakt, wie was dat in de familie?
-B: Dat was een neef van mijn moeder.
-A: Dus als ik het goed begrijp is dat ook de reden dat je vandaag bent gekomen?
-B: Ja eigenlijk wel en natuurlijk ook iets tegen de pijn.
-A: Als ik kijk naar de hoofdpijn, waar in het hoofd voelt u de hoofdpijn?
-B: Meestal een beetje voor in het hoofd, meer aan de linkerzijde.
-A: En hoe zou u de soort pijn omschrijven?
-B: Het is vooral een bonzende pijn.
-A: En hoelang is de pijnaanval dan meestal?
-B: Soms is het na 1 dag al minder, maar het kan soms ook 3 dagen duren.
-A: Wat doe je dan als je zo’n aanval hebt?
-B: Ik ga dan in bed liggen, meestal de deuren en de gordijnen dicht.
-A: Begrijp ik goed dat je ook last heb van licht en geluid overgevoeligheid?
-B: Ja inderdaad.
-A: Heeft u ook nog bijkomende klachten?
-B: Ja soms ben ik misselijk.
-A: Als u misselijk bent, moet u dan soms ook braken?
-B: Heel soms, maar gelukkig niet zo vaak.
-A: Heeft u tijdens de aanvallen ook last van slechter zicht?
-B: Tijdens de aanvallen merk ik wel dat ik het soms niet goed kan zien,
-A: Gebruikt u verder medicatie?
-B: Soms een pijnstiller voor de hoofdpijn.
-A: En helpt dat tegen de pijn?
-B: Ja, meestal wel.
-A: Dus nog even kort om samen te vatten Het is dus een bonzende hoofdpijn die in aanvallen komt, vrij ernstig van karakter, vooral aan één zijde van het hoofd. Soms bent u ook misselijk met braken, en meestal helpt rustig aan doen in een donkere kamer en soms een pijnstiller. U bentook best bang dat het iets ernstigs is en wilt graag iets tegen de pijn. Heeft u zo nog aanvullingen?
-B: Nee, dat is eigenlijk wel compleet.
-A: Uw hoofdpijn doet me sterk denken aan migraine, bent u bekend met deze term?
-B: Ik heb er wel eens van gehoord. Maar u denkt dus niet aan een tumor?
-A: Nee, eigenlijk niet. Het komt bijna precies overeen met het schoolvoorbeeld van migraine.
-B: Oh, ik wist niet dat die pijn zo heftig kon zijn.
-A: Dat kan helaas wel heel verhinderend zijn. De aanvallen zullen helaas blijven terugkomen, maar er zijn wel wat dingen die u kunt doen om de hoofdpijn te verzachten. Op het moment dat de pijn opkomt, is het aan te raden rust te nemen. De pijn kan versterkt worden door stress, onrust en weinig slaap. Dit zijn dus elementen waar je op kan letten om de hoofdpijn te verminderen. Ervaart u veel stress?
-B: Soms wel dokter, maar het wordt wel rustiger op mijn werk binnenkort, we krijgen een extra collega.
-A: Dat is fijn om te horen. Hopelijk neemt de stress dan ook af! Verder kunt u zodra de pijn opkomt, beginnen met 2 paracetamol. U kunt dit dan consequent de dag door op maximaal 4 momenten nemen, totdat u merkt dat de pijn minder wordt.
-B: Een paracetamol, gaat dat wel helpen tegen deze heftige pijn?
-A: Een paracetamol is een medicijn dat verder niet heel schadelijk is, maar het kan wel heel effectief zijn, zeker als het zo op vaste tijdstippen wordt genomen. Mocht het niet helpen kunnen we altijd overgaan naar een andere pijnstiller, vindt u dat een goed idee?
-B: Dat klinkt wel redelijk, ik ga het in ieder geval eens proberen.
-A: Zullen we dan afspreken dat we over ongeveer 4 weken een nieuw consult plannen en kijken hoe het gaat? Mocht het dan niet voldoende helpen, kunnen we dan overgaan op een andere behandeling.
-B: Dat is goed, bedankt dokter.
-A: Heeft u verder nog vragen?
-B: Nee, het is wel duidelijk zo.
-A: Dan zie ik u graag over 4 weken.
+Dokter: Goedemorgen, Wat kan ik voor u betekenen vandaag?
+Client: Ik heb last van heel ernstige hoofdpijn.
+Dokter: Heel ernstig? Wat is ernstig?
+Client: Ik heb gewoon hele hefige hoofdpijnsaanvallen.
+Dokter: Hoe lang heeft u hier al last van?
+Client: Ik denk al enkele maanden, maar de laatste weken wel steeds vaker.
+Dokter: Oh dat is al best wel lang. Wat maakt dat u vandaag naar mij bent gekomen?
+Client: Ik ben er klaar mee, ik wil er nu van af, want het heeft echt invloed op mijn dagelijkse leven.
+Dokter: Hoe bedoelt u?
+Client: Ik wil echt iets tegen de pijn.
+Dokter: Dat begrijp ik. Heeft u al iets geprobeerd om de pijn te verlichten?
+Client: Ik lig dan het liefst gewoon op mijn kamer in het donker maar soms word ik ook echt misselijk als ik moet opstaan.
+Dokter: Heeft u zelf een idee waar het vandaan kan komen?
+Client: Ik ben eigenlijk wel bang dat het iets ernstigs is.
+Dokter: Waar denkt u dan aan?
+Client: Iemand in de familie is na dezelfde klachten gestorven aan een hersentumor, ik ben er eigenlijk wel bang voor dat ik dat ook heb.
+Dokter: Ik kan me voorstellen dat u zich dan zorgen maakt, wie was dat in de familie?
+Client: Dat was een neef van mijn moeder.
+Dokter: Dus als ik het goed begrijp is dat ook de reden dat je vandaag bent gekomen?
+Client: Ja eigenlijk wel en natuurlijk ook iets tegen de pijn.
+Dokter: Als ik kijk naar de hoofdpijn, waar in het hoofd voelt u de hoofdpijn?
+Client: Meestal een beetje voor in het hoofd, meer aan de linkerzijde.
+Dokter: En hoe zou u de soort pijn omschrijven?
+Client: Het is vooral een bonzende pijn.
+Dokter: En hoelang is de pijnaanval dan meestal?
+Client: Soms is het na 1 dag al minder, maar het kan soms ook 3 dagen duren.
+Dokter: Wat doe je dan als je zo’n aanval hebt?
+Client: Ik ga dan in bed liggen, meestal de deuren en de gordijnen dicht.
+Dokter: Begrijp ik goed dat je ook last heb van licht en geluid overgevoeligheid?
+Client: Ja inderdaad.
+Dokter: Heeft u ook nog bijkomende klachten?
+Client: Ja soms ben ik misselijk.
+Dokter: Als u misselijk bent, moet u dan soms ook braken?
+Client: Heel soms, maar gelukkig niet zo vaak.
+Dokter: Heeft u tijdens de aanvallen ook last van slechter zicht?
+Client: Tijdens de aanvallen merk ik wel dat ik het soms niet goed kan zien,
+Dokter: Gebruikt u verder medicatie?
+Client: Soms een pijnstiller voor de hoofdpijn.
+Dokter: En helpt dat tegen de pijn?
+Client: Ja, meestal wel.
+Dokter: Dus nog even kort om samen te vatten Het is dus een bonzende hoofdpijn die in aanvallen komt, vrij ernstig van karakter, vooral aan één zijde van het hoofd. Soms bent u ook misselijk met braken, en meestal helpt rustig aan doen in een donkere kamer en soms een pijnstiller. U bentook best bang dat het iets ernstigs is en wilt graag iets tegen de pijn. Heeft u zo nog aanvullingen?
+Client: Nee, dat is eigenlijk wel compleet.
+Dokter: Uw hoofdpijn doet me sterk denken aan migraine, bent u bekend met deze term?
+Client: Ik heb er wel eens van gehoord. Maar u denkt dus niet aan een tumor?
+Dokter: Nee, eigenlijk niet. Het komt bijna precies overeen met het schoolvoorbeeld van migraine.
+Client: Oh, ik wist niet dat die pijn zo heftig kon zijn.
+Dokter: Dat kan helaas wel heel verhinderend zijn. De aanvallen zullen helaas blijven terugkomen, maar er zijn wel wat dingen die u kunt doen om de hoofdpijn te verzachten. Op het moment dat de pijn opkomt, is het aan te raden rust te nemen. De pijn kan versterkt worden door stress, onrust en weinig slaap. Dit zijn dus elementen waar je op kan letten om de hoofdpijn te verminderen. Ervaart u veel stress?
+Client: Soms wel dokter, maar het wordt wel rustiger op mijn werk binnenkort, we krijgen een extra collega.
+Dokter: Dat is fijn om te horen. Hopelijk neemt de stress dan ook af! Verder kunt u zodra de pijn opkomt, beginnen met 2 paracetamol. U kunt dit dan consequent de dag door op maximaal 4 momenten nemen, totdat u merkt dat de pijn minder wordt.
+Client: Een paracetamol, gaat dat wel helpen tegen deze heftige pijn?
+Dokter: Een paracetamol is een medicijn dat verder niet heel schadelijk is, maar het kan wel heel effectief zijn, zeker als het zo op vaste tijdstippen wordt genomen. Mocht het niet helpen kunnen we altijd overgaan naar een andere pijnstiller, vindt u dat een goed idee?
+Client: Dat klinkt wel redelijk, ik ga het in ieder geval eens proberen.
+Dokter: Zullen we dan afspreken dat we over ongeveer 4 weken een nieuw consult plannen en kijken hoe het gaat? Mocht het dan niet voldoende helpen, kunnen we dan overgaan op een andere behandeling.
+Client: Dat is goed, bedankt dokter.
+Dokter: Heeft u verder nog vragen?
+Client: Nee, het is wel duidelijk zo.
+Dokter: Dan zie ik u graag over 4 weken.

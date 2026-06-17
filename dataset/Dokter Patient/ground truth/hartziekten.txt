@@ -1,39 +1,39 @@
-A: Goedemiddag. Wat heeft u hier gebracht vandaag?
-B: Ik heb de laatste tijd wat last van mijn hart.
-A: Uw hart en wat bedoelt u daarmee?
-B: Ik merk dat ik steeds vaker hartkloppingen heb.
-A: Oke en hoe lang heeft u daar al last van?
-B: nou ik denk een paar weken, maar sommige dagen heb ik er ook helemaal geen last van.
-A: Dus eigenlijk heeft u bijna iedere dag er last van? Wat voelt u dan precies?
-B: Mijn hart klopt dus sneller en ik voel het echt in mijn borstkas kloppen.
-A: Oke, dat is vast een onprettig gevoel. U zegt dat u het al een paar weken heeft, daarvoor had u het niet? Wat maakt dat u vandaag bent gekomen?
-B: Ja, het is gewoon een heel naar gevoel, en ik denk dat ik hartaanval krijg of zo. Dus ik wil het een en ander laten checken.
-A: Ja dat begrijp ik helemaal. En op zo'n moment van de aanval wat doet u dan?
-B: Ja Niks speciaals eigenlijk.
-A: Ehh voelt u verder nog andere dingen op die momenten, in de borstkas of in de rest van je lichaam?
-B: Nee, dat niet. Ik denk eigenlijk alleen in de borstkas en niets anders dan dit hoor.
-A: Merkt u bijvoorbeeld dat het hart ook van tempo wisselt, soms sneller en soms langzamer?
-B: Oh ja, dat heb ik wel enkele keren gemerkt. Maar dat was niet zo heel erg hoor.
-A: Oke, feeft u verder ook geen klachten van misselijkheid, benauwdheid of zweten?
-B: Uhh, nee dat eigenlijk niet. Alhoewel, ik merk dat ik door de hartkloppingen ook wel een snellere ademhaling krijg.
-A: Oke en heeft u daarbij dan ook een gevoel van kortademigheid?
-B: Nee, dat niet.
-A: Oke, dus als ik het goed begrijp, heeft u sinds enkele weken last van hartkloppingen, maar verder niet veel bijkomende klachten?
-B: Ja dat klopt inderdaad.
-A: Mag ik iets anders vragen, heeft u op dit moment last van stress heeft?
-B: Dat valt wel mee. Het is wat drukker, maar ik ga binnenkort op vakantie.
-A: Ah dat is een fijn vooruitzicht. En heeft u zelf al iets aan de klachten gedaan?
-B: Ik probeer gewoon even rustig te doen, dan zakken de klachten vaak wel.
-A: Lukt dat wel goed, om even rustig aan te doen? En wat doet u dan?
-B: Nou, ik maak me soms wel druk, en dan houden de klachten wat langer aan.
-A: En waarover maakt u zich dan druk?
-B: Ja dokter, ik heb in mijn omgeving toch wel mensen gehoord die dezelfde klachten hadden als ik en dan ineens onderuit gingen of waarmee dan ineens slechter ging, maar dat wil ik natuurlijk niet.
-A: Nee, dat is natuurlijk heel begrijpelijk! U hoeft zich daarover geen zorgen te maken. Dit soort hartkloppingen zijn heel veel voorkomend en zijn vaak onschuldig. Maar ik zal voor de zekerheid zo natuurlijk ook even naar uw hart luisteren!
-B: Oh dat vind ik wel fijn om te horen. Het onderzoeken van het hart vind ik ook wel fijn eigenlijk.
-A: Ik krijg de indruk dat nog niet al uw zorgen zijn weggenomen, kan dat kloppen?
-B: Ja, dat klopt misschien wel dokter, want ik maak me vooral ook zorgen om mijn reis.
-A: Uw reis? Wat voor reis gaat u maken?
-B: Ik ga bij mijn dochter op bezoek in Australië, maar dan moet ik ook veel rijden, en ik ben bang dat ik met deze klachten niet veilig achter het stuur kan zitten en kan deelnemen aan het verkeer.
-A: Ja ik kan me dat goed voorstellen, maar ik kan u hierin wel geruststellen, zeker als we dadelijk bij het naar het hart luisteren niks geks horen. Deze klachten zullen uw rijvaardigheid niet beïnvloeden. Naar mijn mening kunt u dus gewoon veilig op reis om uw dochter te bezoeken.
-B: Dat is goed om te horen dokter, dank u wel!
-A: Ik zal eerst even naar uw hart luisteren en dan kunnen we de andere dingen ook makkelijk uitsluiten.
+Dokter: Goedemiddag. Wat heeft u hier gebracht vandaag?
+Client: Ik heb de laatste tijd wat last van mijn hart.
+Dokter: Uw hart en wat bedoelt u daarmee?
+Client: Ik merk dat ik steeds vaker hartkloppingen heb.
+Dokter: Oke en hoe lang heeft u daar al last van?
+Client: nou ik denk een paar weken, maar sommige dagen heb ik er ook helemaal geen last van.
+Dokter: Dus eigenlijk heeft u bijna iedere dag er last van? Wat voelt u dan precies?
+Client: Mijn hart klopt dus sneller en ik voel het echt in mijn borstkas kloppen.
+Dokter: Oke, dat is vast een onprettig gevoel. U zegt dat u het al een paar weken heeft, daarvoor had u het niet? Wat maakt dat u vandaag bent gekomen?
+Client: Ja, het is gewoon een heel naar gevoel, en ik denk dat ik hartaanval krijg of zo. Dus ik wil het een en ander laten checken.
+Dokter: Ja dat begrijp ik helemaal. En op zo'n moment van de aanval wat doet u dan?
+Client: Ja Niks speciaals eigenlijk.
+Dokter: Ehh voelt u verder nog andere dingen op die momenten, in de borstkas of in de rest van je lichaam?
+Client: Nee, dat niet. Ik denk eigenlijk alleen in de borstkas en niets anders dan dit hoor.
+Dokter: Merkt u bijvoorbeeld dat het hart ook van tempo wisselt, soms sneller en soms langzamer?
+Client: Oh ja, dat heb ik wel enkele keren gemerkt. Maar dat was niet zo heel erg hoor.
+Dokter: Oke, feeft u verder ook geen klachten van misselijkheid, benauwdheid of zweten?
+Client: Uhh, nee dat eigenlijk niet. Alhoewel, ik merk dat ik door de hartkloppingen ook wel een snellere ademhaling krijg.
+Dokter: Oke en heeft u daarbij dan ook een gevoel van kortademigheid?
+Client: Nee, dat niet.
+Dokter: Oke, dus als ik het goed begrijp, heeft u sinds enkele weken last van hartkloppingen, maar verder niet veel bijkomende klachten?
+Client: Ja dat klopt inderdaad.
+Dokter: Mag ik iets anders vragen, heeft u op dit moment last van stress heeft?
+Client: Dat valt wel mee. Het is wat drukker, maar ik ga binnenkort op vakantie.
+Dokter: Ah dat is een fijn vooruitzicht. En heeft u zelf al iets aan de klachten gedaan?
+Client: Ik probeer gewoon even rustig te doen, dan zakken de klachten vaak wel.
+Dokter: Lukt dat wel goed, om even rustig aan te doen? En wat doet u dan?
+Client: Nou, ik maak me soms wel druk, en dan houden de klachten wat langer aan.
+Dokter: En waarover maakt u zich dan druk?
+Client: Ja dokter, ik heb in mijn omgeving toch wel mensen gehoord die dezelfde klachten hadden als ik en dan ineens onderuit gingen of waarmee dan ineens slechter ging, maar dat wil ik natuurlijk niet.
+Dokter: Nee, dat is natuurlijk heel begrijpelijk! U hoeft zich daarover geen zorgen te maken. Dit soort hartkloppingen zijn heel veel voorkomend en zijn vaak onschuldig. Maar ik zal voor de zekerheid zo natuurlijk ook even naar uw hart luisteren!
+Client: Oh dat vind ik wel fijn om te horen. Het onderzoeken van het hart vind ik ook wel fijn eigenlijk.
+Dokter: Ik krijg de indruk dat nog niet al uw zorgen zijn weggenomen, kan dat kloppen?
+Client: Ja, dat klopt misschien wel dokter, want ik maak me vooral ook zorgen om mijn reis.
+Dokter: Uw reis? Wat voor reis gaat u maken?
+Client: Ik ga bij mijn dochter op bezoek in Australië, maar dan moet ik ook veel rijden, en ik ben bang dat ik met deze klachten niet veilig achter het stuur kan zitten en kan deelnemen aan het verkeer.
+Dokter: Ja ik kan me dat goed voorstellen, maar ik kan u hierin wel geruststellen, zeker als we dadelijk bij het naar het hart luisteren niks geks horen. Deze klachten zullen uw rijvaardigheid niet beïnvloeden. Naar mijn mening kunt u dus gewoon veilig op reis om uw dochter te bezoeken.
+Client: Dat is goed om te horen dokter, dank u wel!
+Dokter: Ik zal eerst even naar uw hart luisteren en dan kunnen we de andere dingen ook makkelijk uitsluiten.

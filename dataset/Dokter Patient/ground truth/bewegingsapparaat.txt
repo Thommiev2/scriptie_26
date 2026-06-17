@@ -1,34 +1,34 @@
-A: Goedemiddag, komt u verder. Ik heb voor u de uitslag van het rontgenonderzoek. Zoals vorige keer besproken, was er een sterk vermoeden op een breuk, een ingezakte wervel. Hoe gaat het nu met uw rug?
-B: Dankzij de pijnstilling is het wel te doen.
-A: De röntgenfoto laat zien dat u inderdaad een ingezakte wervel heeft. Verder is het een stabiele breuk waarvoor een operatie niet nodig is.
-B: Gelukkig!
-A: Het minder goeie nieuws is wel dat de breuk veroorzaakt is door osteoporose. Dit houdt in dat de dichtheid van uw botten minder wordt. Weet u wat ik daar mee bedoel?
-B: Betekent dit dan dat ik veel vaker botbreuken zal oplopen?
-A: Het is vervelend voor u om te horen. Helaas kan dat wel voorkomen.
-B: Maar uhmm, kan ik dan helemaal niet meer gaan wandelen, want zo is het natuurlijk de vorige keer gebeurd.
-A: Het is juist goed om te blijven bewegen. Hierdoor bouwen de botten meer kracht op.
-B: Ja maar ik ben dan bang dat ik ga vallen, waardoor ik weer iets kan breken.
-A: uhhum, Ik kan me heel goed voorstellen dat u hier bang voor bent, maar er zijn wel manieren om dit te voorkomen, deze kunnen we later wel bespreken.
-B: Oke
-A: U lijkt nog niet echt gerustgesteld
-B: Ja, het voelt gewoon alsof mijn lichaam me in de steek laat.
-A: Hmm het is natuurlijk ook vervelend om dit te horen. Maar we kunnen de maatregelen bespreken die de kans op breuken zo klein mogelijk maken, goed?
-B: Tja, Ik weet niet of ik daar het nut zo van inzie.
-A: En waarom niet?
-B: Ja, dan moet ik zeker oefeningen gaan doen ofzo.
-A: Ik kan me voorstellen dat het wat weerstand oproept, maar de maatregelen kunnen het risico wel degelijk verlagen. Vind u het goed
-B: Oke.
-A: Oke, fijn. We kunnen u allereerst aanraden vitamine D supplementen en calciumtabletten te nemen. Beide stoffen bouwen de botten opnieuw op. Of in plaats van calciumtabletten kunt u minimaal 4 zuivelconsumpties nemen op een dag. Wat denkt u?
-B: Ik eet best veel yoghurt en drink eigenlijk ook altijd wel 2 glazen melk.
-A: Oke, nou dan kunnen we die calciumtabletten al achterwege laten. U zou dan baat hebben bij de vitamine-D supplementen. Verder is het juist goed om te blijven bewegen en actief te blijven. Wat zou u kunnen doen qua beweging?
-B: Het gaat gelukkig wel redelijk om elke dag even te blijven wandelen.
-A: Hmmm, blijf dat vooral doen! Zo blijven de botten gewend aan de belasting. U rookt niet maar drinkt u wel regelmatig alcohol?
-B: Nee, alleen in het weekend.
-A: Goed, met uw bloeddrukverlager vormt dat in principe verder geen risico. Verder raad ik u fysiotherapie aan om te leren een goede balans en evenwicht te behouden, zodat u minder kans heeft om te vallen. Wat denkt u daarvan?
-B: Ja dat wil ik wel proberen.
-A: Wat denkt u van deze adviezen?
-B: Het valt me eigenlijk wel mee. Ik had het erger verwacht om eerlijk te zijn.
-A: Gelukkig maar! Dus kort samengevat, u kunt vanaf nu starten met vitamine D supplementen, en er vooral voor blijven zorgen dat u genoeg calcium binnen krijgt. Verder is blijven bewegen belangrijk, en maakt u een afspraak met de fysiotherapeut. En qua rugpijn kunt u doorgaan met de pijnstilling zoals we die de vorige keer hebben besproken. Is het zo duidelijk of heeft u nog vragen?
-B: Nee, het is wel duidelijk zo en ik ben er ook wel content mee.
-A: Zullen we dan over een week of 3 een nieuwe afspraak inplannen? Dan kunnen we bespreken hoe het gaat.
-B: Dat zou ik fijn vinden. Bedankt voor het prettige gesprek dokter.
+Dokter: Goedemiddag, komt u verder. Ik heb voor u de uitslag van het rontgenonderzoek. Zoals vorige keer besproken, was er een sterk vermoeden op een breuk, een ingezakte wervel. Hoe gaat het nu met uw rug?
+Client: Dankzij de pijnstilling is het wel te doen.
+Dokter: De röntgenfoto laat zien dat u inderdaad een ingezakte wervel heeft. Verder is het een stabiele breuk waarvoor een operatie niet nodig is.
+Client: Gelukkig!
+Dokter: Het minder goeie nieuws is wel dat de breuk veroorzaakt is door osteoporose. Dit houdt in dat de dichtheid van uw botten minder wordt. Weet u wat ik daar mee bedoel?
+Client: Betekent dit dan dat ik veel vaker botbreuken zal oplopen?
+Dokter: Het is vervelend voor u om te horen. Helaas kan dat wel voorkomen.
+Client: Maar uhmm, kan ik dan helemaal niet meer gaan wandelen, want zo is het natuurlijk de vorige keer gebeurd.
+Dokter: Het is juist goed om te blijven bewegen. Hierdoor bouwen de botten meer kracht op.
+Client: Ja maar ik ben dan bang dat ik ga vallen, waardoor ik weer iets kan breken.
+Dokter: uhhum, Ik kan me heel goed voorstellen dat u hier bang voor bent, maar er zijn wel manieren om dit te voorkomen, deze kunnen we later wel bespreken.
+Client: Oke
+Dokter: U lijkt nog niet echt gerustgesteld
+Client: Ja, het voelt gewoon alsof mijn lichaam me in de steek laat.
+Dokter: Hmm het is natuurlijk ook vervelend om dit te horen. Maar we kunnen de maatregelen bespreken die de kans op breuken zo klein mogelijk maken, goed?
+Client: Tja, Ik weet niet of ik daar het nut zo van inzie.
+Dokter: En waarom niet?
+Client: Ja, dan moet ik zeker oefeningen gaan doen ofzo.
+Dokter: Ik kan me voorstellen dat het wat weerstand oproept, maar de maatregelen kunnen het risico wel degelijk verlagen. Vind u het goed
+Client: Oke.
+Dokter: Oke, fijn. We kunnen u allereerst aanraden vitamine D supplementen en calciumtabletten te nemen. Beide stoffen bouwen de botten opnieuw op. Of in plaats van calciumtabletten kunt u minimaal 4 zuivelconsumpties nemen op een dag. Wat denkt u?
+Client: Ik eet best veel yoghurt en drink eigenlijk ook altijd wel 2 glazen melk.
+Dokter: Oke, nou dan kunnen we die calciumtabletten al achterwege laten. U zou dan baat hebben bij de vitamine-D supplementen. Verder is het juist goed om te blijven bewegen en actief te blijven. Wat zou u kunnen doen qua beweging?
+Client: Het gaat gelukkig wel redelijk om elke dag even te blijven wandelen.
+Dokter: Hmmm, blijf dat vooral doen! Zo blijven de botten gewend aan de belasting. U rookt niet maar drinkt u wel regelmatig alcohol?
+Client: Nee, alleen in het weekend.
+Dokter: Goed, met uw bloeddrukverlager vormt dat in principe verder geen risico. Verder raad ik u fysiotherapie aan om te leren een goede balans en evenwicht te behouden, zodat u minder kans heeft om te vallen. Wat denkt u daarvan?
+Client: Ja dat wil ik wel proberen.
+Dokter: Wat denkt u van deze adviezen?
+Client: Het valt me eigenlijk wel mee. Ik had het erger verwacht om eerlijk te zijn.
+Dokter: Gelukkig maar! Dus kort samengevat, u kunt vanaf nu starten met vitamine D supplementen, en er vooral voor blijven zorgen dat u genoeg calcium binnen krijgt. Verder is blijven bewegen belangrijk, en maakt u een afspraak met de fysiotherapeut. En qua rugpijn kunt u doorgaan met de pijnstilling zoals we die de vorige keer hebben besproken. Is het zo duidelijk of heeft u nog vragen?
+Client: Nee, het is wel duidelijk zo en ik ben er ook wel content mee.
+Dokter: Zullen we dan over een week of 3 een nieuwe afspraak inplannen? Dan kunnen we bespreken hoe het gaat.
+Client: Dat zou ik fijn vinden. Bedankt voor het prettige gesprek dokter.

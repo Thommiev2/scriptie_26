@@ -1,46 +1,46 @@
-A: We hebben het zojuist gehad over uw klachten. U gaf aan sinds een langere periode klachten te hebben van buikpijn en diarree en u bent flink wat kilo’s afgevallen. Ook voelt u zich vermoeid en futloos waardoor u overdag weinig energie heeft. En u maakt zich daar zorgen over. Klopt dat?
-B: Ja dat klopt inderdaad!
-A: Dan zou ik u nu graag wat specifiekere vragen willen stellen over de klachten.
-B: Prima.
-A: Zou u kunnen omschrijven waar u de buikpijn voelt?
-B: Vooral wat lager in de buik, het is echt een krampende pijn.
-A: En is er iets wat u kunt doen om de pijn te verzachten?
-B: Het liefst houd ik me rustig, maar ik moet dan vaak naar het toilet. Op de wc heb ik dan ook nog wel veel buikpijn, maar naderhand is de buikpijn vaak iets gezakt.
-A: Dus nadat u naar het toilet bent geweest is de pijn minder? En is de pijn verder de hele dag door aanwezig?
-B: Nee dat niet, het gaat vak een beetje op en af. Ik merk dat het een paar uur na het eten vaak het pijnlijkst is, hoewel ik er ’snachts ook wel veel last van heb! Ik moet dan ook een aantal keer naar de wc.
-A: En dan na de toiletgang is het weer minder?
-B: Ietjses.
-A: Slaapt u verder wel goed?
-B: Redelijk, behalve dat ik er dus wel vaak uit moet ’s nachts. Het inslapen duurt dan soms wel weer even.
-A: Ja, dat snap ik. U zei dat u diarree heeft en kunt u aangeven of de ontlasting altijd zo dun is?
-B: Eigenlijk wel, soms is het wat harder, maar meestal is het gewoon heel dun tot zelfs waterdun.
-A: En hoe vaak gaat u gemiddeld per dag naar het toilet voor de ontlasting?
-B: Ik denk gemiddeld wel een keer of 5 à 6 de afgelopen periode.
-A: Dat is inderdaad wel veel. Weet u misschien of er ook bloed of slijm bij de ontlasting zit?
-B: Nee, dat gelukkig niet.
-A: En uhh heeft u verder nog last van oprispingen of zuurbranden?
-B: Ik heb dat altijd wel een beetje gehad, maar dat is niet veel erger geworden in de afgelopen periode.
-A: En voelt u zich dan ook wel eens misselijk of moet u misschien overgeven?
-B: Nee dat gelukkig niet!
-A: Das fijn om te horen! En hebt u nog wel een normale eetlust?
-B: Nou, ik heb niet vaak zin om te eten moet ik zeggen.
-A: Dus toch wel een afgenomen eetlust als u het zo zegt?
-B: Ja, dat wel.
-A: En hoe is uw eetpatroon? Zou u voor mij eens kunnen omschrijven wat u op een dag zoal eet?
-B: Ik probeer wel genoeg groenten en fruit te eten. Daarnaast eet ik elke dag een stukje vlees of vis. Soms snoep ik wat tussendoor, maar meestal houd ik wel een beetje rekening met wat ik eet.
-A: Oké, ik denk dat ik zo wel een goed beeld hebt. Bent u toevallig recentelijk ook nog in het buitenland geweest, voor de klachten begonnen?
-B: Ik ben wel op vakantie geweest naar de camping op Frankrijk, maar verder niet!
-A: Duidelijk. Heeft u ooit koorts ervaren bij de klachten?
-B: Hmm, dat weet ik eigenlijk niet zo goed. Ik heb soms wel heel koud en dan weer warm, maar dat is niet altijd zo!
-A: Oke, we kunnen zometeen ook de temperatuur wel meten. Zou u kunnen aangeven of u medicijnen of pijnstillers gebruikt?
-B: Medicijnen niet, maar ik neem wel af en toe een pijnstiller. Soms helpt dat iets tegen de buikpijn.
-A: Heeft u verder nog aandoeningen in de voorgeschiedenis?
-B: Nee, eigenlijk niet.
-A: Heeft u misschien toevallig in de familie ooit gehoord dat iemand dit soort klachten heeft?
-B: Volgens mij had mijn tante hier ook weleens last van gehad; ik zou het eens kunnen navragen!
-A: Weet u misschien of er verder erfelijke ziektes in de familie zitten?
-B: Hmm, ik weet dat mijn oma een vorm van reuma had, maar ze is al een tijdje terug overleden. Verder denk ik het eigenlijk niet!
-A: Oke als u het goed vindt, wil ik u graag lichamelijk onderzoeken. Is dat goed voor u?
-B: Natuurlijk
-A: Zou u dan voor mij de buik willen ontbloten? Dat kunt u daar achter het gordijn doen. En uw bh mag u aanhouden.
-B: Okee, dat is goed.
+Dokter: We hebben het zojuist gehad over uw klachten. U gaf aan sinds een langere periode klachten te hebben van buikpijn en diarree en u bent flink wat kilo’s afgevallen. Ook voelt u zich vermoeid en futloos waardoor u overdag weinig energie heeft. En u maakt zich daar zorgen over. Klopt dat?
+Client: Ja dat klopt inderdaad!
+Dokter: Dan zou ik u nu graag wat specifiekere vragen willen stellen over de klachten.
+Client: Prima.
+Dokter: Zou u kunnen omschrijven waar u de buikpijn voelt?
+Client: Vooral wat lager in de buik, het is echt een krampende pijn.
+Dokter: En is er iets wat u kunt doen om de pijn te verzachten?
+Client: Het liefst houd ik me rustig, maar ik moet dan vaak naar het toilet. Op de wc heb ik dan ook nog wel veel buikpijn, maar naderhand is de buikpijn vaak iets gezakt.
+Dokter: Dus nadat u naar het toilet bent geweest is de pijn minder? En is de pijn verder de hele dag door aanwezig?
+Client: Nee dat niet, het gaat vak een beetje op en af. Ik merk dat het een paar uur na het eten vaak het pijnlijkst is, hoewel ik er ’snachts ook wel veel last van heb! Ik moet dan ook een aantal keer naar de wc.
+Dokter: En dan na de toiletgang is het weer minder?
+Client: Ietjses.
+Dokter: Slaapt u verder wel goed?
+Client: Redelijk, behalve dat ik er dus wel vaak uit moet ’s nachts. Het inslapen duurt dan soms wel weer even.
+Dokter: Ja, dat snap ik. U zei dat u diarree heeft en kunt u aangeven of de ontlasting altijd zo dun is?
+Client: Eigenlijk wel, soms is het wat harder, maar meestal is het gewoon heel dun tot zelfs waterdun.
+Dokter: En hoe vaak gaat u gemiddeld per dag naar het toilet voor de ontlasting?
+Client: Ik denk gemiddeld wel een keer of 5 à 6 de afgelopen periode.
+Dokter: Dat is inderdaad wel veel. Weet u misschien of er ook bloed of slijm bij de ontlasting zit?
+Client: Nee, dat gelukkig niet.
+Dokter: En uhh heeft u verder nog last van oprispingen of zuurbranden?
+Client: Ik heb dat altijd wel een beetje gehad, maar dat is niet veel erger geworden in de afgelopen periode.
+Dokter: En voelt u zich dan ook wel eens misselijk of moet u misschien overgeven?
+Client: Nee dat gelukkig niet!
+Dokter: Das fijn om te horen! En hebt u nog wel een normale eetlust?
+Client: Nou, ik heb niet vaak zin om te eten moet ik zeggen.
+Dokter: Dus toch wel een afgenomen eetlust als u het zo zegt?
+Client: Ja, dat wel.
+Dokter: En hoe is uw eetpatroon? Zou u voor mij eens kunnen omschrijven wat u op een dag zoal eet?
+Client: Ik probeer wel genoeg groenten en fruit te eten. Daarnaast eet ik elke dag een stukje vlees of vis. Soms snoep ik wat tussendoor, maar meestal houd ik wel een beetje rekening met wat ik eet.
+Dokter: Oké, ik denk dat ik zo wel een goed beeld hebt. Bent u toevallig recentelijk ook nog in het buitenland geweest, voor de klachten begonnen?
+Client: Ik ben wel op vakantie geweest naar de camping op Frankrijk, maar verder niet!
+Dokter: Duidelijk. Heeft u ooit koorts ervaren bij de klachten?
+Client: Hmm, dat weet ik eigenlijk niet zo goed. Ik heb soms wel heel koud en dan weer warm, maar dat is niet altijd zo!
+Dokter: Oke, we kunnen zometeen ook de temperatuur wel meten. Zou u kunnen aangeven of u medicijnen of pijnstillers gebruikt?
+Client: Medicijnen niet, maar ik neem wel af en toe een pijnstiller. Soms helpt dat iets tegen de buikpijn.
+Dokter: Heeft u verder nog aandoeningen in de voorgeschiedenis?
+Client: Nee, eigenlijk niet.
+Dokter: Heeft u misschien toevallig in de familie ooit gehoord dat iemand dit soort klachten heeft?
+Client: Volgens mij had mijn tante hier ook weleens last van gehad; ik zou het eens kunnen navragen!
+Dokter: Weet u misschien of er verder erfelijke ziektes in de familie zitten?
+Client: Hmm, ik weet dat mijn oma een vorm van reuma had, maar ze is al een tijdje terug overleden. Verder denk ik het eigenlijk niet!
+Dokter: Oke als u het goed vindt, wil ik u graag lichamelijk onderzoeken. Is dat goed voor u?
+Client: Natuurlijk
+Dokter: Zou u dan voor mij de buik willen ontbloten? Dat kunt u daar achter het gordijn doen. En uw bh mag u aanhouden.
+Client: Okee, dat is goed.

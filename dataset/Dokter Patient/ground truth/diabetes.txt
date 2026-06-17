@@ -1,46 +1,46 @@
-A: Goedemiddag, meneer Visser.
-B: Goeiemiddag.
-A: Vertel, waarvoor bent u vandaag gekomen?
-B: Nou, ik ben al een tijdje erg moe. Ik heb nergens zin in, totaal futloos. Echt heel vervelend.
-A: Ja, dat kan ik me voorstellen. Moe en futloos zei u? wat verstaat u hieronder?
-B: Ja ik heb gewoon overdag geen energie om iets te doen.
-A: Wat vervelend. En hoelang heeft u daar al last van?
-B: Ja al een weekje of zes.
-A: Zes weken dus, en wat maakt het dat u nu toch na 6 weken komt?
-B: Ja, ik maak me zorgen, ik vind het nu echt te lang duren. Ik wil weten wat de oorzaak is.
-A: Dat kan ik me voorstellen. Dus als ik goed begrijp wilt u vooral weten wat de oorzaak van u klachten is. Hoe slaapt u?
-B: umm heel goed, ja, ’s nachts ben ik wel een paar keer wakker om eruit om te plassen, maar daarna slaap ik vrijwel direct weer in.
-A: Hoe vaak is een paar keer?
-B: Uhhh, ik denk gemiddeld wel vier keer per nacht.
-A: En hoe was het hiervoor qua plassen in de nacht?
-B: Oh dat was minder.
-A: En ervaart u dan ook pijn bij het plassen?
-B: Nee, dat niet.
-A: Drinkt u veel voordat u gaat slapen?
-B: Ja ik drink de hele dag veel, want ik heb vreselijk veel dorst de hele dag. Maar ’s avonds probeer ik een beetje minder te drinken zodat ik niet zo vaak naar het toilet hoef.
-A: Duidelijk, als ik het goed begrijp heeft dus sinds ongeveer 6 weken veel last van vermoeidheidsklachten, heeft u veel dorst en moet u vaak plassen, vooral ‘s nachts. Heeft u verder nog andere klachten?
-B: Uhhh, nee, eigenlijk niet. Alhoewel ik heb ook een paar wondjes op mijn rug die maar niet willen overgaan.
-A: Daar zal ik ook even naar kijken. Ik wil je ook nog wat algemene vragen stellen.
-B: Ja prima.
-A: En hoeveel weegt u?
-B: uhh zo’n dikke honderd kilo schat ik. Ik weet het niet precies.
-A: Dan gaan we u straks even wegen. Hoe is uw eetpatroon?
-B: Ik eet het liefst aardappelen met een lekker stukje vlees, maar mijn vrouw maakt ook wel eens spaghetti en op vrijdag eten we altijd friet.
-A: Eet u verder ook nog fruit en groente?
-B: Nou, daar houd ik niet zo erg van.
-A: En snoept u ook? Zoete of hartige tussendoortjes?
-B: Ach, een koekje bij de koffie en bij de thee, en ’s avonds wat chips bij het biertje maar meer niet hoor.
-A: En hoeveel drinkt u gemiddeld?
-B: Eigenlijk altijd maar een paar biertjes, verder geen wijn of sterke drank.
-A: Een paar biertjes zegt u, hoeveel biertjes per dag ongeveer?
-B: Uhh, 3 of 4 denk ik zo.
-A: En rookt u?
-B: Ja, een pakje per dag ongeveer.
-A: En beweegt u ook dagelijks?
-B: Dat probeer ik wel, af een toe een blokje om, maar veel meer is het echt niet.
-A: Oke en komt er diabetes voor in uw familie?
-B: Diabetes, oh suikerziekte? Nee, niet dat ik weet. Maar hoezo? Denkt u dat ik suikerziekte heb?
-A: Ik sluit het niet uit, maar we hebben daar een aantal onderzoeken voor nodig. Vind u het goed als ik u eerst uhh lichamelijk ga onderzoeken?
-B: Natuurlijk geen probleem.
-A: U kunt alvast op de onderzoekstafel gaan liggen. Zou u ervoor kunnen zorgen dat de gehele buik ontbloot is? Dan kunnen we deze goed onderzoeken.
-B: Ja dat is prima.
+Dokter: Goedemiddag, meneer Visser.
+Client: Goeiemiddag.
+Dokter: Vertel, waarvoor bent u vandaag gekomen?
+Client: Nou, ik ben al een tijdje erg moe. Ik heb nergens zin in, totaal futloos. Echt heel vervelend.
+Dokter: Ja, dat kan ik me voorstellen. Moe en futloos zei u? wat verstaat u hieronder?
+Client: Ja ik heb gewoon overdag geen energie om iets te doen.
+Dokter: Wat vervelend. En hoelang heeft u daar al last van?
+Client: Ja al een weekje of zes.
+Dokter: Zes weken dus, en wat maakt het dat u nu toch na 6 weken komt?
+Client: Ja, ik maak me zorgen, ik vind het nu echt te lang duren. Ik wil weten wat de oorzaak is.
+Dokter: Dat kan ik me voorstellen. Dus als ik goed begrijp wilt u vooral weten wat de oorzaak van u klachten is. Hoe slaapt u?
+Client: umm heel goed, ja, ’s nachts ben ik wel een paar keer wakker om eruit om te plassen, maar daarna slaap ik vrijwel direct weer in.
+Dokter: Hoe vaak is een paar keer?
+Client: Uhhh, ik denk gemiddeld wel vier keer per nacht.
+Dokter: En hoe was het hiervoor qua plassen in de nacht?
+Client: Oh dat was minder.
+Dokter: En ervaart u dan ook pijn bij het plassen?
+Client: Nee, dat niet.
+Dokter: Drinkt u veel voordat u gaat slapen?
+Client: Ja ik drink de hele dag veel, want ik heb vreselijk veel dorst de hele dag. Maar ’s avonds probeer ik een beetje minder te drinken zodat ik niet zo vaak naar het toilet hoef.
+Dokter: Duidelijk, als ik het goed begrijp heeft dus sinds ongeveer 6 weken veel last van vermoeidheidsklachten, heeft u veel dorst en moet u vaak plassen, vooral ‘s nachts. Heeft u verder nog andere klachten?
+Client: Uhhh, nee, eigenlijk niet. Alhoewel ik heb ook een paar wondjes op mijn rug die maar niet willen overgaan.
+Dokter: Daar zal ik ook even naar kijken. Ik wil je ook nog wat algemene vragen stellen.
+Client: Ja prima.
+Dokter: En hoeveel weegt u?
+Client: uhh zo’n dikke honderd kilo schat ik. Ik weet het niet precies.
+Dokter: Dan gaan we u straks even wegen. Hoe is uw eetpatroon?
+Client: Ik eet het liefst aardappelen met een lekker stukje vlees, maar mijn vrouw maakt ook wel eens spaghetti en op vrijdag eten we altijd friet.
+Dokter: Eet u verder ook nog fruit en groente?
+Client: Nou, daar houd ik niet zo erg van.
+Dokter: En snoept u ook? Zoete of hartige tussendoortjes?
+Client: Ach, een koekje bij de koffie en bij de thee, en ’s avonds wat chips bij het biertje maar meer niet hoor.
+Dokter: En hoeveel drinkt u gemiddeld?
+Client: Eigenlijk altijd maar een paar biertjes, verder geen wijn of sterke drank.
+Dokter: Een paar biertjes zegt u, hoeveel biertjes per dag ongeveer?
+Client: Uhh, 3 of 4 denk ik zo.
+Dokter: En rookt u?
+Client: Ja, een pakje per dag ongeveer.
+Dokter: En beweegt u ook dagelijks?
+Client: Dat probeer ik wel, af een toe een blokje om, maar veel meer is het echt niet.
+Dokter: Oke en komt er diabetes voor in uw familie?
+Client: Diabetes, oh suikerziekte? Nee, niet dat ik weet. Maar hoezo? Denkt u dat ik suikerziekte heb?
+Dokter: Ik sluit het niet uit, maar we hebben daar een aantal onderzoeken voor nodig. Vind u het goed als ik u eerst uhh lichamelijk ga onderzoeken?
+Client: Natuurlijk geen probleem.
+Dokter: U kunt alvast op de onderzoekstafel gaan liggen. Zou u ervoor kunnen zorgen dat de gehele buik ontbloot is? Dan kunnen we deze goed onderzoeken.
+Client: Ja dat is prima.

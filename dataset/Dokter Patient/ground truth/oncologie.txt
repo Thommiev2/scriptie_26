@@ -1,36 +1,36 @@
-A: Fijn dat u vandaag bent gekomen voor het bespreken van de uitslag van de onderzoeken. Zoals u weet hebben we afgelopen donderdag het aanvullende onderzoek gedaan. En nu heb ik de uitslag.
-B: Ja goedemiddag dokter, ik ben wel een beetje bang voor de uitslag.
-A: Dat kan ik me goed voorstellen, ik heb helaas geen goed nieuws voor u. Ik moet u mededelen dat u kanker heeft in de dikke darm, er is een tumor gezien op de scopie. Wat denkt en voelt u nu?
-B: Uhh er gaat wel veel in mij om op dit moment. Ik was al wel een beetje voorbereid, maar ik merk dat het toch wel erg confronterend is wat u mij vertelt.
-A: Het is ook heel heftig nieuws om te horen.
-B: Betekent dit nou dat ik doodga, dokter?
-A: Bent u daar bang voor?
-B: Ja eigenlijk wel.
-A: Ik begrijp dat u zich hierover zorgen maakt maar er zijn nog genoeg behandelopties die in dit stadium van de ziekte toegepast kunnen worden.
-B: Jaa umm, ik weet even niet zo goed hoe ik hierop moet reageren. Ik vind het wel heel beangstigend allemaal, hoe gaat het nu verder? Kan ik nog blijven werken? Moet ik het nou aan iedereen vertellen? En hoe ga ik het thuis aan mijn partner en mijn kinderen vertellen?
-A: Ik begrijp dat dit veel vragen bij u oproept op dit moment. Heeft u iemand in uw naaste omgeving die u kan steunen?
-B: Jazeker mijn partner.
-A: Dat is goed om te horen. Uiteraard hoeft u dit niet alleen te doen. We zullen vanuit hier u en uw familie zo veel mogelijk begeleiden.
-B: Oh, dat is wel fijn om te horen.
-A: U vraagt zich af hoe u dit aan hun familie moet zeggen, wilt u hier hulp bij?
-B: Nou nee, ik denk dat dat wel zal lukken.
-A: Goed om te horen. Wilt u nu al de verschillende behandelopties horen, of wilt u dat liever op een later moment bespreken?
-B: Ja, graag, ik weet alleen niet zeker of ik alles nu kan onthouden.
-A: Ik kan u de informatie ook op papier meegeven en de volgende keer herhalen we alles gewoon nogmaals en kunt u uw verdere vragen stellen.
-B: Oh, bedankt dokter, dat zou ik heel fijn vinden.
-A: Een operatie is sowieso nodig. Hierbij wordt een deel van de dikke darm weggehaald, en de rest wordt weer aan elkaar gemaakt. Soms is het tijdelijk nodig een stoma te gebruiken. Wat vindt u ervan?
-B: uhh ja ja, het klinkt wel begrijpelijk.
-A: Na de operatie moeten we het hebben over chemotherapie. Met de combinatie van een operatie en chemotherapie heeft u in dit stadium 90% kans om de kanker volledig uit uw lichaam te krijgen.
-B: Oke, dus ik krijg een operatie en u raadt chemotherapie aan.
-A: Dat klopt inderdaad. Wat vind u ervan?
-B: Ja het is duidelijk en tja, het zal wel het zal wel moeten he.
-A: Wilt u een folder met de informatie?
-B: Ja heel graag.
-A: Dan zal ik u een folder meegeven met informatie over de behandeling van darmkanker.
-B: Kan ik u nu nog ergens mee helpen?
-A: Nou ik ben al heel erg blij met deze informatie, dus dank u wel daarvoor.
-B: Fijn om te horen. Als u vragen heeft, kunt u deze opschrijven.
-A: Bij de volgende afspraak kunnen we alles nog eens rustig doorlopen. Het zou goed zijn als u dan iemand mee zou nemen.
-B: Ja dat is zeker goed, ik neem mijn partner mee.
-A: Ja, goedzo. Veel sterkte de komende week, en we houden contact.
-B: Ja dank u wel.
+Dokter: Fijn dat u vandaag bent gekomen voor het bespreken van de uitslag van de onderzoeken. Zoals u weet hebben we afgelopen donderdag het aanvullende onderzoek gedaan. En nu heb ik de uitslag.
+Client: Ja goedemiddag dokter, ik ben wel een beetje bang voor de uitslag.
+Dokter: Dat kan ik me goed voorstellen, ik heb helaas geen goed nieuws voor u. Ik moet u mededelen dat u kanker heeft in de dikke darm, er is een tumor gezien op de scopie. Wat denkt en voelt u nu?
+Client: Uhh er gaat wel veel in mij om op dit moment. Ik was al wel een beetje voorbereid, maar ik merk dat het toch wel erg confronterend is wat u mij vertelt.
+Dokter: Het is ook heel heftig nieuws om te horen.
+Client: Betekent dit nou dat ik doodga, dokter?
+Dokter: Bent u daar bang voor?
+Client: Ja eigenlijk wel.
+Dokter: Ik begrijp dat u zich hierover zorgen maakt maar er zijn nog genoeg behandelopties die in dit stadium van de ziekte toegepast kunnen worden.
+Client: Jaa umm, ik weet even niet zo goed hoe ik hierop moet reageren. Ik vind het wel heel beangstigend allemaal, hoe gaat het nu verder? Kan ik nog blijven werken? Moet ik het nou aan iedereen vertellen? En hoe ga ik het thuis aan mijn partner en mijn kinderen vertellen?
+Dokter: Ik begrijp dat dit veel vragen bij u oproept op dit moment. Heeft u iemand in uw naaste omgeving die u kan steunen?
+Client: Jazeker mijn partner.
+Dokter: Dat is goed om te horen. Uiteraard hoeft u dit niet alleen te doen. We zullen vanuit hier u en uw familie zo veel mogelijk begeleiden.
+Client: Oh, dat is wel fijn om te horen.
+Dokter: U vraagt zich af hoe u dit aan hun familie moet zeggen, wilt u hier hulp bij?
+Client: Nou nee, ik denk dat dat wel zal lukken.
+Dokter: Goed om te horen. Wilt u nu al de verschillende behandelopties horen, of wilt u dat liever op een later moment bespreken?
+Client: Ja, graag, ik weet alleen niet zeker of ik alles nu kan onthouden.
+Dokter: Ik kan u de informatie ook op papier meegeven en de volgende keer herhalen we alles gewoon nogmaals en kunt u uw verdere vragen stellen.
+Client: Oh, bedankt dokter, dat zou ik heel fijn vinden.
+Dokter: Een operatie is sowieso nodig. Hierbij wordt een deel van de dikke darm weggehaald, en de rest wordt weer aan elkaar gemaakt. Soms is het tijdelijk nodig een stoma te gebruiken. Wat vindt u ervan?
+Client: uhh ja ja, het klinkt wel begrijpelijk.
+Dokter: Na de operatie moeten we het hebben over chemotherapie. Met de combinatie van een operatie en chemotherapie heeft u in dit stadium 90% kans om de kanker volledig uit uw lichaam te krijgen.
+Client: Oke, dus ik krijg een operatie en u raadt chemotherapie aan.
+Dokter: Dat klopt inderdaad. Wat vind u ervan?
+Client: Ja het is duidelijk en tja, het zal wel het zal wel moeten he.
+Dokter: Wilt u een folder met de informatie?
+Client: Ja heel graag.
+Dokter: Dan zal ik u een folder meegeven met informatie over de behandeling van darmkanker.
+Client: Kan ik u nu nog ergens mee helpen?
+Dokter: Nou ik ben al heel erg blij met deze informatie, dus dank u wel daarvoor.
+Client: Fijn om te horen. Als u vragen heeft, kunt u deze opschrijven.
+Dokter: Bij de volgende afspraak kunnen we alles nog eens rustig doorlopen. Het zou goed zijn als u dan iemand mee zou nemen.
+Client: Ja dat is zeker goed, ik neem mijn partner mee.
+Dokter: Ja, goedzo. Veel sterkte de komende week, en we houden contact.
+Client: Ja dank u wel.
