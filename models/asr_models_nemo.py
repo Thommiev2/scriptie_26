@@ -59,6 +59,12 @@ class ParakeetAsr(BaseModel):
             name="NVIDIA Parakeet TDT 0.6B v3",
             model=ASRModel.from_pretrained(model_name="nvidia/parakeet-tdt-0.6b-v3")
         )
+
+        if CONFIG['device'] == 'cuda':
+            self.model.to(CONFIG['device'])
+#            self.model = self.model.half()
+            print('[PRK] v  Model moved to CUDA')
+
         self.model.change_attention_model("rel_pos_local_attn", [128, 128])
         self.model.change_subsampling_conv_chunking_factor(1)
 
@@ -66,10 +72,21 @@ class ParakeetAsr(BaseModel):
 
     def transcribe(self, data_file: dict) -> (str, float):
 
+        audio = data_file['audio']
+
+#        if CONFIG['device'] == 'cuda':
+#            converted_audio = []
+#            for array in audio:
+#                array = torch.from_numpy(array)
+#                array = array.to(CONFIG['device'])
+#                array = array.half()
+#                converted_audio.append(array)
+#            audio = converted_audio
+
         timer = time.perf_counter()
 
         print(f"[PRK] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
-        text = self.model.transcribe(data_file['audio'])
+        text = self.model.transcribe(audio)
         process_time = (time.perf_counter() - timer)
         seconds = int(process_time % 60)
         print(f"[PRK] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
@@ -86,17 +103,30 @@ class CanaryAsr(BaseModel):
             name="NVIDIA Canary 1B v2",
             model=ASRModel.from_pretrained(model_name="nvidia/canary-1b-v2")
         )
+
+        if CONFIG['device'] == 'cuda':
+            self.model.to(CONFIG['device'])
+#            self.model = self.model.half()
+            print('[PRK] v  Model moved to CUDA')
+
         print('[CNR] v  Model initialized and loaded in succesfully')
 
     def transcribe(self, data_file: dict) -> (str, float):
 
-        if isinstance(data_file['audio'], list):
-            data_file['audio'] = np.concatenate(data_file['audio'])
+        audio = data_file['audio']
+
+        if isinstance(audio, list):
+            audio = np.concatenate(audio)
+
+        if CONFIG['device'] == 'cuda':
+            audio = torch.from_numpy(audio)
+            audio = audio.to(CONFIG['device'])
+#            audio = audio.half()
 
         timer = time.perf_counter()
 
         print(f"[CNR] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
-        text = self.model.transcribe(data_file['audio'], source_lang='nl', target_lang='nl', batch_size=1)
+        text = self.model.transcribe(audio, source_lang='nl', target_lang='nl', batch_size=2)
         process_time = (time.perf_counter() - timer)
         seconds = int(process_time % 60)
         print(f"[CNR] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
