@@ -1,4 +1,3 @@
-from models.asr_models_nemo import ParakeetAsr, CanaryAsr
 import os
 from pathlib import Path
 from datetime import datetime
@@ -7,7 +6,7 @@ import librosa
 import argparse
 import gc
 from models.base_model import VadModel, CONFIG
-
+import torch
 
 #
 #
@@ -73,6 +72,7 @@ class PipeLine1:
                 torch.cuda.empty_cache
 
 if __name__ == '__main__':
+#    categories = ['Test']
     categories = ['Dokter Patient', 'Psychologische gespreksvoering', 'interviews']
     parser = argparse.ArgumentParser(description="Run the transcription process for all the models of a specific env")
     parser.add_argument(
