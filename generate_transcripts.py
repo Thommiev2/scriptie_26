@@ -1,10 +1,12 @@
-from models.base_model import VadModel, CONFIG
+from models.asr_models_nemo import ParakeetAsr, CanaryAsr
 import os
 from pathlib import Path
 from datetime import datetime
 import csv
 import librosa
 import argparse
+import gc
+from models.base_model import VadModel, CONFIG
 
 
 #
@@ -23,7 +25,7 @@ class PipeLine1:
     def __init__(self, models: list['AsrModel'], categories: list[str]):
         self.models = models
         self.dataset_paths = categories
-        self.output_file_path = Path('../output/asr output')
+        self.output_file_path = Path('output/asr output')
 
     def run(self):
 
@@ -42,7 +44,7 @@ class PipeLine1:
                     model.vad = vad_model
                 for dataset_path in self.dataset_paths:
                     print(f"[SYS]    Processing dataset {dataset_path}")
-                    audio_directory = Path("../dataset") / dataset_path / Path('audio')
+                    audio_directory = Path("dataset") / dataset_path / Path('audio')
                     for file in os.listdir(audio_directory):
                         print(f"[SYS]    Processing audio file {file}")
                         audio, process_time = librosa.load(audio_directory / file, sr=CONFIG['sample_rate'], mono=True)
@@ -55,7 +57,7 @@ class PipeLine1:
                         if model.name == "Whisper-large-v3-fast":
                             data_file['audio'] = audio
 
-                        transcript, process_time, time_stamps = model.run(data_file)
+                        transcript, process_time = model.run(data_file)
                         audio_duration = audio.shape[-1] / 16000
 
                         writer.writerow({
@@ -66,6 +68,9 @@ class PipeLine1:
                             'rtfx': audio_duration / process_time
                         })
 
+                del model
+                gc.collect()
+                torch.cuda.empty_cache
 
 if __name__ == '__main__':
     categories = ['Dokter Patient', 'Psychologische gespreksvoering', 'interviews']
@@ -85,9 +90,9 @@ if __name__ == '__main__':
         except ImportError as e:
             print(f"[SYS] X  Environment doesn't match the function call causing an import error: {e}")
 
-        a = PipeLine1(models=[ParakeetAsr, CanaryAsr], categories=categories)
+        a = PipeLine1(models=[CanaryAsr], categories=categories)
 
-    if env == 'latest':
+    elif env == 'latest':
         try:
             from models.asr_models_cohere import CohereAsr
         except ImportError as e:

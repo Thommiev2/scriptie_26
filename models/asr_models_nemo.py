@@ -8,7 +8,7 @@ import os
 import numpy as np
 import torch
 from nemo.collections.asr.models import ASRModel
-from base_model import BaseModel, CONFIG
+from models.base_model import BaseModel, CONFIG
 import librosa
 import time
 from pathlib import Path
@@ -91,7 +91,9 @@ class ParakeetAsr(BaseModel):
         seconds = int(process_time % 60)
         print(f"[PRK] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
 
-        transcript = text[0].text
+        transcript = ''
+        for segment in text:
+            transcript += segment.text.strip()
 
         return transcript, process_time
 
@@ -106,8 +108,8 @@ class CanaryAsr(BaseModel):
 
         if CONFIG['device'] == 'cuda':
             self.model.to(CONFIG['device'])
-#            self.model = self.model.half()
-            print('[PRK] v  Model moved to CUDA')
+            self.model = self.model.half()
+            print('[CNR] v  Model moved to CUDA')
 
         print('[CNR] v  Model initialized and loaded in succesfully')
 
@@ -115,23 +117,29 @@ class CanaryAsr(BaseModel):
 
         audio = data_file['audio']
 
-        if isinstance(audio, list):
-            audio = np.concatenate(audio)
-
         if CONFIG['device'] == 'cuda':
-            audio = torch.from_numpy(audio)
-            audio = audio.to(CONFIG['device'])
-#            audio = audio.half()
+            converted_audio = []
+            for array in audio:
+                array = torch.from_numpy(array)
+                array = array.to(CONFIG['device'])
+                array = array.half()
+                converted_audio.append(array)
+            audio = converted_audio
 
         timer = time.perf_counter()
 
         print(f"[CNR] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
-        text = self.model.transcribe(audio, source_lang='nl', target_lang='nl', batch_size=2)
+        transcript = ''
+        for chunk in audio:
+            text = self.model.transcribe(audio, source_lang='nl', target_lang='nl', batch_size=1)
+            transcript += text[0].text
         process_time = (time.perf_counter() - timer)
         seconds = int(process_time % 60)
         print(f"[CNR] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
 
         transcript = text[0].text
+        for t in text:
+            print(t)
 
         return transcript, process_time
 
