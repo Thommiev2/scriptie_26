@@ -9,26 +9,41 @@ from whisper.normalizers import BasicTextNormalizer
 # initialize OpenAI's basic text normalizer, removes "  ", special characters, punctuation, capitalization
 normalizer = BasicTextNormalizer(remove_diacritics=True)
 # basic regex expression for filler words, matches duhh, uhhh, hmmm, emm, etc
-basic_filler_words_regex = re.compile(r"\s[d]?[uea]+[hm]+\b", flags=re.MULTILINE)
+basic_filler_words_regex = re.compile(r"\s[d]?[uea]*[hm]+(?=\P{L}|$)", flags=re.MULTILINE)
+# basic regex expression for o and ohhh
+other_filler_words_regex = re.compile(r"\s[o]+[h]*(?=\P{L}|$)")
+
 # rule-based lexicon, matches words with similar meaning (not functional yet, can be expanded on during transcribing ground truth)
 rules = {
     'het': ["t", "'t"],
+    'goede': ['goeie'],
     'goededag': ["goeiedag", "goede dag", "goeie dag"],
     'mijn': ["mn", "m'n"],
-    'het is': ["tis", "ts", "t's"],
-    'oke': ["ok"],
-    'haar': ["d'r", " dr"],
+    'het is': ["tis", "ts", "t's", "'ts"],
+    'oke': ["ok", 'k'],
+    'er': ["d'r"],
     'snachts': ["'s nachts", "s nachts"],
     'savonds': ["s avonds", "'s avonds"],
     'sochtends': ["'s ochtends", 's ochtends'],
-    'smiddags': ["'s middags", 's middags']
+    'smiddags': ["'s middags", 's middags'],
+    'zo een': ["zo'n"],
+    'nou ja': ["nouja"],
+    '': [' hè', ' hé'],
+    'niet': ['nie', 'ni'],
+    'elkaar': ['mekaar'],
+    'etcetera': ['et cetera', 'etc'],
+    'procent': ['%'],
+    'euro': ['€']
 }
 
 
 # Apply normalizer and regex
 def normalize(text):
+    text = text.lower()
     text = normalizer(text)
     text = basic_filler_words_regex.sub("", text)
+    text = other_filler_words_regex.sub("", text)
+
     return text
 
 
