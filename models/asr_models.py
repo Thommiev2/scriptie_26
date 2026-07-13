@@ -8,7 +8,7 @@ from qwen_asr import Qwen3ASRModel
 from faster_whisper import WhisperModel
 import numpy as np
 import torch
-from base_model import BaseModel, VadModel, CONFIG
+from models.base_model import BaseModel, VadModel, CONFIG
 import time
 from pathlib import Path
 
@@ -66,8 +66,8 @@ class WhisperAsrFast(BaseModel):
             model=WhisperModel(
                 'large-v3',
                 device=CONFIG['device'],
-                # compute_type=CONFIG['dtype']
-                compute_type='int8'
+                compute_type='float16'
+                # compute_type='int8'
             )
         )
         print('[WPF] v  Model initialized and loaded in succesfully')

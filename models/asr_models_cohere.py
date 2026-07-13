@@ -2,7 +2,7 @@ import os
 import numpy as np
 import torch
 
-from base_model import BaseModel, CONFIG
+from models.base_model import BaseModel, CONFIG
 from transformers import AutoProcessor, CohereAsrForConditionalGeneration, VibeVoiceAsrForConditionalGeneration
 import time
 from pathlib import Path
