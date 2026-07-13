@@ -21,14 +21,14 @@ import torch
 
 
 class PipeLine1:
-    def __init__(self, models: list['AsrModel'], categories: list[str]):
+    def __init__(self, models, categories: list[str]):
         self.models = models
         self.dataset_paths = categories
         self.output_file_path = Path('output/asr output')
 
     def run(self):
 
-        headers = ['name', 'category', 'model', 'rtfx', 'transcript']
+        headers = ['name', 'category', 'model', 'cpu_max', 'cpu_avg', 'gpu_max', 'gpu_avg', 'mem_max', 'mem_avg', 'rtfx', 'transcript']
         current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
         vad_model = VadModel()
@@ -64,12 +64,19 @@ class PipeLine1:
                             'category': dataset_path,
                             'transcript': transcript,
                             'model': model.name,
-                            'rtfx': audio_duration / process_time
+                            'cpu_max': summary['cpu_pct_max'],
+                            'cpu_avg': summary['cpu_pct_avg'],
+                            'gpu_max': summary['gpu_util_max'],
+                            'gpu_avg': summary['gpu_util_avg'],
+                            'mem_max': summary['gpu_mem_mb_max'],
+                            'mem_avg': summary['gpu_mem_mb_avg'],
+                            'rtfx': audio_duration / process_time,
                         })
 
                 del model
                 gc.collect()
                 torch.cuda.empty_cache
+
 
 if __name__ == '__main__':
 #    categories = ['Test']

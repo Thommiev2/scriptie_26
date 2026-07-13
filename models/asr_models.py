@@ -103,4 +103,5 @@ if __name__ == "__main__":
         model = model()
         if model.name == "Qwen3 ASR 1.7B":
             model.vad = VadModel()
+        model.validate_model()
 

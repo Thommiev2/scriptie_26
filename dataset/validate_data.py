@@ -18,7 +18,7 @@ from pathlib import Path
 #
 
 
-def validate_data_formatting(fix=True):
+def validate_data_formatting(fix=False):
 
     path = Path('../dataset')
     if not path.exists():

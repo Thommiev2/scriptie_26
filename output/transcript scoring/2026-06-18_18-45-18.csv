@@ -1,0 +1,23 @@
+name,category,model,num_words,num_sentences,char diff,wer,simdist
+bewegingsapparaat.mp3,Dokter Patient,Cohere Labs Transcribe,598,60,3.1,0.07251264755480608,0.9734758138656616
+ademhaling.mp3,Dokter Patient,Cohere Labs Transcribe,191,21,1.4,0.031578947368421054,0.9946874380111694
+diabetes.mp3,Dokter Patient,Cohere Labs Transcribe,561,68,-0.1,0.0661764705882353,0.9706249833106995
+hartziekten.mp3,Dokter Patient,Cohere Labs Transcribe,645,59,-0.5,0.054773082942097026,0.9699938297271729
+oncologie.mp3,Dokter Patient,Cohere Labs Transcribe,583,58,-0.8,0.03466204506065858,0.9875075817108154
+abdomen.mp3,Dokter Patient,Cohere Labs Transcribe,585,49,0.3,0.039655172413793106,0.9823610186576843
+auto-immuunziekten.mp3,Dokter Patient,Cohere Labs Transcribe,706,70,-0.2,0.04871060171919771,0.9602982997894287
+neurologie.mp3,Dokter Patient,Cohere Labs Transcribe,788,75,1.3,0.05739795918367347,0.9786690473556519
+misbruik.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,1759,130,-3.3,0.2063397129186603,0.8274070024490356
+intake-bedrijf.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,2441,227,-2.7,0.06852159468438539,0.9550313949584961
+baan.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,3185,149,-4.1,0.1755700325732899,0.8068314790725708
+angststoornis.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,531,89,-6.3,0.12180746561886051,0.8979912400245667
+antidepressiva.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,1606,73,-3.7,0.09090909090909091,0.9593537449836731
+studie.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,1431,154,-5.1,0.15446559297218154,0.8518601059913635
+vrijheden.mp3,Psychologische gespreksvoering,Cohere Labs Transcribe,1374,148,-7.5,0.1835966892400301,0.8362538814544678
+interview-113.mp3,interviews,Cohere Labs Transcribe,1568,75,-3.3,0.1456953642384106,0.8671062588691711
+verzorgings-staat.mp3,interviews,Cohere Labs Transcribe,5312,386,-5.5,0.12524500196001567,0.9039778113365173
+hulpverleners.mp3,interviews,Cohere Labs Transcribe,2448,119,-3.6,0.08337068579112505,0.9616316556930542
+ouderen-zorg.mp3,interviews,Cohere Labs Transcribe,6311,528,-3.1,0.10563145618127291,0.906799852848053
+ouder-worden-2040.mp3,interviews,Cohere Labs Transcribe,2032,113,-3.3,0.1574884199691199,0.9076796174049377
+seksuele-voorlichting.mp3,interviews,Cohere Labs Transcribe,2715,208,-1.9,0.10625694187338022,0.890343964099884
+GGZ-exposure-therapie.mp3,interviews,Cohere Labs Transcribe,5267,285,-6.3,0.16149436647558807,0.878411054611206

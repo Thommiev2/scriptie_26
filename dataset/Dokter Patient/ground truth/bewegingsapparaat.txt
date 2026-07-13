@@ -1,6 +1,6 @@
 Dokter: Goedemiddag, komt u verder. Ik heb voor u de uitslag van het rontgenonderzoek. Zoals vorige keer besproken, was er een sterk vermoeden op een breuk, een ingezakte wervel. Hoe gaat het nu met uw rug?
 Client: Dankzij de pijnstilling is het wel te doen.
-Dokter: De röntgenfoto laat zien dat u inderdaad een ingezakte wervel heeft. Verder is het een stabiele breuk waarvoor een operatie niet nodig is.
+Dokter: De rontgenfoto laat zien dat u inderdaad een ingezakte wervel heeft. Verder is het een stabiele breuk waarvoor een operatie niet nodig is.
 Client: Gelukkig!
 Dokter: Het minder goeie nieuws is wel dat de breuk veroorzaakt is door osteoporose. Dit houdt in dat de dichtheid van uw botten minder wordt. Weet u wat ik daar mee bedoel?
 Client: Betekent dit dan dat ik veel vaker botbreuken zal oplopen?
@@ -8,7 +8,7 @@ Dokter: Het is vervelend voor u om te horen. Helaas kan dat wel voorkomen.
 Client: Maar uhmm, kan ik dan helemaal niet meer gaan wandelen, want zo is het natuurlijk de vorige keer gebeurd.
 Dokter: Het is juist goed om te blijven bewegen. Hierdoor bouwen de botten meer kracht op.
 Client: Ja maar ik ben dan bang dat ik ga vallen, waardoor ik weer iets kan breken.
-Dokter: uhhum, Ik kan me heel goed voorstellen dat u hier bang voor bent, maar er zijn wel manieren om dit te voorkomen, deze kunnen we later wel bespreken.
+Dokter: uhhm, Ik kan me heel goed voorstellen dat u hier bang voor bent, maar er zijn wel manieren om dit te voorkomen, deze kunnen we later wel bespreken.
 Client: Oke
 Dokter: U lijkt nog niet echt gerustgesteld
 Client: Ja, het voelt gewoon alsof mijn lichaam me in de steek laat.

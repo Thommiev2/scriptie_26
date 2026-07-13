@@ -1,5 +1,6 @@
 from metrics import WER, SimDist
-from utility_functions import clean_func, count_words, count_sentences
+from validate_data import validate_data_formatting
+from utility_functions import clean_func, count_words, count_sentences, normalize
 import os
 from pathlib import Path
 import csv
@@ -19,19 +20,18 @@ import csv
 
 class PipeLine2:
     def __init__(self, metrics):
-        self.asr_output = Path("../output/asr output")
+        self.asr_output = Path("output/asr output")
         self.metrics = [metric() for metric in metrics]
 
     def run(self):
 
-        headers = ['name', 'category', 'model', 'num_words', 'num_sentences'] + [metric.name for metric in self.metrics]
-        already_calculated = os.listdir(Path('output/transcript scoring'))
+        headers = ['name', 'category', 'model', 'num_words', 'num_sentences', 'char diff'] + [metric.name for metric in self.metrics]
+        already_calculated = os.listdir(Path('output/transcription scoring'))
         print(already_calculated)
 
         for file in os.listdir(self.asr_output):
-            print(file)
             if file not in already_calculated:
-                with open(Path('output/transcript scoring') / file, 'w', newline='', encoding='utf-8') as f_w:
+                with open(Path('output/transcription scoring') / file, 'w', newline='', encoding='utf-8') as f_w:
 
                     writer = csv.DictWriter(f_w, fieldnames=headers)
                     # print(writer.fieldnames)
@@ -40,7 +40,10 @@ class PipeLine2:
                         reader = csv.DictReader(f_r)
                         for row in reader:
 
-                            ground_truth_path = Path('../dataset') / row['category'] / Path('ground truth') / Path(f"{row['name']}.txt")
+                            if row['name'] == 'ge.mp3' or row['name'] == 'metadata.csv':
+                                continue
+
+                            ground_truth_path = Path('dataset') / row['category'] / Path('ground truth') / Path(f"{row['name'][:row['name'].find('.')]}.txt")
                             ground_truth = open(ground_truth_path).read()
                             ground_truth = clean_func[row['category']](ground_truth).strip()
                             hypothesis = row['transcript'].strip()
@@ -60,13 +63,19 @@ class PipeLine2:
                                 'num_sentences': count_sentences(ground_truth),
                             }
 
-                            for metric in metrics:
+                            for metric in self.metrics:
                                 output_row[metric.name] = metric.calculate_score(ground_truth, hypothesis)
 
                             character_error_margin = 0.05
-                            if len(ground_truth) * character_error_margin < abs(len(hypothesis) - len(ground_truth)):
-                                print(f"[SYS] X  Character diff over the margin of error of {round(character_error_margin * 100, 1)}%")
-                                print(f"         Audio file {row['name']} of dataset {row['category']} might have been truncated")
+                            error = len(normalize(hypothesis)) - len(normalize(ground_truth))
+                            if len(ground_truth) * character_error_margin < abs(error):
+                                print(f"[SYS] X  Character diff of {round(error / len(ground_truth) * 100, 1)}% exceeds error margin of {round(character_error_margin * 100, 1)}%")
+                                if error < 0:
+                                    print(f"         Audio file {row['name']} of dataset {row['category']} might have been truncated by {row['model']}")
+                                else:
+                                    print(f"         Audio file {row['name']} of dataset {row['category']} might contain hallucinations or repeating segments by {row['model']}")
+
+                            output_row['char diff'] = round(error / len(ground_truth) * 100, 1)
 
                             writer.writerow(output_row)
 
@@ -74,7 +83,8 @@ class PipeLine2:
                     f_w.close()
 
 
-a = PipeLine2([WER, SimDist])
-a.run()
+if __name__ == '__main__':
+    a = PipeLine2([WER, SimDist])
+    a.run()
 
 
