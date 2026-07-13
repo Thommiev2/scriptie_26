@@ -1,0 +1,23 @@
+name,category,model,num_words,num_sentences,char diff,wer,simdist
+bewegingsapparaat.mp3,Dokter Patient,NVIDIA Canary 1B v2,598,60,3.0,0.07082630691399663,0.9778594374656677
+ademhaling.mp3,Dokter Patient,NVIDIA Canary 1B v2,191,21,0.1,0.06842105263157895,0.9702684283256531
+diabetes.mp3,Dokter Patient,NVIDIA Canary 1B v2,561,68,-0.5,0.06801470588235294,0.9712775945663452
+hartziekten.mp3,Dokter Patient,NVIDIA Canary 1B v2,645,59,0.6,0.04538341158059468,0.9859329462051392
+oncologie.mp3,Dokter Patient,NVIDIA Canary 1B v2,583,58,-0.7,0.043327556325823226,0.9858798384666443
+abdomen.mp3,Dokter Patient,NVIDIA Canary 1B v2,585,49,-0.0,0.05517241379310345,0.9735660552978516
+auto-immuunziekten.mp3,Dokter Patient,NVIDIA Canary 1B v2,706,70,-0.2,0.055873925501432664,0.9581477046012878
+neurologie.mp3,Dokter Patient,NVIDIA Canary 1B v2,788,75,2.1,0.0625,0.977861225605011
+misbruik.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,1759,130,-4.3,0.22188995215311005,0.8135020136833191
+intake-bedrijf.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,2441,227,-2.7,0.07724252491694353,0.9382867217063904
+baan.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,3185,149,-3.7,0.18273615635179152,0.8068471550941467
+angststoornis.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,531,89,-4.5,0.10609037328094302,0.899980902671814
+antidepressiva.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,1606,73,-2.7,0.08450704225352113,0.9273884296417236
+studie.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,1431,154,-7.9,0.18887262079062958,0.7890563607215881
+vrijheden.mp3,Psychologische gespreksvoering,NVIDIA Canary 1B v2,1374,148,-4.8,0.16854778028592926,0.8276171088218689
+interview-113.mp3,interviews,NVIDIA Canary 1B v2,1568,75,-2.4,0.152317880794702,0.8482644557952881
+verzorgings-staat.mp3,interviews,NVIDIA Canary 1B v2,5312,386,-24.8,0.4272834182673461,0.6489364504814148
+hulpverleners.mp3,interviews,NVIDIA Canary 1B v2,2448,119,-3.8,0.08695652173913043,0.9559305906295776
+ouderen-zorg.mp3,interviews,NVIDIA Canary 1B v2,6311,528,-2.6,0.11446184605131622,0.8981712460517883
+ouder-worden-2040.mp3,interviews,NVIDIA Canary 1B v2,2032,113,-5.4,0.18991250643335048,0.8860006928443909
+seksuele-voorlichting.mp3,interviews,Cohere Labs Transcribe,2715,208,-1.9,0.10625694187338022,0.890343964099884
+GGZ-exposure-therapie.mp3,interviews,NVIDIA Canary 1B v2,5267,285,-7.3,0.18244712393753706,0.8677632212638855

@@ -7,8 +7,9 @@ from utility_functions import align_sentences, normalize
 import numpy as np
 import torch
 import jiwer
-from bert_score import score
+# from bert_score import score
 from pathlib import Path
+
 
 class SummaC:
     def __init__(self):
@@ -66,6 +67,7 @@ class WER:
         h = normalize(h)
 
         processed_words = jiwer.process_words(gt, h)
+
         return processed_words.wer
 
 
