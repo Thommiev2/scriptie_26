@@ -56,7 +56,7 @@ class PipeLine1:
                         if model.name == "Whisper-large-v3-fast":
                             data_file['audio'] = audio
 
-                        transcript, process_time = model.run(data_file)
+                        transcript, process_time, summary = model.run(data_file)
                         audio_duration = audio.shape[-1] / 16000
 
                         writer.writerow({
@@ -97,7 +97,7 @@ if __name__ == '__main__':
         except ImportError as e:
             print(f"[SYS] X  Environment doesn't match the function call causing an import error: {e}")
 
-        a = PipeLine1(models=[CanaryAsr], categories=categories)
+        a = PipeLine1(models=[ParakeetAsr], categories=categories)
 
     elif env == 'latest':
         try:

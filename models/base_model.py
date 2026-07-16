@@ -22,8 +22,9 @@ class BaseModel:
         with ResourceMonitor(interval=0.1) as mon:
             if isinstance(self.model, torch.nn.Module):
                 with torch.inference_mode():
-                    return self.transcribe(data_file)
-            data = self.transcribe(data_file)
+                    data = self.transcribe(data_file)
+            else:
+                data = self.transcribe(data_file)
         summary = mon.summary()
         return data[0].strip(), data[1], summary
 
@@ -47,6 +48,8 @@ class BaseModel:
 
         try:
             text, process_time, summary = self.run(data_file)
+            if not isinstance(summary, dict):
+                print(f"[SYS] X  Summary of gpu, cpu and memory usage of model {self.name} is not of type dict")
             if not isinstance(text, str):
                 print(f"[SYS] X  Transcript ouput of model {self.name} is not of type str")
             if not isinstance(time, float):
@@ -55,6 +58,7 @@ class BaseModel:
             print(f"[SYS] X  The following error occured while running model {self.name}\n{e}")
             return False
 
+        print(f"[SYS] <  Summary output {summary}")
         print(f"[SYS] v  Validating model {self.name} was succesfull")
 
         return True

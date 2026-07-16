@@ -8,7 +8,10 @@ import os
 import numpy as np
 import torch
 from nemo.collections.asr.models import ASRModel
-from models.base_model import BaseModel, CONFIG
+if __name__ != "__main__":
+    from models.base_model import BaseModel, CONFIG
+else:
+    from base_model import BaseModel, CONFIG
 import librosa
 import time
 from pathlib import Path
@@ -131,15 +134,15 @@ class CanaryAsr(BaseModel):
         print(f"[CNR] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
         transcript = ''
         for chunk in audio:
-            text = self.model.transcribe(audio, source_lang='nl', target_lang='nl', batch_size=1)
+            text = self.model.transcribe(chunk, source_lang='nl', target_lang='nl', batch_size=1)
             transcript += text[0].text
         process_time = (time.perf_counter() - timer)
         seconds = int(process_time % 60)
         print(f"[CNR] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
 
-        transcript = text[0].text
-        for t in text:
-            print(t)
+#        transcript = text[0].text
+#        for t in text:
+#            print(t)
 
         return transcript, process_time
 

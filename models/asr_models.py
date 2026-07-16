@@ -8,7 +8,10 @@ from qwen_asr import Qwen3ASRModel
 from faster_whisper import WhisperModel
 import numpy as np
 import torch
-from models.base_model import BaseModel, VadModel, CONFIG
+if __name__ != "__main__":
+    from models.base_model import BaseModel, VadModel, CONFIG
+else:
+    from base_model import BaseModel, VadModel, CONFIG
 import time
 from pathlib import Path
 
