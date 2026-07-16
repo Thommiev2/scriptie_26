@@ -1,6 +1,10 @@
 import torch
 import numpy as np
 import librosa
+import threading
+import time
+import psutil
+import pynvml
 
 
 class BaseModel:
@@ -15,12 +19,14 @@ class BaseModel:
             self.model.eval()
 
     def run(self, data_file):
-
-        if isinstance(self.model, torch.nn.Module):
-            with torch.inference_mode():
-                return self.transcribe(data_file)
-        data = self.transcribe(data_file)
-        return data[0].strip(), data[1]
+        with ResourceMonitor(interval=0.1) as mon:
+            if isinstance(self.model, torch.nn.Module):
+                with torch.inference_mode():
+                    data = self.transcribe(data_file)
+            else:
+                data = self.transcribe(data_file)
+        summary = mon.summary()
+        return data[0].strip(), data[1], summary
 
     def transcribe(self, data_file: dict) -> (str, float):
         return '', 0
@@ -29,7 +35,7 @@ class BaseModel:
 
         print(f"[SYS]    Validating {self.name}")
 
-        audio, process_time = librosa.load("../test.wav", sr=16000, mono=True)
+        audio, process_time = librosa.load("test.wav", sr=16000, mono=True)
 
         vad_model = VadModel() if CONFIG['use_vad'] else None
         vad_audio = vad_model.get_speech_chunks(audio, CONFIG['sample_rate']) if CONFIG['use_vad'] else audio
@@ -41,7 +47,9 @@ class BaseModel:
         }
 
         try:
-            text, time = self.run(data_file)
+            text, process_time, summary = self.run(data_file)
+            if not isinstance(summary, dict):
+                print(f"[SYS] X  Summary of gpu, cpu and memory usage of model {self.name} is not of type dict")
             if not isinstance(text, str):
                 print(f"[SYS] X  Transcript ouput of model {self.name} is not of type str")
             if not isinstance(time, float):
@@ -50,6 +58,7 @@ class BaseModel:
             print(f"[SYS] X  The following error occured while running model {self.name}\n{e}")
             return False
 
+        print(f"[SYS] <  Summary output {summary}")
         print(f"[SYS] v  Validating model {self.name} was succesfull")
 
         return True
@@ -140,6 +149,57 @@ class VadModel:
         for chunk in chunks:
             print(len(chunk))
         return chunks if chunks else [audio]
+
+
+pynvml.nvmlInit()
+GPU_HANDLE = pynvml.nvmlDeviceGetHandleByIndex(0)  # adjust index if multi-GPU
+
+
+class ResourceMonitor:
+    """Samples CPU/GPU usage in a background thread while a block runs."""
+
+    def __init__(self, interval=0.1):
+        self.interval = interval
+        self.stop = threading.Event()
+        self.samples = []
+
+    def sample_loop(self):
+        while not self.stop.is_set():
+            util = pynvml.nvmlDeviceGetUtilizationRates(GPU_HANDLE)
+            mem = pynvml.nvmlDeviceGetMemoryInfo(GPU_HANDLE)
+            self.samples.append({
+                "cpu_pct": psutil.cpu_percent(),
+                "gpu_util_pct": util.gpu,
+                "gpu_mem_used_mb": mem.used / 1024**2,
+            })
+            time.sleep(self.interval)
+
+    def __enter__(self):
+        self.thread = threading.Thread(target=self.sample_loop, daemon=True)
+        self.stop.clear()
+        self.thread.start()
+        return self
+
+    def __exit__(self, *exc):
+        self.stop.set()
+        self.thread.join()
+
+    def summary(self):
+        if not self.samples:
+            return {}
+        cpu = [s["cpu_pct"] for s in self.samples]
+        gpu = [s["gpu_util_pct"] for s in self.samples]
+        mem = [s["gpu_mem_used_mb"] for s in self.samples]
+        return {
+            "cpu_pct_avg": sum(cpu) / len(cpu),
+            "cpu_pct_max": max(cpu),
+            "gpu_util_avg": sum(gpu) / len(gpu),
+            "gpu_util_max": max(gpu),
+            "gpu_mem_mb_avg": sum(mem) / len(mem),
+            "gpu_mem_mb_max": max(mem),
+            "n_samples": len(self.samples),
+        }
+
 
 CPU_CONSTANTS = {
     'device': 'cpu',

@@ -51,8 +51,9 @@ def validate_data_formatting(check_ground_truth=False):
     path = Path('dataset')
     if not path.exists():
         raise FileNotFoundError("Missing root directory named 'dataset' for all data")
-    for directory in [d for d in os.listdir() if Path(d).is_dir()]:
-        validate_category(Path(directory), check_ground_truth)
+    print(os.listdir(path))
+    for directory in [path / d for d in os.listdir(path) if Path(path / d).is_dir() and d[0] != '.']:
+        validate_category(Path(path / directory), check_ground_truth)
 
     print('[SYS] v  validation succesfull')
 
@@ -105,8 +106,7 @@ def validate_category(directory: Path, check_ground_truth=False):
 
 
 if __name__ == "__main__":
-    validate_models()
-    validate_data_formatting()
+    validate_data_formatting(True)
 
 
 # def generate_metadata(directory: Path, override=False):

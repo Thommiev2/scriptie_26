@@ -1,8 +1,10 @@
 import os
 import numpy as np
 import torch
-
-from base_model import BaseModel, CONFIG
+if __name__ != "__main__":
+    from models.base_model import BaseModel, CONFIG
+else:
+    from base_model import BaseModel, CONFIG
 from transformers import AutoProcessor, CohereAsrForConditionalGeneration, VibeVoiceAsrForConditionalGeneration
 import time
 from pathlib import Path
@@ -25,23 +27,31 @@ class CohereAsr(BaseModel):
 
     def transcribe(self, data_file) -> (str, float):
 
-        if isinstance(data_file['audio'], list):
-            data_file['audio'] = np.concatenate(data_file['audio'])
+        if not isinstance(data_file['audio'], list):
+            data_file['audio'] = [data_file['audio']]
 
         timer = time.perf_counter()
 
         print(f"[CHR] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
-        inputs = self.processor(data_file['audio'], sampling_rate=CONFIG['sample_rate'], return_tensors='pt', language='nl')
-        inputs = inputs.to(self.model.device, dtype=self.model.dtype)
-        audio_chunk_index = inputs.get("audio_chunk_index")
-        output = self.model.generate(**inputs, max_new_tokens=CONFIG['max_new_tokens'])
-        text = self.processor.decode(output, skip_special_tokens=True, audio_chunk_index=audio_chunk_index, language="nl")[0]
+
+        transcript = ''
+        for chunk in data_file['audio']:
+            inputs = self.processor(chunk, sampling_rate=CONFIG['sample_rate'], return_tensors='pt', language='nl')
+            inputs = inputs.to(self.model.device, dtype=self.model.dtype)
+            audio_chunk_index = inputs.get("audio_chunk_index")
+            output = self.model.generate(**inputs, max_new_tokens=CONFIG['max_new_tokens'])
+            text = self.processor.decode(output, skip_special_tokens=True, audio_chunk_index=audio_chunk_index, language="nl")[0]
+
+            transcript += " " + text.strip()
+
+            # Fixes problem where GPU runs out of memory to allocate the audio files to.
+            del inputs, output, audio_chunk_index
+            if CONFIG['device'] == 'cuda':
+                torch.cuda.empty_cache()
 
         process_time = (time.perf_counter() - timer)
         seconds = int(process_time % 60)
         print(f"[CHR] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
-
-        transcript = text
 
         return transcript, process_time
 

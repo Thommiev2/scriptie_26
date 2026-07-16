@@ -1,0 +1,45 @@
+name,category,model,num_words,num_sentences,char diff,wer,simdist
+bewegingsapparaat.mp3,Dokter Patient,Whisper-large-v3-fast,598,60,1.4,0.07925801011804384,0.9704664945602417
+ademhaling.mp3,Dokter Patient,Whisper-large-v3-fast,191,21,2.3,0.05789473684210526,0.9903756976127625
+diabetes.mp3,Dokter Patient,Whisper-large-v3-fast,561,68,0.2,0.058823529411764705,0.9769383668899536
+hartziekten.mp3,Dokter Patient,Whisper-large-v3-fast,645,59,0.9,0.048513302034428794,0.9822558760643005
+oncologie.mp3,Dokter Patient,Whisper-large-v3-fast,583,58,-0.7,0.03986135181975736,0.9876846075057983
+abdomen.mp3,Dokter Patient,Whisper-large-v3-fast,585,49,2.0,0.08448275862068966,0.9711089134216309
+auto-immuunziekten.mp3,Dokter Patient,Whisper-large-v3-fast,706,70,-0.1,0.07449856733524356,0.9554805755615234
+neurologie.mp3,Dokter Patient,Whisper-large-v3-fast,788,75,2.2,0.05994897959183673,0.9734545350074768
+misbruik.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,1759,130,-7.9,0.23684210526315788,0.7769781351089478
+intake-bedrijf.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,2441,227,-1.1,0.05191029900332226,0.9708379507064819
+baan.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,3185,149,-4.1,0.17817589576547233,0.8178537487983704
+angststoornis.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,531,89,-3.7,0.06679764243614932,0.9302799701690674
+antidepressiva.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,1606,73,-0.8,0.07106274007682459,0.9462144374847412
+studie.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,1431,154,-10.7,0.23718887262079064,0.8281106352806091
+vrijheden.mp3,Psychologische gespreksvoering,Whisper-large-v3-fast,1374,148,-3.8,0.14296463506395787,0.8806266784667969
+interview-113.mp3,interviews,Whisper-large-v3-fast,1568,75,-3.0,0.13973509933774833,0.8693656921386719
+verzorgings-staat.mp3,interviews,Whisper-large-v3-fast,5312,386,-6.3,0.11858094864758918,0.918437123298645
+hulpverleners.mp3,interviews,Whisper-large-v3-fast,2448,119,-2.6,0.07216494845360824,0.9642120003700256
+ouderen-zorg.mp3,interviews,Whisper-large-v3-fast,6311,528,-0.9,0.09546817727424192,0.9149752855300903
+ouder-worden-2040.mp3,interviews,Whisper-large-v3-fast,2032,113,-0.3,0.14410705095213588,0.9180701971054077
+seksuele-voorlichting.mp3,interviews,Whisper-large-v3-fast,2715,208,0.5,0.07885968159940762,0.9252556562423706
+GGZ-exposure-therapie.mp3,interviews,Whisper-large-v3-fast,5267,285,-10.1,0.1937141727614153,0.8689528703689575
+bewegingsapparaat.mp3,Dokter Patient,Qwen3 ASR 1.7B,598,60,3.2,0.07925801011804384,0.9688118100166321
+ademhaling.mp3,Dokter Patient,Qwen3 ASR 1.7B,191,21,0.2,0.07368421052631578,0.9846879243850708
+diabetes.mp3,Dokter Patient,Qwen3 ASR 1.7B,561,68,-0.8,0.06801470588235294,0.9733410477638245
+hartziekten.mp3,Dokter Patient,Qwen3 ASR 1.7B,645,59,0.4,0.056338028169014086,0.9741159081459045
+oncologie.mp3,Dokter Patient,Qwen3 ASR 1.7B,583,58,-0.3,0.04679376083188908,0.9828675389289856
+abdomen.mp3,Dokter Patient,Qwen3 ASR 1.7B,585,49,0.4,0.07413793103448275,0.9743438363075256
+auto-immuunziekten.mp3,Dokter Patient,Qwen3 ASR 1.7B,706,70,-0.4,0.06017191977077364,0.9519001245498657
+neurologie.mp3,Dokter Patient,Qwen3 ASR 1.7B,788,75,2.4,0.06760204081632654,0.9770041704177856
+misbruik.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,1759,130,-3.6,0.2242822966507177,0.8062068819999695
+intake-bedrijf.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,2441,227,-0.6,0.06935215946843853,0.9362059831619263
+baan.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,3185,149,-4.7,0.20749185667752443,0.8128883838653564
+angststoornis.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,531,89,-3.8,0.1100196463654224,0.882789671421051
+antidepressiva.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,1606,73,-2.2,0.10243277848911651,0.8705713748931885
+studie.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,1431,154,-2.4,0.16764275256222547,0.8371930122375488
+vrijheden.mp3,Psychologische gespreksvoering,Qwen3 ASR 1.7B,1374,148,-4.9,0.18209179834462003,0.7954047322273254
+interview-113.mp3,interviews,Qwen3 ASR 1.7B,1568,75,-0.8,0.16821192052980133,0.8729397654533386
+verzorgings-staat.mp3,interviews,Qwen3 ASR 1.7B,5312,386,-31.2,0.40493923951391614,0.6535559296607971
+hulpverleners.mp3,interviews,Qwen3 ASR 1.7B,2448,119,-1.0,0.07844016136261767,0.952904224395752
+ouderen-zorg.mp3,interviews,Qwen3 ASR 1.7B,6311,528,-1.0,0.11562812395868044,0.8943896293640137
+ouder-worden-2040.mp3,interviews,Qwen3 ASR 1.7B,2032,113,0.2,0.14668039114770973,0.8993155360221863
+seksuele-voorlichting.mp3,interviews,Qwen3 ASR 1.7B,2715,208,0.0,0.12476860422065901,0.8851084113121033
+GGZ-exposure-therapie.mp3,interviews,Qwen3 ASR 1.7B,5267,285,-4.5,0.16208736904526586,0.8720518946647644
