@@ -28,13 +28,13 @@ class PipeLine3:
 
         headers = ['name', 'category', 'asr_model', 'genai_model', 'summary']
 
-        for file in os.listdir(Path('../output/asr output')):
-            if file in os.listdir(Path('../output/genai output')):
+        for file in os.listdir(Path('output/asr output')):
+            if file in os.listdir(Path('output/genai output')):
                 print(f"X ASR OUTPUT FILE {file} HAS ALREADY BEEN SUMMARIZED")
                 continue
-            with open(Path('../output/asr output') / file, 'r', encoding='utf-8') as f_r:
+            with open(Path('output/asr output') / file, 'r', encoding='utf-8') as f_r:
                 reader = csv.DictReader(f_r)
-                with open(Path('../output/genai output') / file, 'w', newline='', encoding='utf-8') as f_w:
+                with open(Path('output/genai output') / file, 'w', newline='', encoding='utf-8') as f_w:
                     writer = csv.DictWriter(f_w, fieldnames=headers)
                     writer.writeheader()
 
@@ -77,7 +77,7 @@ class PipeLine3:
             f_r.close()
             print(f' x-x-x-x-x SUCCESFULLY GENERATED SUMMARIES FOR ASR OUTPUT FILE {file} x-x-x-x-x ')
 
-a = PipeLine3(models=[Gemini, GPT])
+a = PipeLine3(models=[GPT])
 a.run()
 
 

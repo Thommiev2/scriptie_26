@@ -41,19 +41,56 @@ lexicon: dict[str, list[str]] = {
     'procent': ['%'],
     'euro': ['€'],
     'eigenlijk': ['eigelijk'],
-    'en zo': ['enzo']
+    'en zo': ['enzo'],
+    'wauw': ['wow', 'wouw'],
 }
 
 
 # Apply normalizer, basic lexicon and filler words removal
-def normalize(text):
-    text = text.lower()
-    text = basic_filler_words_regex.sub("", text)
-    text = other_filler_words_regex.sub("", text)
-    text = apply_ruleset(text, lexicon)
-    text = normalizer(text)
+def normalize(text, level=3):
+    if level > 0:
+        text = text.lower()
+    if level > 1:
+        text = basic_filler_words_regex.sub("", text)
+        text = other_filler_words_regex.sub("", text)
+        text = apply_ruleset(text, lexicon)
+    if level > 0:
+        text = normalizer(text)
+    if level > 2:
+        text = remove_stutters(text)
 
     return text
+
+
+def remove_stutters(text, sequence_length=1):
+
+    def remove_word_punctuation(w) -> (str, bool):
+        if w == '':
+            return w, False
+        return w[:-1] if ((w[-1] == ',') or w[-1] == '.') else w, True if w[-1] == '.' else False
+
+    text = text.split(' ')
+    stutter_index = []
+
+    for index in range(len(text)):
+        i = sequence_length
+        while index + i + sequence_length - 1 < len(text):
+            match = True
+            for sequence_offset in range(sequence_length):
+                if remove_word_punctuation(text[index + sequence_offset])[0] != remove_word_punctuation(text[index + sequence_offset + i])[0]:
+                    match = False
+                    break
+            if not match:
+                break
+
+            for word_index in range(sequence_length):
+                stutter_index.append(index + word_index + i)
+            i += sequence_length
+
+    for stutter in sorted(set(stutter_index), reverse=True):
+        text.pop(stutter)
+
+    return ' '.join(text)
 
 
 def build_pattern(variant: str) -> re.Pattern:
@@ -232,7 +269,8 @@ def ped_ges(t):
 clean_func = {'Dokter Patient': ped_ges, 'Psychologische gespreksvoering': ped_ges, 'Test': dok_pat, 'interviews': ped_ges}
 
 if __name__ == "__main__":
-    pass
+    text = 'ik ik kan misschien nou nee kijk nee, maar, soort, soort soort klein klij ik i i door door sta, sta. st. se osp paosk i moeo sm eisis i isi s ss mij zijn mij zijn door'
+    print(remove_stutters(text))
 #     examples = [
 #         "k zag t niet meer, das gek hè",
 #         "'s ochtends drink ik koffie en 's avonds thee",

@@ -2,69 +2,123 @@ import re
 
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, RobertaTokenizer
 from sentence_transformers import SentenceTransformer
-from utility_functions import align_sentences, normalize
+from utility_functions import align_sentences, normalize, remove_stutters
 
 import numpy as np
 import torch
 import jiwer
-# from bert_score import score
+from bert_score import score
 from pathlib import Path
 
-
 class SummaC:
-    def __init__(self):
+    def __init__(self, batch_size: int = 64, device: str = None):
         self.name = 'summac'
-        self.model = AutoModelForSequenceClassification.from_pretrained("LokaalHub/nl-nli-klein")
+        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.model = AutoModelForSequenceClassification.from_pretrained("LokaalHub/nl-nli-klein").to(self.device)
+        self.model.eval()
         self.tokenizer = AutoTokenizer.from_pretrained("LokaalHub/nl-nli-klein")
+        self.batch_size = batch_size
 
-    def calculate_score(self, transcript: str, summary: str) -> (float, int):
-
-        # validate input
+    def calculate_score(self, transcript: str, summary: str) -> float:
         if not isinstance(transcript, str):
             raise TypeError(f"Transcript is not of type string but of type {type(transcript)}")
         if not isinstance(summary, str):
             raise TypeError(f"Summary is not of type string but of type {type(summary)}")
 
         transcript = re.sub(r"[?!]+", '.', transcript)
-        h = re.sub(r"[?!]+", '.', summary)
+        summary_text = re.sub(r"[?!]+", '.', summary)
 
-        transcript = transcript.split('.')
-        summary = h.split('.')
+        transcript_sents = [normalize(s, 1).strip() for s in transcript.split('.')]
+        summary_sents = [normalize(s, 1).strip() for s in summary_text.split('.')]
 
-        # Array containing entailment scores for each pair of summary sentences with sentences from the original document
-        array = np.zeros((len(transcript), len(summary)))
+        # drop empty strings from splitting on '.'
+        transcript_sents = [s for s in transcript_sents if s]
+        summary_sents = [s for s in summary_sents if s]
 
-        for i, transcript_sentence in enumerate(transcript):
-            for j, summary_sentence in enumerate(summary):
+        # build all m*n pairs up front
+        pairs = [(t, s) for t in transcript_sents for s in summary_sents]
 
-                inputs = self.tokenizer(transcript_sentence, summary_sentence, truncation='only_first', max_length=256, return_tensors='pt')
+        entailment_scores = []
+        with torch.inference_mode():
+            for start in range(0, len(pairs), self.batch_size):
+                batch = pairs[start:start + self.batch_size]
+                first = [p[0] for p in batch]
+                second = [p[1] for p in batch]
 
-                with torch.no_grad():
-                    logits = self.model(**inputs).logits
+                inputs = self.tokenizer(
+                    first, second,
+                    truncation='only_first',
+                    max_length=256,
+                    padding=True,
+                    return_tensors='pt'
+                ).to(self.device)
 
-                prob_distr = logits.softmax(-1).squeeze().tolist()
-                # Takes just the entailment probability. Change later to incorporate other scores into single value
-                array[i, j] = prob_distr[0]
-                # print(f"gt: {transcript_sentence}, h: {summary_sentence}, entailment_score: {prob_distr[0]}")
+                logits = self.model(**inputs).logits
+                probs = logits.softmax(-1)[:, 0]  # entailment column
+                entailment_scores.extend(probs.tolist())
 
+        array = np.array(entailment_scores).reshape(len(transcript_sents), len(summary_sents))
         max_entailment_scores = np.max(array, axis=0)
 
-        return np.average(max_entailment_scores)
+        return float(np.average(max_entailment_scores))
+
+# class SummaC:
+#     def __init__(self):
+#         self.name = 'summac'
+#         self.model = AutoModelForSequenceClassification.from_pretrained("LokaalHub/nl-nli-klein")
+#         self.tokenizer = AutoTokenizer.from_pretrained("LokaalHub/nl-nli-klein")
+#
+#     def calculate_score(self, transcript: str, summary: str) -> (float, int):
+#
+#         # validate input
+#         if not isinstance(transcript, str):
+#             raise TypeError(f"Transcript is not of type string but of type {type(transcript)}")
+#         if not isinstance(summary, str):
+#             raise TypeError(f"Summary is not of type string but of type {type(summary)}")
+#
+#         transcript = re.sub(r"[?!]+", '.', transcript)
+#         h = re.sub(r"[?!]+", '.', summary)
+#
+#         transcript = transcript.split('.')
+#         transcript = [normalize(sentence, 1).strip() for sentence in transcript]
+#         summary = h.split('.')
+#         summary = [normalize(sentence, 1).strip() for sentence in summary]
+#
+#         # Array containing entailment scores for each pair of summary sentences with sentences from the original document
+#         array = np.zeros((len(transcript), len(summary)))
+#
+#         for i, transcript_sentence in enumerate(transcript):
+#             for j, summary_sentence in enumerate(summary):
+#
+#                 inputs = self.tokenizer(transcript_sentence, summary_sentence, truncation='only_first', max_length=256, return_tensors='pt')
+#
+#                 with torch.no_grad():
+#                     logits = self.model(**inputs).logits
+#
+#                 prob_distr = logits.softmax(-1).squeeze().tolist()
+#                 # Takes just the entailment probability. Change later to incorporate other scores into single value
+#                 array[i, j] = prob_distr[0]
+#                 # print(f"gt: {transcript_sentence}, h: {summary_sentence}, entailment_score: {prob_distr[0]}")
+#
+#         max_entailment_scores = np.max(array, axis=0)
+#
+#         return np.average(max_entailment_scores)
 
 
 class WER:
-    def __init__(self):
-        self.name = 'wer'
+    def __init__(self, level):
+        self.name = f"wer_{level}"
+        self.level = level
 
-    def calculate_score(self, gt, h) -> (float, int):
+    def calculate_score(self, gt, h) -> float:
 
         if not isinstance(gt, str):
             raise TypeError(f"Ground Truth is not of type string but of type {type(gt)} while calculating WER")
         if not isinstance(h, str):
             raise TypeError(f"Hypothesis is not of type string but of type {type(h)} while calculating WER")
 
-        gt = normalize(gt)
-        h = normalize(h)
+        gt = normalize(gt, self.level)
+        h = normalize(h, self.level)
 
         processed_words = jiwer.process_words(gt, h)
 
@@ -72,16 +126,17 @@ class WER:
 
 
 class SimDist:
-    def __init__(self):
-        self.name = 'simdist'
+    def __init__(self, level):
+        self.name = f'simdist_{level}'
         self.model = SentenceTransformer('NetherlandsForensicInstitute/robbert-2022-dutch-sentence-transformers')
+        self.level = level
 
-    def calculate_score(self, gt: str, h: str) -> (float, int):
+    def calculate_score(self, gt: str, h: str) -> float:
 
         gt, h = align_sentences(gt, h)
 
-        gt = [normalize(sentence) for sentence in gt]
-        h = [normalize(sentence) for sentence in h]
+        gt = [normalize(sentence, self.level) for sentence in gt]
+        h = [normalize(sentence, self.level) for sentence in h]
 
         gt_embed = self.model.encode(gt, convert_to_numpy=True)
         h_embed = self.model.encode(h, convert_to_numpy=True)
@@ -126,8 +181,8 @@ class BertScore:
         # for token in can_tokens:
         #     print(token)
 
-        reference = [reference]
-        candidate = [candidate]
+        reference = [normalize(reference, 1)]
+        candidate = [normalize(candidate, 1)]
 
         if not Path.exists(Path("hf_model")):
             model = SentenceTransformer('NetherlandsForensicInstitute/robbert-2022-dutch-sentence-transformers')
@@ -150,6 +205,8 @@ class Density:
         self.name = 'density'
 
     def calculate_score(self, transcript: str, summary: str):
+        transcript = normalize(transcript, 1)
+        summary = normalize(summary, 1)
         sequences = get_common_sequences(transcript, summary)
         score = sum(len(seq)**2 for seq in sequences['sequences']) / sequences['sum_length']
         return score
@@ -160,6 +217,8 @@ class Coverage:
         self.name = 'coverage'
 
     def calculate_score(self, transcript: str, summary: str):
+        transcript = normalize(transcript, 1),
+        summary = normalize(summary, 1)
         sequences = get_common_sequences(transcript, summary)
         score = sum(len(seq) for seq in sequences['sequences']) / sequences['sum_length']
         return score
@@ -171,6 +230,9 @@ class ROUGE:
         self.seq_length = n
 
     def calculate_score(self, reference: str, candidate: str):
+
+        reference = normalize(reference, 1)
+        candidate = normalize(candidate, 1)
 
         ref_summ = reference.split(' ')
         summ = candidate.split(' ')
@@ -235,6 +297,51 @@ def get_common_sequences(original_text, summary):
 
     return {'sequences': sequences, 'sum_length': l_sum}
 
+
+if __name__ == '__main__':
+    m_1 = [BertScore, ROUGE]
+    m_2 = [CompressionRate, Density, Coverage, SummaC]
+    GT = """
+    Code-switching: Het vloeiend uhhh uhhhh overstappen van de ene taal naar de andere binnen een zin of gesprek.
+    Bijvoorbeeld: "De patiënt heeft een goede prognosis, maar we moeten wel de follow-up in de gaten houden."
+    """
+
+    H = """
+        Code-switching uhhh we: Het overstappen van de ene taal naar ohhh de binnen een zin of gesprek hi.
+        Bijvoorbeeld: "De ptiënt hft een goede prognosis, maar we we we moeten wel de follow-up in de gaten houden."
+        """
+    a = """"
+    Following identification and de-duplication, we
+    extracted the article texts and summaries and further cleaned and filtered the dataset.
+    Article Text We used Readability5
+    to extract
+    HTML body content. Readability uses HTML
+    heuristics to extract the main content and title of
+    a page, producing article text without extraneous
+    HTML markup and images. Our preliminary testing, as well as comparison by Peters (2015), found
+    Readability to be one of the highest accuracy content extraction algorithms available. To exclude
+    inline advertising and image captions sometimes
+    present in extractions, we applied additional filtering of paragraphs with fewer than five words. We
+    excluded articles with no body text extracted.
+    Summary Metadata We extracted the article
+    summaries from the metadata available in the
+    HTML pages of articles. These summaries are
+    often written by newsroom editors and journalists to appear in social media distribution and
+    search results. While there is no standard metadata format for summaries online, common fields
+    are often present in the page’s HTML. Popular
+    metadata field types include: og:description, twitter:description, and description. In cases where"""
+
+    b = "extracted the hello image and no body text appear extracted twitter field types can not believe through accuracy body content highest excluded insane new story metadata"
+
+    for metric in m_1:
+        m = metric()
+        c = m.calculate_score(GT, H)
+        print(c, m.name)
+    for metric in m_2:
+        m = metric()
+        c = m.calculate_score(a, b)
+        print(c, m.name)
+
 ########################################### SummaC ################################################
 # premise = "Het contract gaat in op 1 mei 2026. Het is koud. Ik ben cool. oops"
 # hypothesis = "Het contract start in mei. vandaag voelt het koud aan"
@@ -244,14 +351,17 @@ def get_common_sequences(original_text, summary):
 
 ########################################### WER ################################################
 # GT = """
-#     Code-switching: Het vloeiend overstappen van de ene taal naar de andere binnen een zin of gesprek.
+#     Code-switching: Het vloeiend uhhh uhhhh overstappen van de ene taal naar de andere binnen een zin of gesprek.
 #     Bijvoorbeeld: "De patiënt heeft een goede prognosis, maar we moeten wel de follow-up in de gaten houden."
 #     """
 #
 # H = """
-#     Code-switching we: Het overstappen van de ene taal naar de binnen een zin of gesprek hi.
-#     Bijvoorbeeld: "De ptiënt hft een goede prognosis, maar we moeten wel de follow-up in de gaten houden."
+#     Code-switching uhhh we: Het overstappen van de ene taal naar ohhh de binnen een zin of gesprek hi.
+#     Bijvoorbeeld: "De ptiënt hft een goede prognosis, maar we we we moeten wel de follow-up in de gaten houden."
 #     """
+#
+# for i in range(1, 4):
+#     print(WER(i).calculate_score(GT, H))
 #
 # GT1 = "de kat loopt.\n hallo meneer. "
 # H1 = "de loopt.\n hallo meneer sam"
@@ -311,7 +421,7 @@ def get_common_sequences(original_text, summary):
 # metadata field types include: og:description, twitter:description, and description. In cases where"""
 #
 # b = "extracted the hello image and no body text appear extracted twitter field types can not believe through accuracy body content highest excluded insane new story metadata"
-#
+
 # gt = "yam nam happy happy yam yam"
 # h = "nam happy yam nam nam happy"
 #

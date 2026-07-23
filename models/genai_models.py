@@ -2,7 +2,6 @@ import os
 
 import openai.lib.streaming.chat
 from openai import OpenAI
-from google import genai
 import json
 import csv
 from pathlib import Path
@@ -49,27 +48,27 @@ class GPT(GenAI):
 
         messages = [{"role": 'user',
                      'content': f"{self.prompt}\n{text}"}]
-        if self.instructions:
+        with open('../prompt.md', "r", encoding="utf-8") as f:
             messages.insert(0, {"role": "system",
-                                "content": self.instructions})
-        print(f"> Attempting to summarize {name} from dataset {category}")
-        while True:
+                                "content": f.read()})
+            print(f"> Attempting to summarize {name} from dataset {category}")
+            while True:
 
-            try:
-                completion = self.client.chat.completions.create(
-                    model=self.model,
-                    messages=messages,
-                    temperature=0.3
-                )
-                break
-            except:
-                print(f'| Failed to summaries on the {n_tries} time')
-                time.sleep(cooldown * n_tries)
-                cooldown *= 2
+                try:
+                    completion = self.client.chat.completions.create(
+                        model=self.model,
+                        messages=messages,
+                        temperature=0.3
+                    )
+                    break
+                except:
+                    print(f'| Failed to summaries on the {n_tries} time')
+                    time.sleep(cooldown * n_tries)
+                    cooldown *= 2
 
-        print(f"< Transcription completed in {int((time.perf_counter() - timer) / 60)}:{int((time.perf_counter() - timer) % 60)} minutes")
+            print(f"< Transcription completed in {int((time.perf_counter() - timer) / 60)}:{int((time.perf_counter() - timer) % 60)} minutes")
 
-        return completion.choices[0].message.content
+            return completion.choices[0].message.content
 
     def summarize_large_batch(self):
         pass
@@ -94,65 +93,65 @@ class GPT(GenAI):
 
         return instruction
 
-
-class Gemini(GenAI):
-    def __init__(self):
-        super().__init__(instructions=summarization_instructions,
-                         prompt=summarization_prompt,
-                         model="gemini-2.5-flash",
-                         client=genai.Client())
-
-    def summarize_single_call(self, text, name, category, model):
-
-        timer = time.perf_counter()
-        n_tries = 1
-        cooldown = 5
-
-        print(f"> Attempting to summarize{' the ground truth of' if model == 'gt' else ''} {name} from dataset {category}{f' transcribed by {model}' if model != 'gt' else ''}")
-        while True:
-            try:
-                response = self.client.models.generate_content(
-                    model=self.model,
-                    contents=self.prompt + '\n' + text,
-                    config=genai.types.GenerateContentConfig(
-                        temperature=temperature,
-                        system_instruction=self.instructions
-                    ),
-                )
-                break
-            except:
-                print(f'| Failed to summaries on the {n_tries} time')
-                time.sleep(cooldown * n_tries)
-                n_tries += 1
-
-        print(f"< Transcription completed in {int((time.perf_counter() - timer) / 60)}:{int((time.perf_counter() - timer) % 60)} minutes")
-        text = response.text.replace('\n', "")
-
-        return text
-
-    def summarize_small_batch(self):
-        inline_requests = []
-        for file in os.listdir(Path('batch requests')):
-            if file.split('_')[0] == self.model:
-                with open(Path('batch requests') / file, 'r', encoding='utf-8') as f_r:
-                    for r in f_r:
-                        if not r:
-                            continue
-                        r = r.strip()
-                        request = json.loads(r)
-                        inline_request = {
-                            "contents": request['request']['contents'],
-                            'config': {
-                                'system_instruction': request['request']["systemInstruction"],
-                                "temperature": request['request']["generationConfig"]["temperature"]
-                            }
-                        }
-                        inline_requests.append(inline_request)
-                        # print(inline_request)
-                    f_r.close()
-
-        # # print(inline_requests)
-        batch_name = 'inline_requests_batch'
+#
+# class Gemini(GenAI):
+#     def __init__(self):
+#         super().__init__(instructions=summarization_instructions,
+#                          prompt=summarization_prompt,
+#                          model="gemini-2.5-flash",
+#                          client=genai.Client())
+#
+#     def summarize_single_call(self, text, name, category, model):
+#
+#         timer = time.perf_counter()
+#         n_tries = 1
+#         cooldown = 5
+#
+#         print(f"> Attempting to summarize{' the ground truth of' if model == 'gt' else ''} {name} from dataset {category}{f' transcribed by {model}' if model != 'gt' else ''}")
+#         while True:
+#             try:
+#                 response = self.client.models.generate_content(
+#                     model=self.model,
+#                     contents=self.prompt + '\n' + text,
+#                     config=genai.types.GenerateContentConfig(
+#                         temperature=temperature,
+#                         system_instruction=self.instructions
+#                     ),
+#                 )
+#                 break
+#             except:
+#                 print(f'| Failed to summaries on the {n_tries} time')
+#                 time.sleep(cooldown * n_tries)
+#                 n_tries += 1
+#
+#         print(f"< Transcription completed in {int((time.perf_counter() - timer) / 60)}:{int((time.perf_counter() - timer) % 60)} minutes")
+#         text = response.text.replace('\n', "")
+#
+#         return text
+#
+#     def summarize_small_batch(self):
+#         inline_requests = []
+#         for file in os.listdir(Path('batch requests')):
+#             if file.split('_')[0] == self.model:
+#                 with open(Path('batch requests') / file, 'r', encoding='utf-8') as f_r:
+#                     for r in f_r:
+#                         if not r:
+#                             continue
+#                         r = r.strip()
+#                         request = json.loads(r)
+#                         inline_request = {
+#                             "contents": request['request']['contents'],
+#                             'config': {
+#                                 'system_instruction': request['request']["systemInstruction"],
+#                                 "temperature": request['request']["generationConfig"]["temperature"]
+#                             }
+#                         }
+#                         inline_requests.append(inline_request)
+#                         # print(inline_request)
+#                     f_r.close()
+#
+#         # # print(inline_requests)
+#         batch_name = 'inline_requests_batch'
 
         # batch_job = self.client.batches.create(
         #     model=self.model,
@@ -221,33 +220,33 @@ class Gemini(GenAI):
         return request
 
 
-def generate_batch(models: list['GenAI'], save=False, normalize_input=False):
-    batched_data = os.listdir(Path('batch requests'))
-
-    for genai_model in models:
-        print("Initializing generative AI model")
-        genai_model = genai_model()
-        print(f"model {genai_model.model} initiated succesfully")
-
-        for file in os.listdir(Path('../output/asr output')):
-            batch_file_path = Path('batch requests') / Path(f'{genai_model.model}_{file}.jsonl')
-            if str(batch_file_path) not in batched_data:
-
-                with open(batch_file_path, 'w', newline='', encoding='utf-8') as f_w:
-                    with open(Path('../output/asr output') / file, 'r', encoding='utf-8') as f_r:
-                        reader = csv.DictReader(f_r)
-                        for i, row in enumerate(reader):
-                            request_id = f"{i}_{row['name']}_{row['category']}_{row['model']}"
-                            text = normalize(row['transcript']) if normalize_input else row['transcript']
-                            request = genai_model.instruction_format(request_id, text)
-
-                            json.dump(request, f_w, ensure_ascii=False)
-                            f_w.write('\n')
-                        f_r.close()
-                print(f"generated batch for ASR output file {file}")
-                f_w.close()
-            else:
-                print(f"ASR ouput file {file} has already been converted to a batch")
+# def generate_batch(models: list['GenAI'], save=False, normalize_input=False):
+#     batched_data = os.listdir(Path('batch requests'))
+#
+#     for genai_model in models:
+#         print("[SYS]    Initializing generative AI model")
+#         genai_model = genai_model()
+#         print(f"[SYS] v  model {genai_model.model} initiated succesfully")
+#
+#         for file in os.listdir(Path('output/asr output')):
+#             batch_file_path = Path('batch requests') / Path(f'{genai_model.model}_{file}.jsonl')
+#             if str(batch_file_path) not in batched_data:
+#
+#                 with open(batch_file_path, 'w', newline='', encoding='utf-8') as f_w:
+#                     with open(Path('../output/asr output') / file, 'r', encoding='utf-8') as f_r:
+#                         reader = csv.DictReader(f_r)
+#                         for i, row in enumerate(reader):
+#                             request_id = f"{i}_{row['name']}_{row['category']}_{row['model']}"
+#                             text = normalize(row['transcript']) if normalize_input else row['transcript']
+#                             request = genai_model.instruction_format(request_id, text)
+#
+#                             json.dump(request, f_w, ensure_ascii=False)
+#                             f_w.write('\n')
+#                         f_r.close()
+#                 print(f"generated batch for ASR output file {file}")
+#                 f_w.close()
+#             else:
+#                 print(f"ASR ouput file {file} has already been converted to a batch")
 
         # if not save:
         #     yield batch_file_path

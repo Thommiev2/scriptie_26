@@ -21,7 +21,7 @@ import csv
 class PipeLine2:
     def __init__(self, metrics):
         self.asr_output = Path("output/asr output")
-        self.metrics = [metric() for metric in metrics]
+        self.metrics = metrics
 
     def run(self):
 
@@ -40,7 +40,7 @@ class PipeLine2:
                         reader = csv.DictReader(f_r)
                         for row in reader:
 
-                            if row['name'] == 'ge.mp3' or row['name'] == 'metadata.csv':
+                            if row['name'] == 'metadata.csv':
                                 continue
 
                             ground_truth_path = Path('dataset') / row['category'] / Path('ground truth') / Path(f"{row['name'][:row['name'].find('.')]}.txt")
@@ -84,7 +84,11 @@ class PipeLine2:
 
 
 if __name__ == '__main__':
-    a = PipeLine2([WER, SimDist])
+    metrics = []
+    for i in range(1, 4):
+        metrics += [WER(level=i), SimDist(level=i)]
+
+    a = PipeLine2(metrics=metrics)
     a.run()
 
 

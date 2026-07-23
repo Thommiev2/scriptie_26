@@ -5,7 +5,7 @@ if __name__ != "__main__":
     from models.base_model import BaseModel, CONFIG
 else:
     from base_model import BaseModel, CONFIG
-from transformers import AutoProcessor, CohereAsrForConditionalGeneration, VibeVoiceAsrForConditionalGeneration
+from transformers import AutoProcessor, CohereAsrForConditionalGeneration
 import time
 from pathlib import Path
 import librosa
@@ -54,39 +54,6 @@ class CohereAsr(BaseModel):
         print(f"[CHR] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
 
         return transcript, process_time
-
-
-# class VibeVoiceAsr(BaseModel):
-#     def __init__(self):
-#         super().__init__(
-#             name="Microsoft VibeVoice",
-#             model=VibeVoiceAsrForConditionalGeneration.from_pretrained(
-#                 "microsoft/VibeVoice-ASR-HF",
-#                 device_map="auto",
-#                 dtype=torch.float16
-#             ),
-#             processor=AutoProcessor.from_pretrained("microsoft/VibeVoice-ASR-HF")
-#         )
-#
-#     def transcribe(self, data_file: dict) -> (str, float):
-#
-#         timer = time.perf_counter()
-#
-#         print(f"[VBV] >  Attempting to transcribe {data_file['name']} from dataset {data_file['category']}")
-#
-#         inputs = self.processor.apply_transcription_request(audio=data_file['audio'])
-#         inputs = inputs.to(self.model.device, self.model.dtype)
-#
-#         output_ids = self.model.generate(**inputs, max_new_tokens=512)
-#         generated_ids = output_ids[:, inputs["input_ids"].shape[1]:]
-#
-#         transcript = self.processor.decode(generated_ids, return_format="transcription_only")[0]
-#
-#         process_time = (time.perf_counter() - timer)
-#         seconds = int(process_time % 60)
-#         print(f"[VBV] <  Transcription completed in {int(process_time/60)}:{'0' if seconds < 10 else ''}{seconds} minutes")
-#
-#         return transcript, process_time
 
 
 if __name__ == "__main__":
