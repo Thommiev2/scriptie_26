@@ -1,0 +1,132 @@
+name,category,asr_model,genai_model,sum_num_words,bertscore,rouge,compression_rate,density,coverage,summac
+bewegingsapparaat,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,389,"[1.0, 1.0, 1.0]",1.0,0.7265906362545018,0.7223650385604113,0.0,0.43231670050458476
+verzorgings-staat,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,339,"[1.0, 1.0, 1.0]",1.0,0.08146057379684876,1.2153392330383481,0.0,0.31801752044874076
+diabetes,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,348,"[1.0, 1.0, 1.0]",1.0,0.7092028737598358,0.9109195402298851,0.0,0.3855897846321265
+hulpverleners,interviews,gt,transcript_GPT-5_5-medium,311,"[1.0, 1.0, 1.0]",1.0,0.16225562848472017,1.8167202572347267,0.0,0.481035031770405
+ademhaling,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,230,"[1.0, 1.0, 1.0]",1.0,1.293774319066148,0.6391304347826087,0.0,0.22204011810176513
+bewegingsapparaat,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,389,"[1.0, 1.0, 1.0]",1.0,0.7265906362545018,0.7223650385604113,0.0,0.43231670050458476
+GGZ-exposure-therapie,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,301,"[1.0, 1.0, 1.0]",1.0,0.07635229594580062,1.0066445182724253,0.0,0.6252697223708743
+ademhaling,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,230,"[1.0, 1.0, 1.0]",1.0,1.293774319066148,0.6391304347826087,0.0,0.22204011810176513
+neurologie,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,387,"[1.0, 1.0, 1.0]",1.0,0.5724121557454891,0.9147286821705426,0.0,0.539322309816877
+abdomen,Dokter Patient,gt,transcript_GPT-5_5-medium,429,"[1.0, 1.0, 1.0]",1.0,0.8317586101798232,0.8461538461538461,0.0,0.4749051563201412
+studie,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,352,"[1.0, 1.0, 1.0]",1.0,0.2936966694192128,1.0056818181818181,0.0,0.3862053417953952
+verzorgings-staat,interviews,gt,transcript_GPT-5_5-medium,339,"[1.0, 1.0, 1.0]",1.0,0.08146057379684876,1.2153392330383481,0.0,0.31801752044874076
+diabetes,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,348,"[1.0, 1.0, 1.0]",1.0,0.7092028737598358,0.9109195402298851,0.0,0.3855897846321265
+intake-bedrijf,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,467,"[1.0, 1.0, 1.0]",1.0,0.23003194888178913,1.1434689507494646,0.0,0.3896007385637079
+angststoornis,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,257,"[1.0, 1.0, 1.0]",1.0,0.5879450123369757,0.6848249027237354,0.0,0.19435286835620277
+interview-113,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,271,"[1.0, 1.0, 1.0]",1.0,0.22069630165040358,1.5202952029520296,0.0,0.48039879153172177
+misbruik,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,454,"[1.0, 1.0, 1.0]",1.0,0.30363112391930835,0.8193832599118943,0.0,0.4153140043058703
+hartziekten,Dokter Patient,gt,transcript_GPT-5_5-medium,364,"[1.0, 1.0, 1.0]",1.0,0.6585081585081585,0.6758241758241759,0.0,0.3654147058982274
+ouder-worden-2040,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,262,"[1.0, 1.0, 1.0]",1.0,0.17095283759044547,1.1526717557251909,0.0,0.550580364651978
+diabetes,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,348,"[1.0, 1.0, 1.0]",1.0,0.7092028737598358,0.9109195402298851,0.0,0.3855897846321265
+bewegingsapparaat,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,389,"[1.0, 1.0, 1.0]",1.0,0.7265906362545018,0.7223650385604113,0.0,0.43231670050458476
+hartziekten,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,364,"[1.0, 1.0, 1.0]",1.0,0.6585081585081585,0.6758241758241759,0.0,0.3654147058982274
+vrijheden,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,379,"[1.0, 1.0, 1.0]",1.0,0.3408929836995039,0.7546174142480211,0.0,0.3379991244790809
+verzorgings-staat,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,339,"[1.0, 1.0, 1.0]",1.0,0.08146057379684876,1.2153392330383481,0.0,0.31801752044874076
+oncologie,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,390,"[1.0, 1.0, 1.0]",1.0,0.7669270833333334,1.0974358974358975,0.0,0.40928786596463573
+intake-bedrijf,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,467,"[1.0, 1.0, 1.0]",1.0,0.23003194888178913,1.1434689507494646,0.0,0.3896007385637079
+studie,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,352,"[1.0, 1.0, 1.0]",1.0,0.2936966694192128,1.0056818181818181,0.0,0.3862053417953952
+studie,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,352,"[1.0, 1.0, 1.0]",1.0,0.2936966694192128,1.0056818181818181,0.0,0.3862053417953952
+auto-immuunziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,397,"[1.0, 1.0, 1.0]",1.0,0.657080846446012,1.0780856423173804,0.0,0.46590238141224666
+seksuele-voorlichting,interviews,gt,transcript_GPT-5_5-medium,296,"[1.0, 1.0, 1.0]",1.0,0.1352881698685541,1.5202702702702702,0.0,0.3254502835787005
+abdomen,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,429,"[1.0, 1.0, 1.0]",1.0,0.8317586101798232,0.8461538461538461,0.0,0.4749051563201412
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,467,"[1.0, 1.0, 1.0]",1.0,0.23003194888178913,1.1434689507494646,0.0,0.3896007385637079
+GGZ-exposure-therapie,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,301,"[1.0, 1.0, 1.0]",1.0,0.07635229594580062,1.0066445182724253,0.0,0.6252697223708743
+vrijheden,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,379,"[1.0, 1.0, 1.0]",1.0,0.3408929836995039,0.7546174142480211,0.0,0.3379991244790809
+hulpverleners,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,311,"[1.0, 1.0, 1.0]",1.0,0.16225562848472017,1.8167202572347267,0.0,0.481035031770405
+ademhaling,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,230,"[1.0, 1.0, 1.0]",1.0,1.293774319066148,0.6391304347826087,0.0,0.22204011810176513
+ouder-worden-2040,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,262,"[1.0, 1.0, 1.0]",1.0,0.17095283759044547,1.1526717557251909,0.0,0.550580364651978
+misbruik,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,454,"[1.0, 1.0, 1.0]",1.0,0.30363112391930835,0.8193832599118943,0.0,0.4153140043058703
+auto-immuunziekten,Dokter Patient,gt,transcript_GPT-5_5-medium,397,"[1.0, 1.0, 1.0]",1.0,0.657080846446012,1.0780856423173804,0.0,0.46590238141224666
+GGZ-exposure-therapie,interviews,gt,transcript_GPT-5_5-medium,301,"[1.0, 1.0, 1.0]",1.0,0.07635229594580062,1.0066445182724253,0.0,0.6252697223708743
+vrijheden,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,379,"[1.0, 1.0, 1.0]",1.0,0.3408929836995039,0.7546174142480211,0.0,0.3379991244790809
+oncologie,Dokter Patient,gt,transcript_GPT-5_5-medium,390,"[1.0, 1.0, 1.0]",1.0,0.7669270833333334,1.0974358974358975,0.0,0.40928786596463573
+oncologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,390,"[1.0, 1.0, 1.0]",1.0,0.7669270833333334,1.0974358974358975,0.0,0.40928786596463573
+misbruik,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,454,"[1.0, 1.0, 1.0]",1.0,0.30363112391930835,0.8193832599118943,0.0,0.4153140043058703
+diabetes,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,348,"[1.0, 1.0, 1.0]",1.0,0.7092028737598358,0.9109195402298851,0.0,0.3855897846321265
+oncologie,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,390,"[1.0, 1.0, 1.0]",1.0,0.7669270833333334,1.0974358974358975,0.0,0.40928786596463573
+baan,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,419,"[1.0, 1.0, 1.0]",1.0,0.15878854760591013,0.8997613365155132,0.0,0.50529216726621
+intake-bedrijf,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,467,"[1.0, 1.0, 1.0]",1.0,0.23003194888178913,1.1434689507494646,0.0,0.3896007385637079
+antidepressiva,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,411,"[1.0, 1.0, 1.0]",1.0,0.31749073719177207,0.8710462287104623,0.0,0.3856674659031409
+GGZ-exposure-therapie,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,301,"[1.0, 1.0, 1.0]",1.0,0.07635229594580062,1.0066445182724253,0.0,0.6252697223708743
+hartziekten,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,364,"[1.0, 1.0, 1.0]",1.0,0.6585081585081585,0.6758241758241759,0.0,0.3654147058982274
+ouder-worden-2040,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,262,"[1.0, 1.0, 1.0]",1.0,0.17095283759044547,1.1526717557251909,0.0,0.550580364651978
+abdomen,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,429,"[1.0, 1.0, 1.0]",1.0,0.8317586101798232,0.8461538461538461,0.0,0.4749051563201412
+antidepressiva,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,411,"[1.0, 1.0, 1.0]",1.0,0.31749073719177207,0.8710462287104623,0.0,0.3856674659031409
+baan,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,419,"[1.0, 1.0, 1.0]",1.0,0.15878854760591013,0.8997613365155132,0.0,0.50529216726621
+verzorgings-staat,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,339,"[1.0, 1.0, 1.0]",1.0,0.08146057379684876,1.2153392330383481,0.0,0.31801752044874076
+seksuele-voorlichting,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,296,"[1.0, 1.0, 1.0]",1.0,0.1352881698685541,1.5202702702702702,0.0,0.3254502835787005
+baan,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,419,"[1.0, 1.0, 1.0]",1.0,0.15878854760591013,0.8997613365155132,0.0,0.50529216726621
+seksuele-voorlichting,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,296,"[1.0, 1.0, 1.0]",1.0,0.1352881698685541,1.5202702702702702,0.0,0.3254502835787005
+seksuele-voorlichting,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,296,"[1.0, 1.0, 1.0]",1.0,0.1352881698685541,1.5202702702702702,0.0,0.3254502835787005
+neurologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,387,"[1.0, 1.0, 1.0]",1.0,0.5724121557454891,0.9147286821705426,0.0,0.539322309816877
+auto-immuunziekten,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,397,"[1.0, 1.0, 1.0]",1.0,0.657080846446012,1.0780856423173804,0.0,0.46590238141224666
+ouderen-zorg,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,329,"[1.0, 1.0, 1.0]",1.0,0.06529932509422386,1.1884498480243162,0.0,0.4285997152328491
+diabetes,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,348,"[1.0, 1.0, 1.0]",1.0,0.7092028737598358,0.9109195402298851,0.0,0.3855897846321265
+ouderen-zorg,interviews,gt,transcript_GPT-5_5-medium,329,"[1.0, 1.0, 1.0]",1.0,0.06529932509422386,1.1884498480243162,0.0,0.4285997152328491
+angststoornis,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,257,"[1.0, 1.0, 1.0]",1.0,0.5879450123369757,0.6848249027237354,0.0,0.19435286835620277
+intake-bedrijf,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,467,"[1.0, 1.0, 1.0]",1.0,0.23003194888178913,1.1434689507494646,0.0,0.3896007385637079
+neurologie,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,387,"[1.0, 1.0, 1.0]",1.0,0.5724121557454891,0.9147286821705426,0.0,0.539322309816877
+oncologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,390,"[1.0, 1.0, 1.0]",1.0,0.7669270833333334,1.0974358974358975,0.0,0.40928786596463573
+baan,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,419,"[1.0, 1.0, 1.0]",1.0,0.15878854760591013,0.8997613365155132,0.0,0.50529216726621
+angststoornis,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,257,"[1.0, 1.0, 1.0]",1.0,0.5879450123369757,0.6848249027237354,0.0,0.19435286835620277
+interview-113,interviews,gt,transcript_GPT-5_5-medium,271,"[1.0, 1.0, 1.0]",1.0,0.22069630165040358,1.5202952029520296,0.0,0.48039879153172177
+ouder-worden-2040,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,262,"[1.0, 1.0, 1.0]",1.0,0.17095283759044547,1.1526717557251909,0.0,0.550580364651978
+ouder-worden-2040,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,262,"[1.0, 1.0, 1.0]",1.0,0.17095283759044547,1.1526717557251909,0.0,0.550580364651978
+studie,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,352,"[1.0, 1.0, 1.0]",1.0,0.2936966694192128,1.0056818181818181,0.0,0.3862053417953952
+hulpverleners,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,311,"[1.0, 1.0, 1.0]",1.0,0.16225562848472017,1.8167202572347267,0.0,0.481035031770405
+baan,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,419,"[1.0, 1.0, 1.0]",1.0,0.15878854760591013,0.8997613365155132,0.0,0.50529216726621
+diabetes,Dokter Patient,gt,transcript_GPT-5_5-medium,348,"[1.0, 1.0, 1.0]",1.0,0.7092028737598358,0.9109195402298851,0.0,0.3855897846321265
+interview-113,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,271,"[1.0, 1.0, 1.0]",1.0,0.22069630165040358,1.5202952029520296,0.0,0.48039879153172177
+hartziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,364,"[1.0, 1.0, 1.0]",1.0,0.6585081585081585,0.6758241758241759,0.0,0.3654147058982274
+neurologie,Dokter Patient,gt,transcript_GPT-5_5-medium,387,"[1.0, 1.0, 1.0]",1.0,0.5724121557454891,0.9147286821705426,0.0,0.539322309816877
+angststoornis,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,257,"[1.0, 1.0, 1.0]",1.0,0.5879450123369757,0.6848249027237354,0.0,0.19435286835620277
+baan,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,419,"[1.0, 1.0, 1.0]",1.0,0.15878854760591013,0.8997613365155132,0.0,0.50529216726621
+studie,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,352,"[1.0, 1.0, 1.0]",1.0,0.2936966694192128,1.0056818181818181,0.0,0.3862053417953952
+verzorgings-staat,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,339,"[1.0, 1.0, 1.0]",1.0,0.08146057379684876,1.2153392330383481,0.0,0.31801752044874076
+hulpverleners,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,311,"[1.0, 1.0, 1.0]",1.0,0.16225562848472017,1.8167202572347267,0.0,0.481035031770405
+seksuele-voorlichting,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,296,"[1.0, 1.0, 1.0]",1.0,0.1352881698685541,1.5202702702702702,0.0,0.3254502835787005
+angststoornis,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,257,"[1.0, 1.0, 1.0]",1.0,0.5879450123369757,0.6848249027237354,0.0,0.19435286835620277
+oncologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,390,"[1.0, 1.0, 1.0]",1.0,0.7669270833333334,1.0974358974358975,0.0,0.40928786596463573
+misbruik,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,454,"[1.0, 1.0, 1.0]",1.0,0.30363112391930835,0.8193832599118943,0.0,0.4153140043058703
+hulpverleners,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,311,"[1.0, 1.0, 1.0]",1.0,0.16225562848472017,1.8167202572347267,0.0,0.481035031770405
+angststoornis,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,257,"[1.0, 1.0, 1.0]",1.0,0.5879450123369757,0.6848249027237354,0.0,0.19435286835620277
+vrijheden,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,379,"[1.0, 1.0, 1.0]",1.0,0.3408929836995039,0.7546174142480211,0.0,0.3379991244790809
+antidepressiva,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,411,"[1.0, 1.0, 1.0]",1.0,0.31749073719177207,0.8710462287104623,0.0,0.3856674659031409
+abdomen,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,429,"[1.0, 1.0, 1.0]",1.0,0.8317586101798232,0.8461538461538461,0.0,0.4749051563201412
+bewegingsapparaat,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,389,"[1.0, 1.0, 1.0]",1.0,0.7265906362545018,0.7223650385604113,0.0,0.43231670050458476
+interview-113,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,271,"[1.0, 1.0, 1.0]",1.0,0.22069630165040358,1.5202952029520296,0.0,0.48039879153172177
+auto-immuunziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,397,"[1.0, 1.0, 1.0]",1.0,0.657080846446012,1.0780856423173804,0.0,0.46590238141224666
+auto-immuunziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,397,"[1.0, 1.0, 1.0]",1.0,0.657080846446012,1.0780856423173804,0.0,0.46590238141224666
+vrijheden,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,379,"[1.0, 1.0, 1.0]",1.0,0.3408929836995039,0.7546174142480211,0.0,0.3379991244790809
+GGZ-exposure-therapie,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,301,"[1.0, 1.0, 1.0]",1.0,0.07635229594580062,1.0066445182724253,0.0,0.6252697223708743
+bewegingsapparaat,Dokter Patient,gt,transcript_GPT-5_5-medium,389,"[1.0, 1.0, 1.0]",1.0,0.7265906362545018,0.7223650385604113,0.0,0.43231670050458476
+vrijheden,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,379,"[1.0, 1.0, 1.0]",1.0,0.3408929836995039,0.7546174142480211,0.0,0.3379991244790809
+ouderen-zorg,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,329,"[1.0, 1.0, 1.0]",1.0,0.06529932509422386,1.1884498480243162,0.0,0.4285997152328491
+hartziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,364,"[1.0, 1.0, 1.0]",1.0,0.6585081585081585,0.6758241758241759,0.0,0.3654147058982274
+antidepressiva,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,411,"[1.0, 1.0, 1.0]",1.0,0.31749073719177207,0.8710462287104623,0.0,0.3856674659031409
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,467,"[1.0, 1.0, 1.0]",1.0,0.23003194888178913,1.1434689507494646,0.0,0.3896007385637079
+verzorgings-staat,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,339,"[1.0, 1.0, 1.0]",1.0,0.08146057379684876,1.2153392330383481,0.0,0.31801752044874076
+abdomen,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,429,"[1.0, 1.0, 1.0]",1.0,0.8317586101798232,0.8461538461538461,0.0,0.4749051563201412
+hartziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,364,"[1.0, 1.0, 1.0]",1.0,0.6585081585081585,0.6758241758241759,0.0,0.3654147058982274
+ademhaling,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,230,"[1.0, 1.0, 1.0]",1.0,1.293774319066148,0.6391304347826087,0.0,0.22204011810176513
+misbruik,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,454,"[1.0, 1.0, 1.0]",1.0,0.30363112391930835,0.8193832599118943,0.0,0.4153140043058703
+ademhaling,Dokter Patient,gt,transcript_GPT-5_5-medium,230,"[1.0, 1.0, 1.0]",1.0,1.293774319066148,0.6391304347826087,0.0,0.22204011810176513
+neurologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,387,"[1.0, 1.0, 1.0]",1.0,0.5724121557454891,0.9147286821705426,0.0,0.539322309816877
+interview-113,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,271,"[1.0, 1.0, 1.0]",1.0,0.22069630165040358,1.5202952029520296,0.0,0.48039879153172177
+abdomen,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,429,"[1.0, 1.0, 1.0]",1.0,0.8317586101798232,0.8461538461538461,0.0,0.4749051563201412
+auto-immuunziekten,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,397,"[1.0, 1.0, 1.0]",1.0,0.657080846446012,1.0780856423173804,0.0,0.46590238141224666
+misbruik,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,454,"[1.0, 1.0, 1.0]",1.0,0.30363112391930835,0.8193832599118943,0.0,0.4153140043058703
+ouderen-zorg,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,329,"[1.0, 1.0, 1.0]",1.0,0.06529932509422386,1.1884498480243162,0.0,0.4285997152328491
+hulpverleners,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,311,"[1.0, 1.0, 1.0]",1.0,0.16225562848472017,1.8167202572347267,0.0,0.481035031770405
+ademhaling,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,230,"[1.0, 1.0, 1.0]",1.0,1.293774319066148,0.6391304347826087,0.0,0.22204011810176513
+ouderen-zorg,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,329,"[1.0, 1.0, 1.0]",1.0,0.06529932509422386,1.1884498480243162,0.0,0.4285997152328491
+bewegingsapparaat,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,389,"[1.0, 1.0, 1.0]",1.0,0.7265906362545018,0.7223650385604113,0.0,0.43231670050458476
+antidepressiva,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,411,"[1.0, 1.0, 1.0]",1.0,0.31749073719177207,0.8710462287104623,0.0,0.3856674659031409
+interview-113,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,271,"[1.0, 1.0, 1.0]",1.0,0.22069630165040358,1.5202952029520296,0.0,0.48039879153172177
+ouder-worden-2040,interviews,gt,transcript_GPT-5_5-medium,262,"[1.0, 1.0, 1.0]",1.0,0.17095283759044547,1.1526717557251909,0.0,0.550580364651978
+neurologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,387,"[1.0, 1.0, 1.0]",1.0,0.5724121557454891,0.9147286821705426,0.0,0.539322309816877
+studie,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,352,"[1.0, 1.0, 1.0]",1.0,0.2936966694192128,1.0056818181818181,0.0,0.3862053417953952
+antidepressiva,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,411,"[1.0, 1.0, 1.0]",1.0,0.31749073719177207,0.8710462287104623,0.0,0.3856674659031409
+GGZ-exposure-therapie,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,301,"[1.0, 1.0, 1.0]",1.0,0.07635229594580062,1.0066445182724253,0.0,0.6252697223708743
+ouderen-zorg,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,329,"[1.0, 1.0, 1.0]",1.0,0.06529932509422386,1.1884498480243162,0.0,0.4285997152328491
