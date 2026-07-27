@@ -1,0 +1,132 @@
+name,category,asr_model,genai_model,sum_num_words,coverage
+abdomen,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,250,0.52
+ademhaling,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,104,0.41346153846153844
+auto-immuunziekten,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,213,0.4084507042253521
+bewegingsapparaat,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,377,0.38726790450928383
+diabetes,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,209,0.430622009569378
+hartziekten,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,240,0.44166666666666665
+neurologie,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,288,0.3888888888888889
+oncologie,Dokter Patient,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,355,0.3126760563380282
+GGZ-exposure-therapie,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,335,0.6208955223880597
+hulpverleners,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,428,0.6261682242990654
+interview-113,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,197,0.6548223350253807
+ouder-worden-2040,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,313,0.597444089456869
+ouderen-zorg,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,426,0.5821596244131455
+seksuele-voorlichting,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,350,0.6514285714285715
+verzorgings-staat,interviews,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,378,0.6031746031746031
+angststoornis,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,317,0.3753943217665615
+antidepressiva,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,272,0.41911764705882354
+baan,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,273,0.5201465201465202
+intake-bedrijf,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,823,0.34264884568651277
+misbruik,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,531,0.3352165725047081
+studie,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,255,0.5333333333333333
+vrijheden,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Gemini_3.1_Pro-high,406,0.32019704433497537
+abdomen,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,225,0.49777777777777776
+ademhaling,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,127,0.4330708661417323
+auto-immuunziekten,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,162,0.49382716049382713
+bewegingsapparaat,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,245,0.4530612244897959
+diabetes,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,176,0.45454545454545453
+hartziekten,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,362,0.30662983425414364
+neurologie,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,208,0.4182692307692308
+oncologie,Dokter Patient,gt,transcript_Gemini_3.1_Pro-high,376,0.2845744680851064
+GGZ-exposure-therapie,interviews,gt,transcript_Gemini_3.1_Pro-high,415,0.6771084337349398
+hulpverleners,interviews,gt,transcript_Gemini_3.1_Pro-high,588,0.6156462585034014
+interview-113,interviews,gt,transcript_Gemini_3.1_Pro-high,281,0.5729537366548043
+ouder-worden-2040,interviews,gt,transcript_Gemini_3.1_Pro-high,293,0.6143344709897611
+ouderen-zorg,interviews,gt,transcript_Gemini_3.1_Pro-high,412,0.5169902912621359
+seksuele-voorlichting,interviews,gt,transcript_Gemini_3.1_Pro-high,338,0.665680473372781
+verzorgings-staat,interviews,gt,transcript_Gemini_3.1_Pro-high,476,0.5777310924369747
+angststoornis,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,264,0.44696969696969696
+antidepressiva,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,534,0.352059925093633
+baan,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,312,0.47435897435897434
+intake-bedrijf,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,536,0.3582089552238806
+misbruik,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,536,0.27238805970149255
+studie,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,298,0.48322147651006714
+vrijheden,Psychologische gespreksvoering,gt,transcript_Gemini_3.1_Pro-high,436,0.30275229357798167
+abdomen,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,297,0.4882154882154882
+ademhaling,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,88,0.38636363636363635
+auto-immuunziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,235,0.4553191489361702
+bewegingsapparaat,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,280,0.42142857142857143
+diabetes,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,224,0.48214285714285715
+hartziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,221,0.416289592760181
+neurologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,263,0.4372623574144487
+oncologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,377,0.3103448275862069
+GGZ-exposure-therapie,interviews,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,483,0.6273291925465838
+hulpverleners,interviews,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,404,0.6955445544554455
+interview-113,interviews,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,311,0.5016077170418006
+ouder-worden-2040,interviews,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,457,0.5689277899343544
+ouderen-zorg,interviews,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,555,0.5351351351351351
+verzorgings-staat,interviews,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,366,0.5983606557377049
+angststoornis,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,305,0.35737704918032787
+antidepressiva,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,267,0.4606741573033708
+baan,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,312,0.5128205128205128
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,757,0.3527080581241744
+misbruik,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,484,0.26859504132231404
+studie,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,223,0.5515695067264574
+vrijheden,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Gemini_3.1_Pro-high,345,0.42028985507246375
+abdomen,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,265,0.5132075471698113
+ademhaling,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,114,0.41228070175438597
+auto-immuunziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,219,0.5388127853881278
+bewegingsapparaat,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,257,0.46303501945525294
+diabetes,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,379,0.27440633245382584
+hartziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,184,0.3967391304347826
+neurologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,375,0.32
+oncologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,470,0.2957446808510638
+GGZ-exposure-therapie,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,384,0.5989583333333334
+hulpverleners,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,484,0.628099173553719
+interview-113,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,273,0.5494505494505495
+ouder-worden-2040,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,327,0.5749235474006116
+ouderen-zorg,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,466,0.5643776824034334
+seksuele-voorlichting,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,242,0.6818181818181818
+verzorgings-staat,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,374,0.553475935828877
+angststoornis,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,261,0.421455938697318
+antidepressiva,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,257,0.4591439688715953
+baan,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,492,0.35772357723577236
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,667,0.34182908545727136
+misbruik,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,525,0.29714285714285715
+studie,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,530,0.38113207547169814
+vrijheden,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Gemini_3.1_Pro-high,358,0.40782122905027934
+abdomen,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,255,0.5019607843137255
+ademhaling,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,117,0.358974358974359
+auto-immuunziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,190,0.4473684210526316
+bewegingsapparaat,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,242,0.4256198347107438
+diabetes,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,252,0.40476190476190477
+hartziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,201,0.42786069651741293
+neurologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,236,0.4406779661016949
+oncologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,411,0.25304136253041365
+GGZ-exposure-therapie,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,438,0.6461187214611872
+hulpverleners,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,504,0.6567460317460317
+interview-113,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,233,0.5879828326180258
+ouder-worden-2040,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,268,0.5597014925373134
+ouderen-zorg,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,456,0.5679824561403509
+seksuele-voorlichting,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,423,0.6122931442080378
+verzorgings-staat,interviews,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,357,0.6162464985994398
+angststoornis,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,286,0.44405594405594406
+antidepressiva,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,239,0.4811715481171548
+baan,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,254,0.4645669291338583
+intake-bedrijf,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,595,0.3865546218487395
+misbruik,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,427,0.31381733021077285
+studie,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,361,0.554016620498615
+vrijheden,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Gemini_3.1_Pro-high,259,0.4092664092664093
+abdomen,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,269,0.4684014869888476
+ademhaling,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,110,0.41818181818181815
+auto-immuunziekten,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,181,0.43646408839779005
+bewegingsapparaat,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,232,0.4827586206896552
+diabetes,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,413,0.2687651331719128
+hartziekten,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,193,0.41450777202072536
+neurologie,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,311,0.4662379421221865
+oncologie,Dokter Patient,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,362,0.3342541436464088
+GGZ-exposure-therapie,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,384,0.6223958333333334
+hulpverleners,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,543,0.712707182320442
+interview-113,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,395,0.48860759493670886
+ouder-worden-2040,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,297,0.5488215488215489
+ouderen-zorg,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,535,0.5495327102803739
+seksuele-voorlichting,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,382,0.6230366492146597
+verzorgings-staat,interviews,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,465,0.6301075268817204
+angststoornis,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,394,0.3197969543147208
+antidepressiva,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,291,0.44329896907216493
+baan,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,386,0.5025906735751295
+intake-bedrijf,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,753,0.350597609561753
+misbruik,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,482,0.3257261410788382
+studie,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,269,0.5018587360594795
+vrijheden,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Gemini_3.1_Pro-high,350,0.3914285714285714

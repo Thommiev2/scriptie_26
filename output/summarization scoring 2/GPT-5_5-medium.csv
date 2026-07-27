@@ -1,0 +1,132 @@
+name,category,asr_model,genai_model,sum_num_words,coverage
+abdomen,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,429,0.44522144522144524
+ademhaling,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,230,0.3
+auto-immuunziekten,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,397,0.4433249370277078
+bewegingsapparaat,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,389,0.39331619537275064
+diabetes,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,348,0.4396551724137931
+hartziekten,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,364,0.38461538461538464
+neurologie,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,387,0.4496124031007752
+oncologie,Dokter Patient,Cohere Labs Transcribe,transcript_GPT-5_5-medium,390,0.4153846153846154
+GGZ-exposure-therapie,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,301,0.6345514950166113
+hulpverleners,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,311,0.7427652733118971
+interview-113,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,271,0.6937269372693727
+ouder-worden-2040,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,262,0.6412213740458015
+ouderen-zorg,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,329,0.6534954407294833
+seksuele-voorlichting,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,296,0.668918918918919
+verzorgings-staat,interviews,Cohere Labs Transcribe,transcript_GPT-5_5-medium,339,0.5781710914454278
+angststoornis,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,257,0.4280155642023346
+antidepressiva,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,411,0.4720194647201946
+baan,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,419,0.4701670644391408
+intake-bedrijf,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,467,0.5353319057815846
+misbruik,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,454,0.42290748898678415
+studie,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,352,0.48863636363636365
+vrijheden,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_GPT-5_5-medium,379,0.40105540897097625
+abdomen,Dokter Patient,gt,transcript_GPT-5_5-medium,429,0.44522144522144524
+ademhaling,Dokter Patient,gt,transcript_GPT-5_5-medium,230,0.3
+auto-immuunziekten,Dokter Patient,gt,transcript_GPT-5_5-medium,397,0.4433249370277078
+bewegingsapparaat,Dokter Patient,gt,transcript_GPT-5_5-medium,389,0.39331619537275064
+diabetes,Dokter Patient,gt,transcript_GPT-5_5-medium,348,0.4396551724137931
+hartziekten,Dokter Patient,gt,transcript_GPT-5_5-medium,364,0.38461538461538464
+neurologie,Dokter Patient,gt,transcript_GPT-5_5-medium,387,0.4496124031007752
+oncologie,Dokter Patient,gt,transcript_GPT-5_5-medium,390,0.4153846153846154
+GGZ-exposure-therapie,interviews,gt,transcript_GPT-5_5-medium,301,0.6345514950166113
+hulpverleners,interviews,gt,transcript_GPT-5_5-medium,311,0.7427652733118971
+interview-113,interviews,gt,transcript_GPT-5_5-medium,271,0.6937269372693727
+ouder-worden-2040,interviews,gt,transcript_GPT-5_5-medium,262,0.6412213740458015
+ouderen-zorg,interviews,gt,transcript_GPT-5_5-medium,329,0.6534954407294833
+seksuele-voorlichting,interviews,gt,transcript_GPT-5_5-medium,296,0.668918918918919
+verzorgings-staat,interviews,gt,transcript_GPT-5_5-medium,339,0.5781710914454278
+angststoornis,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,257,0.4280155642023346
+antidepressiva,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,411,0.4720194647201946
+baan,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,419,0.4701670644391408
+intake-bedrijf,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,467,0.5353319057815846
+misbruik,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,454,0.42290748898678415
+studie,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,352,0.48863636363636365
+vrijheden,Psychologische gespreksvoering,gt,transcript_GPT-5_5-medium,379,0.40105540897097625
+abdomen,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,429,0.44522144522144524
+ademhaling,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,230,0.3
+auto-immuunziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,397,0.4433249370277078
+bewegingsapparaat,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,389,0.39331619537275064
+diabetes,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,348,0.4396551724137931
+hartziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,364,0.38461538461538464
+neurologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,387,0.4496124031007752
+oncologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,390,0.4153846153846154
+GGZ-exposure-therapie,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,301,0.6345514950166113
+hulpverleners,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,311,0.7427652733118971
+interview-113,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,271,0.6937269372693727
+ouder-worden-2040,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,262,0.6412213740458015
+ouderen-zorg,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,329,0.6534954407294833
+verzorgings-staat,interviews,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,339,0.5781710914454278
+angststoornis,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,257,0.4280155642023346
+antidepressiva,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,411,0.4720194647201946
+baan,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,419,0.4701670644391408
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,467,0.5353319057815846
+misbruik,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,454,0.42290748898678415
+studie,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,352,0.48863636363636365
+vrijheden,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_GPT-5_5-medium,379,0.40105540897097625
+abdomen,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,429,0.44522144522144524
+ademhaling,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,230,0.3
+auto-immuunziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,397,0.4433249370277078
+bewegingsapparaat,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,389,0.39331619537275064
+diabetes,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,348,0.4396551724137931
+hartziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,364,0.38461538461538464
+neurologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,387,0.4496124031007752
+oncologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,390,0.4153846153846154
+GGZ-exposure-therapie,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,301,0.6345514950166113
+hulpverleners,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,311,0.7427652733118971
+interview-113,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,271,0.6937269372693727
+ouder-worden-2040,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,262,0.6412213740458015
+ouderen-zorg,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,329,0.6534954407294833
+seksuele-voorlichting,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,296,0.668918918918919
+verzorgings-staat,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,339,0.5781710914454278
+angststoornis,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,257,0.4280155642023346
+antidepressiva,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,411,0.4720194647201946
+baan,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,419,0.4701670644391408
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,467,0.5353319057815846
+misbruik,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,454,0.42290748898678415
+studie,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,352,0.48863636363636365
+vrijheden,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_GPT-5_5-medium,379,0.40105540897097625
+abdomen,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,429,0.44522144522144524
+ademhaling,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,230,0.3
+auto-immuunziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,397,0.4433249370277078
+bewegingsapparaat,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,389,0.39331619537275064
+diabetes,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,348,0.4396551724137931
+hartziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,364,0.38461538461538464
+neurologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,387,0.4496124031007752
+oncologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,390,0.4153846153846154
+GGZ-exposure-therapie,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,301,0.6345514950166113
+hulpverleners,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,311,0.7427652733118971
+interview-113,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,271,0.6937269372693727
+ouder-worden-2040,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,262,0.6412213740458015
+ouderen-zorg,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,329,0.6534954407294833
+seksuele-voorlichting,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,296,0.668918918918919
+verzorgings-staat,interviews,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,339,0.5781710914454278
+angststoornis,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,257,0.4280155642023346
+antidepressiva,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,411,0.4720194647201946
+baan,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,419,0.4701670644391408
+intake-bedrijf,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,467,0.5353319057815846
+misbruik,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,454,0.42290748898678415
+studie,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,352,0.48863636363636365
+vrijheden,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_GPT-5_5-medium,379,0.40105540897097625
+abdomen,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,429,0.44522144522144524
+ademhaling,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,230,0.3
+auto-immuunziekten,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,397,0.4433249370277078
+bewegingsapparaat,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,389,0.39331619537275064
+diabetes,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,348,0.4396551724137931
+hartziekten,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,364,0.38461538461538464
+neurologie,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,387,0.4496124031007752
+oncologie,Dokter Patient,Whisper-large-v3-fast,transcript_GPT-5_5-medium,390,0.4153846153846154
+GGZ-exposure-therapie,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,301,0.6345514950166113
+hulpverleners,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,311,0.7427652733118971
+interview-113,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,271,0.6937269372693727
+ouder-worden-2040,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,262,0.6412213740458015
+ouderen-zorg,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,329,0.6534954407294833
+seksuele-voorlichting,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,296,0.668918918918919
+verzorgings-staat,interviews,Whisper-large-v3-fast,transcript_GPT-5_5-medium,339,0.5781710914454278
+angststoornis,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,257,0.4280155642023346
+antidepressiva,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,411,0.4720194647201946
+baan,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,419,0.4701670644391408
+intake-bedrijf,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,467,0.5353319057815846
+misbruik,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,454,0.42290748898678415
+studie,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,352,0.48863636363636365
+vrijheden,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_GPT-5_5-medium,379,0.40105540897097625

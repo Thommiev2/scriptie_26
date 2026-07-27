@@ -1,0 +1,133 @@
+name,category,asr_model,genai_model,sum_num_words,coverage
+abdomen,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,228,0.37280701754385964
+ademhaling,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,143,0.21678321678321677
+auto-immuunziekten,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,178,0.25842696629213485
+bewegingsapparaat,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,198,0.36363636363636365
+diabetes,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,177,0.2824858757062147
+hartziekten,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,199,0.2864321608040201
+neurologie,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,185,0.3621621621621622
+oncologie,Dokter Patient,Cohere Labs Transcribe,transcript_Haiku_4.5,218,0.2798165137614679
+GGZ-exposure-therapie,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,138,0.6159420289855072
+hulpverleners,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,156,0.7948717948717948
+interview-113,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,145,0.5586206896551724
+ouder-worden-2040,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,157,0.6815286624203821
+ouderen-zorg,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,163,0.6380368098159509
+seksuele-voorlichting,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,171,0.631578947368421
+verzorgings-staat,interviews,Cohere Labs Transcribe,transcript_Haiku_4.5,167,0.6407185628742516
+angststoornis,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,254,0.2559055118110236
+antidepressiva,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,268,0.30970149253731344
+baan,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,256,0.41796875
+intake-bedrijf,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,259,0.3861003861003861
+misbruik,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,257,0.3151750972762646
+studie,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,246,0.4065040650406504
+vrijheden,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Haiku_4.5,217,0.3456221198156682
+abdomen,Dokter Patient,gt,transcript_Haiku_4.5,259,0.4555984555984556
+ademhaling,Dokter Patient,gt,transcript_Haiku_4.5,120,0.25833333333333336
+auto-immuunziekten,Dokter Patient,gt,transcript_Haiku_4.5,181,0.5580110497237569
+bewegingsapparaat,Dokter Patient,gt,transcript_Haiku_4.5,217,0.3686635944700461
+diabetes,Dokter Patient,gt,transcript_Haiku_4.5,197,0.5380710659898477
+hartziekten,Dokter Patient,gt,transcript_Haiku_4.5,218,0.41284403669724773
+neurologie,Dokter Patient,gt,transcript_Haiku_4.5,240,0.48333333333333334
+oncologie,Dokter Patient,gt,transcript_Haiku_4.5,241,0.5477178423236515
+GGZ-exposure-therapie,interviews,gt,transcript_Haiku_4.5,313,0.6837060702875399
+hulpverleners,interviews,gt,transcript_Haiku_4.5,316,0.7246835443037974
+interview-113,interviews,gt,transcript_Haiku_4.5,335,0.6537313432835821
+ouder-worden-2040,interviews,gt,transcript_Haiku_4.5,274,0.5948905109489051
+ouderen-zorg,interviews,gt,transcript_Haiku_4.5,365,0.5945205479452055
+seksuele-voorlichting,interviews,gt,transcript_Haiku_4.5,314,0.6464968152866242
+verzorgings-staat,interviews,gt,transcript_Haiku_4.5,277,0.6678700361010831
+angststoornis,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,243,0.4773662551440329
+antidepressiva,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,407,0.5724815724815725
+baan,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,358,0.5558659217877095
+intake-bedrijf,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,361,0.6038781163434903
+misbruik,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,353,0.48158640226628896
+studie,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,328,0.5457317073170732
+vrijheden,Psychologische gespreksvoering,gt,transcript_Haiku_4.5,357,0.48179271708683474
+abdomen,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,210,0.46190476190476193
+ademhaling,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,144,0.3194444444444444
+auto-immuunziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,220,0.38181818181818183
+bewegingsapparaat,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,195,0.38461538461538464
+diabetes,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,197,0.38071065989847713
+hartziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,218,0.42201834862385323
+neurologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,1,1.0
+oncologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_Haiku_4.5,229,0.4148471615720524
+GGZ-exposure-therapie,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,375,0.5946666666666667
+hulpverleners,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,343,0.6588921282798834
+interview-113,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,395,0.569620253164557
+ouder-worden-2040,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,363,0.5867768595041323
+ouderen-zorg,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,458,0.5087336244541485
+seksuele-voorlichting,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,76,0.4342105263157895
+verzorgings-staat,interviews,NVIDIA Canary 1B v2,transcript_Haiku_4.5,156,0.36538461538461536
+angststoornis,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,300,0.27666666666666667
+antidepressiva,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,336,0.3125
+baan,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,315,0.3682539682539683
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,428,0.38317757009345793
+misbruik,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,419,0.4105011933174224
+studie,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,374,0.3716577540106952
+vrijheden,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Haiku_4.5,365,0.38082191780821917
+abdomen,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,143,0.4405594405594406
+ademhaling,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,95,0.25263157894736843
+auto-immuunziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,131,0.40458015267175573
+bewegingsapparaat,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,162,0.37037037037037035
+diabetes,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,153,0.42483660130718953
+hartziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,147,0.4013605442176871
+neurologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,151,0.47019867549668876
+oncologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,137,0.35766423357664234
+GGZ-exposure-therapie,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,261,0.6091954022988506
+hulpverleners,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,245,0.6448979591836734
+interview-113,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,248,0.5403225806451613
+ouder-worden-2040,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,244,0.6270491803278688
+ouderen-zorg,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,266,0.4849624060150376
+seksuele-voorlichting,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,273,0.6996336996336996
+verzorgings-staat,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,47,0.3404255319148936
+angststoornis,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,216,0.5185185185185185
+antidepressiva,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,298,0.47315436241610737
+baan,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,310,0.4967741935483871
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,270,0.40370370370370373
+misbruik,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,272,0.4264705882352941
+studie,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,230,0.4
+vrijheden,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Haiku_4.5,241,0.38589211618257263
+abdomen,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,245,0.3142857142857143
+ademhaling,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,241,0.12448132780082988
+auto-immuunziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,242,0.17768595041322313
+bewegingsapparaat,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,241,0.18672199170124482
+diabetes,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,242,0.17355371900826447
+hartziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,241,0.1908713692946058
+neurologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,242,0.22727272727272727
+oncologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_Haiku_4.5,241,0.2572614107883817
+GGZ-exposure-therapie,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,127,0.4645669291338583
+hulpverleners,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,89,0.43820224719101125
+interview-113,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,73,0.3150684931506849
+ouder-worden-2040,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,76,0.3815789473684211
+ouderen-zorg,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,92,0.391304347826087
+seksuele-voorlichting,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,70,0.38571428571428573
+verzorgings-staat,interviews,Qwen3 ASR 1.7B,transcript_Haiku_4.5,81,0.35802469135802467
+angststoornis,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,258,0.22093023255813954
+antidepressiva,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,261,0.21839080459770116
+baan,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,260,0.28846153846153844
+intake-bedrijf,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,260,0.25384615384615383
+misbruik,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,262,0.18702290076335878
+studie,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,261,0.21455938697318008
+vrijheden,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Haiku_4.5,261,0.21455938697318008
+abdomen,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,245,0.3142857142857143
+ademhaling,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,241,0.12448132780082988
+auto-immuunziekten,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,242,0.17768595041322313
+bewegingsapparaat,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,241,0.18672199170124482
+diabetes,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,242,0.17355371900826447
+hartziekten,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,241,0.1908713692946058
+neurologie,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,242,0.22727272727272727
+oncologie,Dokter Patient,Whisper-large-v3-fast,transcript_Haiku_4.5,241,0.2572614107883817
+GGZ-exposure-therapie,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,64,0.734375
+hulpverleners,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,437,0.7093821510297483
+interview-113,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,392,0.5663265306122449
+ouder-worden-2040,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,400,0.6
+ouderen-zorg,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,457,0.5579868708971554
+seksuele-voorlichting,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,345,0.6231884057971014
+verzorgings-staat,interviews,Whisper-large-v3-fast,transcript_Haiku_4.5,424,0.6014150943396226
+angststoornis,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,258,0.22093023255813954
+antidepressiva,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,261,0.21839080459770116
+baan,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,260,0.28846153846153844
+intake-bedrijf,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,480,0.4479166666666667
+misbruik,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,468,0.3055555555555556
+studie,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,558,0.30824372759856633
+vrijheden,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Haiku_4.5,561,0.31194295900178254

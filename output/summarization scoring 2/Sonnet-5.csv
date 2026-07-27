@@ -1,0 +1,132 @@
+name,category,asr_model,genai_model,sum_num_words,coverage
+abdomen,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,405,0.45925925925925926
+ademhaling,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,181,0.3314917127071823
+auto-immuunziekten,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,374,0.4197860962566845
+bewegingsapparaat,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,325,0.4307692307692308
+diabetes,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,324,0.3395061728395062
+hartziekten,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,313,0.36741214057507987
+neurologie,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,372,0.4166666666666667
+oncologie,Dokter Patient,Cohere Labs Transcribe,transcript_Sonnet-5,396,0.39141414141414144
+GGZ-exposure-therapie,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,587,0.6439522998296422
+hulpverleners,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,721,0.7295423023578363
+interview-113,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,444,0.6126126126126126
+ouder-worden-2040,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,537,0.5865921787709497
+ouderen-zorg,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,964,0.5663900414937759
+seksuele-voorlichting,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,530,0.5943396226415094
+verzorgings-staat,interviews,Cohere Labs Transcribe,transcript_Sonnet-5,543,0.570902394106814
+angststoornis,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,394,0.3299492385786802
+antidepressiva,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,470,0.42340425531914894
+baan,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,501,0.45109780439121755
+intake-bedrijf,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,661,0.4523449319213313
+misbruik,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,581,0.3528399311531842
+studie,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,536,0.4253731343283582
+vrijheden,Psychologische gespreksvoering,Cohere Labs Transcribe,transcript_Sonnet-5,729,0.33607681755829905
+abdomen,Dokter Patient,gt,transcript_Sonnet-5,420,0.5380952380952381
+ademhaling,Dokter Patient,gt,transcript_Sonnet-5,201,0.32338308457711445
+auto-immuunziekten,Dokter Patient,gt,transcript_Sonnet-5,368,0.42934782608695654
+bewegingsapparaat,Dokter Patient,gt,transcript_Sonnet-5,399,0.48370927318295737
+diabetes,Dokter Patient,gt,transcript_Sonnet-5,397,0.3853904282115869
+hartziekten,Dokter Patient,gt,transcript_Sonnet-5,393,0.3638676844783715
+neurologie,Dokter Patient,gt,transcript_Sonnet-5,548,0.3978102189781022
+oncologie,Dokter Patient,gt,transcript_Sonnet-5,543,0.3738489871086556
+GGZ-exposure-therapie,interviews,gt,transcript_Sonnet-5,390,0.6717948717948717
+hulpverleners,interviews,gt,transcript_Sonnet-5,509,0.787819253438114
+interview-113,interviews,gt,transcript_Sonnet-5,502,0.6454183266932271
+ouder-worden-2040,interviews,gt,transcript_Sonnet-5,432,0.6180555555555556
+ouderen-zorg,interviews,gt,transcript_Sonnet-5,491,0.6028513238289206
+seksuele-voorlichting,interviews,gt,transcript_Sonnet-5,438,0.6689497716894978
+verzorgings-staat,interviews,gt,transcript_Sonnet-5,484,0.6239669421487604
+angststoornis,Psychologische gespreksvoering,gt,transcript_Sonnet-5,411,0.4257907542579075
+antidepressiva,Psychologische gespreksvoering,gt,transcript_Sonnet-5,589,0.44482173174872663
+baan,Psychologische gespreksvoering,gt,transcript_Sonnet-5,728,0.4230769230769231
+intake-bedrijf,Psychologische gespreksvoering,gt,transcript_Sonnet-5,686,0.5058309037900874
+misbruik,Psychologische gespreksvoering,gt,transcript_Sonnet-5,671,0.35767511177347244
+studie,Psychologische gespreksvoering,gt,transcript_Sonnet-5,603,0.4593698175787728
+vrijheden,Psychologische gespreksvoering,gt,transcript_Sonnet-5,658,0.36322188449848025
+abdomen,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,551,0.4355716878402904
+ademhaling,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,191,0.3193717277486911
+auto-immuunziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,380,0.4052631578947368
+bewegingsapparaat,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,393,0.40966921119592875
+diabetes,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,337,0.4094955489614243
+hartziekten,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,371,0.33153638814016173
+neurologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,412,0.41019417475728154
+oncologie,Dokter Patient,NVIDIA Canary 1B v2,transcript_Sonnet-5,415,0.3614457831325301
+GGZ-exposure-therapie,interviews,NVIDIA Canary 1B v2,transcript_Sonnet-5,235,0.6851063829787234
+hulpverleners,interviews,NVIDIA Canary 1B v2,transcript_Sonnet-5,355,0.8112676056338028
+interview-113,interviews,NVIDIA Canary 1B v2,transcript_Sonnet-5,294,0.6258503401360545
+ouder-worden-2040,interviews,NVIDIA Canary 1B v2,transcript_Sonnet-5,344,0.6337209302325582
+ouderen-zorg,interviews,NVIDIA Canary 1B v2,transcript_Sonnet-5,402,0.5920398009950248
+verzorgings-staat,interviews,NVIDIA Canary 1B v2,transcript_Sonnet-5,369,0.6151761517615176
+angststoornis,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,385,0.3220779220779221
+antidepressiva,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,460,0.3717391304347826
+baan,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,508,0.42913385826771655
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,573,0.45200698080279234
+misbruik,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,482,0.38381742738589214
+studie,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,458,0.40829694323144106
+vrijheden,Psychologische gespreksvoering,NVIDIA Canary 1B v2,transcript_Sonnet-5,462,0.35714285714285715
+abdomen,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,435,0.46436781609195404
+ademhaling,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,171,0.36257309941520466
+auto-immuunziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,442,0.4298642533936652
+bewegingsapparaat,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,532,0.34962406015037595
+diabetes,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,526,0.38022813688212925
+hartziekten,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,449,0.34075723830734966
+neurologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,525,0.3980952380952381
+oncologie,Dokter Patient,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,664,0.3795180722891566
+GGZ-exposure-therapie,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,305,0.6885245901639344
+hulpverleners,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,455,0.8
+interview-113,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,335,0.6388059701492538
+ouder-worden-2040,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,441,0.671201814058957
+ouderen-zorg,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,478,0.6297071129707112
+seksuele-voorlichting,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,339,0.640117994100295
+verzorgings-staat,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,362,0.6160220994475138
+angststoornis,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,548,0.2846715328467153
+antidepressiva,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,848,0.3007075471698113
+baan,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,1077,0.35376044568245124
+intake-bedrijf,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,989,0.41456016177957533
+misbruik,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,795,0.33584905660377357
+studie,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,679,0.3549337260677467
+vrijheden,Psychologische gespreksvoering,NVIDIA Parakeet TDT 0.6B v3,transcript_Sonnet-5,545,0.3614678899082569
+abdomen,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,369,0.42005420054200543
+ademhaling,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,152,0.3355263157894737
+auto-immuunziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,344,0.3866279069767442
+bewegingsapparaat,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,435,0.41379310344827586
+diabetes,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,422,0.35308056872037913
+hartziekten,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,407,0.33415233415233414
+neurologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,436,0.4151376146788991
+oncologie,Dokter Patient,Qwen3 ASR 1.7B,transcript_Sonnet-5,429,0.4172494172494173
+GGZ-exposure-therapie,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,289,0.7024221453287197
+hulpverleners,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,414,0.7874396135265701
+interview-113,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,309,0.6537216828478964
+ouder-worden-2040,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,336,0.6636904761904762
+ouderen-zorg,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,345,0.6173913043478261
+seksuele-voorlichting,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,372,0.6935483870967742
+verzorgings-staat,interviews,Qwen3 ASR 1.7B,transcript_Sonnet-5,391,0.639386189258312
+angststoornis,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,438,0.319634703196347
+antidepressiva,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,574,0.39198606271777003
+baan,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,584,0.4160958904109589
+intake-bedrijf,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,647,0.42967542503863987
+misbruik,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,534,0.3389513108614232
+studie,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,509,0.40078585461689586
+vrijheden,Psychologische gespreksvoering,Qwen3 ASR 1.7B,transcript_Sonnet-5,585,0.3435897435897436
+abdomen,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,423,0.46808510638297873
+ademhaling,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,231,0.31601731601731603
+auto-immuunziekten,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,421,0.3752969121140142
+bewegingsapparaat,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,400,0.4025
+diabetes,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,405,0.345679012345679
+hartziekten,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,401,0.32418952618453867
+neurologie,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,528,0.36742424242424243
+oncologie,Dokter Patient,Whisper-large-v3-fast,transcript_Sonnet-5,554,0.3862815884476534
+GGZ-exposure-therapie,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,615,0.5804878048780487
+hulpverleners,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,544,0.7886029411764706
+interview-113,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,370,0.6702702702702703
+ouder-worden-2040,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,358,0.6703910614525139
+ouderen-zorg,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,403,0.6104218362282878
+seksuele-voorlichting,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,384,0.6640625
+verzorgings-staat,interviews,Whisper-large-v3-fast,transcript_Sonnet-5,466,0.6437768240343348
+angststoornis,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,434,0.3271889400921659
+antidepressiva,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,593,0.3912310286677909
+baan,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,694,0.3919308357348703
+intake-bedrijf,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,588,0.46598639455782315
+misbruik,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,539,0.3654916512059369
+studie,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,556,0.4370503597122302
+vrijheden,Psychologische gespreksvoering,Whisper-large-v3-fast,transcript_Sonnet-5,637,0.30612244897959184
