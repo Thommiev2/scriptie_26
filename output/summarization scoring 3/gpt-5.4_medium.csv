@@ -1,0 +1,19 @@
+name,category,asr_model,genai_model,sum_num_words,bertscore,rouge,compression_rate,density,coverage,summac
+kpni-arts,interviews,Whisper-large-v3-fast,transcript_gpt-5.4_medium,395,"[1.0, 1.0, 1.0]",1.0,0.03524651541624519,1.0075949367088608,0.0,0.605137999938882
+ouderen-zorg-2,interviews,Cohere Labs Transcribe,transcript_gpt-5.4_medium,430,"[1.0, 1.0, 1.0]",1.0,0.05086069210292813,1.0906976744186045,0.0,0.3724039953947067
+ouderen-zorg-2,interviews,NVIDIA Canary 1B v2,transcript_gpt-5.4_medium,430,"[1.0, 1.0, 1.0]",1.0,0.05086069210292813,1.0906976744186045,0.0,0.3724039953947067
+verpleegkundige gevangenis,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_gpt-5.4_medium,382,"[1.0, 1.0, 1.0]",1.0,0.049837827819479194,1.049738219895288,0.0,0.3445809779858047
+verpleegkundige gevangenis,interviews,NVIDIA Canary 1B v2,transcript_gpt-5.4_medium,382,"[1.0, 1.0, 1.0]",1.0,0.049837827819479194,1.049738219895288,0.0,0.3445809779858047
+kpni-arts,interviews,gt,transcript_gpt-5.4_medium,395,"[1.0, 1.0, 1.0]",1.0,0.03524651541624519,1.0075949367088608,0.0,0.605137999938882
+verpleegkundige gevangenis,interviews,Qwen3 ASR 1.7B,transcript_gpt-5.4_medium,382,"[1.0, 1.0, 1.0]",1.0,0.049837827819479194,1.049738219895288,0.0,0.3445809779858047
+kpni-arts,interviews,Qwen3 ASR 1.7B,transcript_gpt-5.4_medium,395,"[1.0, 1.0, 1.0]",1.0,0.03524651541624519,1.0075949367088608,0.0,0.605137999938882
+kpni-arts,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_gpt-5.4_medium,395,"[1.0, 1.0, 1.0]",1.0,0.03524651541624519,1.0075949367088608,0.0,0.605137999938882
+ouderen-zorg-2,interviews,gt,transcript_gpt-5.4_medium,430,"[1.0, 1.0, 1.0]",1.0,0.05086069210292813,1.0906976744186045,0.0,0.3724039953947067
+ouderen-zorg-2,interviews,Whisper-large-v3-fast,transcript_gpt-5.4_medium,430,"[1.0, 1.0, 1.0]",1.0,0.05086069210292813,1.0906976744186045,0.0,0.3724039953947067
+verpleegkundige gevangenis,interviews,Whisper-large-v3-fast,transcript_gpt-5.4_medium,382,"[1.0, 1.0, 1.0]",1.0,0.049837827819479194,1.049738219895288,0.0,0.3445809779858047
+ouderen-zorg-2,interviews,Qwen3 ASR 1.7B,transcript_gpt-5.4_medium,430,"[1.0, 1.0, 1.0]",1.0,0.05086069210292813,1.0906976744186045,0.0,0.3724039953947067
+ouderen-zorg-2,interviews,NVIDIA Parakeet TDT 0.6B v3,transcript_gpt-5.4_medium,430,"[1.0, 1.0, 1.0]",1.0,0.05086069210292813,1.0906976744186045,0.0,0.3724039953947067
+kpni-arts,interviews,Cohere Labs Transcribe,transcript_gpt-5.4_medium,395,"[1.0, 1.0, 1.0]",1.0,0.03524651541624519,1.0075949367088608,0.0,0.605137999938882
+kpni-arts,interviews,NVIDIA Canary 1B v2,transcript_gpt-5.4_medium,395,"[1.0, 1.0, 1.0]",1.0,0.03524651541624519,1.0075949367088608,0.0,0.605137999938882
+verpleegkundige gevangenis,interviews,Cohere Labs Transcribe,transcript_gpt-5.4_medium,382,"[1.0, 1.0, 1.0]",1.0,0.049837827819479194,1.049738219895288,0.0,0.3445809779858047
+verpleegkundige gevangenis,interviews,gt,transcript_gpt-5.4_medium,382,"[1.0, 1.0, 1.0]",1.0,0.049837827819479194,1.049738219895288,0.0,0.3445809779858047
